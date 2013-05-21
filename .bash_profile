@@ -40,3 +40,25 @@ which grunt > /dev/null && eval "$(grunt --completion=bash)"
 
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
+
+# customization
+
+alias zshconfig="mate ~/.zshrc"
+alias ohmyzsh="mate ~/.oh-my-zsh"
+
+export PATH=/opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/opt/local/bin:/opt/local/sbin:/opt/gtk/bin:/Users/drew/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/MacGPG2/bin:/usr/local/git/bin
+
+export EC2_HOME=~/.fcc_ec2
+export PATH=$PATH:$EC2_HOME/bin
+export EC2_PRIVATE_KEY=`ls $EC2_HOME/pk-*.pem`
+export EC2_CERT=`ls $EC2_HOME/cert-*.pem`
+export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
+
+alias sshec2="ssh -i $EC2_HOME/id_rsa-main"
+alias scpec2="scp -i $EC2_HOME/id_rsa-main"
+
+export WORKON_HOME=~/envs
+export TM_PYCHECKER=pylint
+
+
+

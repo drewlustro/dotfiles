@@ -1,13 +1,13 @@
-# Drew Lustro's oh-my-zsh dotfiles
-## (inspired by Mathias’ Bash dotfiles)
+# Drew's dotfiles
+#### (an oh-my-zsh variant inspired by Mathias’ dotfiles)
 
-This fork of Mathias' dotfiles is specially customized for ZSH (oh-my-zsh) on Mac OS X. It is a near-complete port of M's original BASH dotfiles but with some bonus goodies that I've customized & added. I plan to make this ZSH dotfiles distribution to be more "generically opinionated" as time goes on.
+This fork of Mathias' dotfiles is specially customized for *ZSH* (oh-my-zsh) on Mac OS X. It is a near-complete port of M's original BASH dotfiles but with some bonus goodies that I've customized & added. My goal is to make this ZSH dotfiles distribution widely compatible and robust yet opinionated. 
 
 ## Installation
 
 ### Using Git and the bootstrap.zsh script
 
-You can clone the repository wherever you want. (I like to keep it in `~/dev/dotfiles`. The bootstrapper script will pull in the latest version and copy the files to your home folder.
+You can clone the repository wherever you want. (I like to keep it in `~/dev/dotfiles`. The bootstrapper script will pull in the latest version from the master branch before installing.
 
 ```zsh
 git clone https://github.com/drewlustro/dotfiles.git && cd dotfiles && source bootstrap.zsh
@@ -20,27 +20,31 @@ source bootstrap.zsh
 ```
 
 
-### Common dotfiles
+### Common customizations
 
 The most commonly scaffolded dotfiles are placed in the `$ZSH/custom` directory, so that oh-my-zsh can be updated without conflict, as that directory is ignored by oh-my-zsh's repository.
+
+* aliases
+* completions
+* exports
 
 To easily view this directory's contents after installation, type:
 
 ```zsh
 zshdotfiles # will open a Finder window of the $ZSH/custom directory
-zshconfig # will launch Sublime Text 3 with all ZSH-related dotfiles opened
+zshconfig # will launch Sublime Text 3 (or $EDITOR) with all ZSH-related dotfiles opened
 ```
 
 ### Bonus Features
 
 #### Hyper-diverse Terminal Colors
-GNU **ls** and **dircolors**, compiled from [GNU coreutils-8.21](http://www.gnu.org/software/coreutils/), will be installed into `$HOME/bin`, allowing for an elevated terminal color experience on OS X via true *LS_COLORS* support.
+GNU **ls** and **dircolors**, compiled from [GNU coreutils-8.21](http://www.gnu.org/software/coreutils/), will be installed into `$HOME/bin`, allowing for an elevated terminal color experience on OS X via true `LS_COLORS` support.
 
 #### npm Auto-Completion
 Auto-completion support has been added for the node package manager.
 
 #### Local-Software First
-The *$PATH* export chain checks for executables in many common local installation paths first, preferring user-installed binaries.
+The `$PATH` export chain checks for executables in many common local installation paths first, preferring user-installed binaries.
 
 
 ### Add custom commands without creating a new fork
@@ -90,18 +94,18 @@ When setting up a new Mac, you may want to set some sensible OS X defaults:
 
 ## Contact Me & Feedback
 
-| [![twitter/msodrew](http://drewlustro.com/shared_static/img/commodore_normal.png](http://twitter.com/msodrew "Follow @msodrew on Twitter") |
+| [![twitter/msodrew](http://drewlustro.com/shared_static/img/commodore_normal.png)](http://twitter.com/msodrew "Follow @msodrew on Twitter") |
 |---|
 | [Drew Lustro](http://drewlustro.com) |
 
 Suggestions/improvements
 [welcome](https://github.com/drewlustro/dotfiles/issues)!
 
-## Original Author Credit & Huge Thanks...
+### Original Author Credit & Huge Thanks...
 
-[Mathias Bynens](http://mathiasbynens.be/)
+*[Mathias Bynens](http://mathiasbynens.be/)*
 
-### Mathias' Thanks to…
+#### Mathias' Thanks to…
 
 * @ptb and [his _OS X Lion Setup_ repository](https://github.com/ptb/Mac-OS-X-Lion-Setup)
 * [Ben Alman](http://benalman.com/) and his [dotfiles repository](https://github.com/cowboy/dotfiles)

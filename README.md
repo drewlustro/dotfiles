@@ -1,7 +1,7 @@
-# Drew's dotfiles
+# Drew's ZSH dotfiles
 #### (an oh-my-zsh variant inspired by Mathias’ dotfiles)
 
-This fork of Mathias' dotfiles is specially customized for *ZSH* (oh-my-zsh) on Mac OS X. It is a near-complete port of M's original BASH dotfiles but with some bonus goodies that I've customized & added. My goal is to make this ZSH dotfiles distribution widely compatible and robust yet opinionated. 
+This fork of Mathias' dotfiles is specially customized for **ZSH** (oh-my-zsh) on Mac OS X. It is a near-complete port of M's original BASH dotfiles but with some bonus goodies that I've customized & added. My goal is to make this ZSH dotfiles distribution widely compatible and robust yet opinionated. 
 
 ## Installation
 

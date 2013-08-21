@@ -77,16 +77,9 @@ fi
 
 You could also use `$ZSH/custom/extra.zsh` to override settings, functions and aliases from my dotfiles repository. It’s probably better to [fork this repository](https://github.com/drewlustro/dotfiles/fork_select) instead, though.
 
-### BASH customization remains available
-The original bash dotfiles and `bootstrap.sh` file still exist in the source tree (for now) and can be used if you prefer. Simply execute:
-
-```zsh
-git clone https://github.com/drewlustro/dotfiles.git && cd dotfiles && source bootstrap.sh
-```
-
 ### Sensible OS X defaults from Mathias
 
-When setting up a new Mac, you may want to set some sensible OS X defaults:
+Too good to remove from this fork. When setting up a new Mac, you may want to set some sensible OS X defaults:
 
 ```zsh
 ./.osx

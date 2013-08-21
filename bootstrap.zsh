@@ -7,7 +7,8 @@ function doIt() {
         echo "OK going for it"
         mkdir "$ZSH/custom" > /dev/null 2>&1
         rsync -av --no-perms .zshrc ~
-        rsync -av --no-perms bin ~
+        rsync -av --no-perms bin ~ 
+        rsync -av --no-perms .vim .vimrc .osx ~ 
         rsync -av --no-perms --exclude ".DS_Store" --exclude "extra.zsh" ./zsh/custom/* "$ZSH/custom/"
     fi
 }

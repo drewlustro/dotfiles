@@ -1,9 +1,14 @@
-# Drew's ZSH dotfiles
-#### (an oh-my-zsh variant inspired by Mathias’ dotfiles)
+# Drew's oh-my-zsh dotfiles for OS X
+#### (an oh-my-zsh variant of Mathias' dotfiles for ZSH)
 
 This fork of Mathias' dotfiles is specially customized for **ZSH** (oh-my-zsh) on Mac OS X. It is a near-complete port of M's original BASH dotfiles but with some bonus goodies that I've customized & added. My goal is to make this ZSH dotfiles distribution widely compatible and robust yet opinionated. 
 
 ## Installation
+
+### Prerequesite: Install oh-my-zsh
+
+If you haven't already, install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh). It's easy!
+
 
 ### Using Git and the bootstrap.zsh script
 
@@ -24,9 +29,9 @@ source bootstrap.zsh
 
 The most commonly scaffolded dotfiles are placed in the `$ZSH/custom` directory, so that oh-my-zsh can be updated without conflict, as that directory is ignored by oh-my-zsh's repository.
 
-* aliases
-* completions
-* exports
+* `aliases.zsh`
+* `completions.zsh`
+* `exports.zsh`
 
 To easily view this directory's contents after installation, type:
 
@@ -35,15 +40,18 @@ zshdotfiles # will open a Finder window of the $ZSH/custom directory
 zshconfig # will launch Sublime Text 3 (or $EDITOR) with all ZSH-related dotfiles opened
 ```
 
-### Bonus Features
+### Features
 
-#### Hyper-diverse Terminal Colors
+#### Tons of convenience aliases and shortcut commands
+Take a look at all the `aliases.zsh` and `completions.zsh` files within `$ZSH/custom` to see what goodies lie within. You can simply type `zshdotfiles` after installation to quickly take a look.
+
+#### Hyper-diverse terminal colors
 GNU **ls** and **dircolors**, compiled from [GNU coreutils-8.21](http://www.gnu.org/software/coreutils/), will be installed into `$HOME/bin`, allowing for an elevated terminal color experience on OS X via true `LS_COLORS` support.
 
-#### npm Auto-Completion
+#### npm auto-completion
 Auto-completion support has been added for the node package manager.
 
-#### Local-Software First
+#### Local user software first!
 The `$PATH` export chain checks for executables in many common local installation paths first, preferring user-installed binaries.
 
 

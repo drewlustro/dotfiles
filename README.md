@@ -13,7 +13,7 @@ You can clone the repository wherever you want. (I like to keep it in `~/dev/dot
 git clone https://github.com/drewlustro/dotfiles.git && cd dotfiles && source bootstrap.zsh
 ```
 
-Whenever you'd like to update to the latest version, `cd` into your local `dotfiles` repository and then:
+Whenever you'd like to update to the latest version, `cd` into your local `dotfiles` repository and then type:
 
 ```zsh
 source bootstrap.zsh
@@ -103,7 +103,7 @@ Suggestions/improvements
 
 ### Original Author Credit & Huge Thanks...
 
-*[Mathias Bynens](http://mathiasbynens.be/)*
+##### [Mathias Bynens](http://mathiasbynens.be/)
 
 #### Mathias' Thanks to…
 
@@ -118,5 +118,4 @@ Suggestions/improvements
 * [Nicolas Gallagher](http://nicolasgallagher.com/) and his [dotfiles repository](https://github.com/necolas/dotfiles)
 * [Sindre Sorhus](http://sindresorhus.com/)
 * [Tom Ryder](http://blog.sanctum.geek.nz/) and his [dotfiles repository](https://github.com/tejr/dotfiles)
-
 * anyone who [contributed a patch](https://github.com/mathiasbynens/dotfiles/contributors) or [made a helpful suggestion](https://github.com/mathiasbynens/dotfiles/issues)

@@ -4,7 +4,6 @@ function doIt() {
     if [[ -z "$ZSH" ]]; then
         echo "ZSH is not set, aborting. (it is usually ~/.oh-my-zsh)"
     else
-        echo "OK going for it"
         mkdir "$ZSH/custom" > /dev/null 2>&1
         rsync -av --no-perms .zshrc ~
         rsync -av --no-perms bin ~ 

@@ -9,7 +9,6 @@ alias .....="cd ../../../.."
 
 # Shortcuts
 alias zshdotfiles="open $ZSH/custom"
-alias zshconfig="$EDITOR ~/.zshrc ~/.oh-my-zsh"
 alias dropbox="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias desktop="cd ~/Desktop"

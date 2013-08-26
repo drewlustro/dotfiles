@@ -11,6 +11,9 @@ ZSH_THEME="ys"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Disable zsh autocorrection prompts
+DISABLE_CORRECTION="true"
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 

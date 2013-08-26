@@ -29,3 +29,6 @@ export MANPAGER="less -X"
 
 # Always enable colored `grep` output
 export GREP_OPTIONS="--color=auto"
+
+# Export-dependent aliases
+alias zshconfig="$EDITOR ~/.zshrc ~/.oh-my-zsh"

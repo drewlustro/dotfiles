@@ -1,16 +1,17 @@
 # Lustro ZSH dotfiles for Mac OS X
-#### (an oh-my-zsh variant of Mathias' dotfiles for ZSH)
+##### (an oh-my-zsh variant of Mathias' dotfiles for Bash)
 
-This dotfiles setup is specially customized for **ZSH** (oh-my-zsh) on Mac OS X. It is a near-complete port of M's original BASH dotfiles but with some bonus goodies that I've customized & added. My goal is to make this ZSH dotfiles distribution widely compatible and robust yet opinionated. 
+
+This dotfiles setup is specially customized for **ZSH** (oh-my-zsh) on Mac OS X. It is a near-complete port of Mathias' original BASH dotfiles but with some bonus goodies that I've customized & added. My goal is to make this ZSH dotfiles distribution widely compatible and robust yet opinionated. 
 
 ## Installation
 
 ### Prerequesite: Install oh-my-zsh
 
-If you haven't already, install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh). It's easy!
+If you haven't already, install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh).
 
 
-### Using Git and the bootstrap.zsh script
+### Easy Install
 
 You can clone the repository wherever you want. (I like to keep it in `~/dev/dotfiles`. The bootstrapper script will pull in the latest version from the master branch before installing.
 
@@ -18,14 +19,19 @@ You can clone the repository wherever you want. (I like to keep it in `~/dev/dot
 git clone https://github.com/drewlustro/dotfiles.git && cd dotfiles && source bootstrap.zsh
 ```
 
-Whenever you'd like to update to the latest version, `cd` into your local `dotfiles` repository and then type:
+### Manual installation
+
+1. Download **.zip** & extract or `git clone` this repository.
+2. Open a terminal window and `cd` into the `dotfiles` directory.
+3. Run `source bootstrap.zsh` to install.
 
 ```zsh
-source bootstrap.zsh
+~/dotfiles $ source bootstrap.zsh
 ```
 
+## Charactaristics
 
-### Common customizations
+### ZSH Config File Locations
 
 The most commonly scaffolded dotfiles are placed in the `$ZSH/custom` directory, so that oh-my-zsh can be updated without conflict, as that directory is ignored by oh-my-zsh's repository.
 
@@ -40,7 +46,7 @@ zshdotfiles # will open a Finder window of the $ZSH/custom directory
 zshconfig # will launch Sublime Text 3 (or $EDITOR) with all ZSH-related dotfiles opened
 ```
 
-### Features
+### Notable Features
 
 #### Tons of convenience aliases and shortcut commands
 Take a look at all the `aliases.zsh` and `completions.zsh` files within `$ZSH/custom` to see what goodies lie within. You can simply type `zshdotfiles` after installation to quickly take a look.
@@ -48,22 +54,18 @@ Take a look at all the `aliases.zsh` and `completions.zsh` files within `$ZSH/cu
 #### Hyper-diverse terminal colors
 GNU **ls** and **dircolors**, compiled from [GNU coreutils-8.21](http://www.gnu.org/software/coreutils/), will be installed into `$HOME/bin`, allowing for an elevated terminal color experience on Mac OS X 10.8.x via true `LS_COLORS` support.
 
-#### LazyProdigy ZSH Theme
-[LazyProdigy terminal theme](https://github.com/drewlustro/lazyprodigy-zsh-theme) for local machines and servers. Theme changes are easy from `~/.zshrc`
-
-`lazyprodigy.zsh-theme`
-![lazyprodigy.zsh-theme](http://pool.drewlustro.com/img/github/lazyprodigy-ss.png "lazyprodigy.zsh-theme")
-
-`lazyprodigy-server.zsh-theme`
-![lazyprodigy-server.zsh-theme](http://pool.drewlustro.com/img/github/lazyprodigy-server-ss.png "lazyprodigy-server.zsh-theme")
-
-
 #### npm auto-completion
 Auto-completion support has been added for the node package manager, sourced from `npm completion >> ~/.oh-my-zsh/custom/completions.zsh`
 
 #### Local user software first!
 The `$PATH` export chain checks for executables in many common local installation paths first, preferring user-installed binaries.
 
+#### LazyProdigy ZSH Theme
+[LazyProdigy terminal theme](https://github.com/drewlustro/lazyprodigy-zsh-theme) for local machines and servers. Change the theme in `~/.zshrc`
+![lazyprodigy.zsh-theme](http://pool.drewlustro.com/img/github/lazyprodigy-ss.png "lazyprodigy.zsh-theme")
+![lazyprodigy-server.zsh-theme](http://pool.drewlustro.com/img/github/lazyprodigy-server-ss.png "lazyprodigy-server.zsh-theme")
+
+---
 
 ### Add custom commands without creating a new fork
 

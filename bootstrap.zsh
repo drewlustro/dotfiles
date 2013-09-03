@@ -63,11 +63,11 @@ if [[ "$1" == "--force" || "$1" == "-f" ]]; then
     installDotfiles
 else
     br
-    echo "Drew's ZSH dotfiles Installation"
+    echo "Lustro ZSH dotfiles installation"
     hr
     br
     echo "This may overwrite existing files in your home directory"
-    read "REPLY?and zsh config directories. Are you sure? (y/n) " -k 1
+    read "REPLY?and zsh/vim config directories. Are you sure? (y/n) " -k 1
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         installDotfiles        

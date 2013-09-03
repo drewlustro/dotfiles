@@ -1,4 +1,4 @@
-# Drew's oh-my-zsh dotfiles for Mac OS X
+# Lustro ZSH dotfiles for Mac OS X
 #### (an oh-my-zsh variant of Mathias' dotfiles for ZSH)
 
 This dotfiles setup is specially customized for **ZSH** (oh-my-zsh) on Mac OS X. It is a near-complete port of M's original BASH dotfiles but with some bonus goodies that I've customized & added. My goal is to make this ZSH dotfiles distribution widely compatible and robust yet opinionated. 
@@ -105,7 +105,7 @@ Too good to remove from this fork. When setting up a new Mac, you may want to se
 
 ## Contact & Feedback
 
-| [![twitter/msodrew](http://drewlustro.com/shared_static/img/commodore_normal.png)](http://twitter.com/msodrew "Follow @msodrew on Twitter") |
+| [![twitter/msodrew](http://drewlustro.com/shared_static/img/commodore_normal.png)](http://twitter.com/msodrew "@msodrew on Twitter") |
 |---|
 | [Drew Lustro](http://drewlustro.com) |
 

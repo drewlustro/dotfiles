@@ -1,7 +1,7 @@
-# Drew's oh-my-zsh dotfiles for OS X
+# Drew's oh-my-zsh dotfiles for Mac OS X
 #### (an oh-my-zsh variant of Mathias' dotfiles for ZSH)
 
-This fork of Mathias' dotfiles is specially customized for **ZSH** (oh-my-zsh) on Mac OS X. It is a near-complete port of M's original BASH dotfiles but with some bonus goodies that I've customized & added. My goal is to make this ZSH dotfiles distribution widely compatible and robust yet opinionated. 
+This dotfiles setup is specially customized for **ZSH** (oh-my-zsh) on Mac OS X. It is a near-complete port of M's original BASH dotfiles but with some bonus goodies that I've customized & added. My goal is to make this ZSH dotfiles distribution widely compatible and robust yet opinionated. 
 
 ## Installation
 
@@ -46,10 +46,20 @@ zshconfig # will launch Sublime Text 3 (or $EDITOR) with all ZSH-related dotfile
 Take a look at all the `aliases.zsh` and `completions.zsh` files within `$ZSH/custom` to see what goodies lie within. You can simply type `zshdotfiles` after installation to quickly take a look.
 
 #### Hyper-diverse terminal colors
-GNU **ls** and **dircolors**, compiled from [GNU coreutils-8.21](http://www.gnu.org/software/coreutils/), will be installed into `$HOME/bin`, allowing for an elevated terminal color experience on OS X via true `LS_COLORS` support.
+GNU **ls** and **dircolors**, compiled from [GNU coreutils-8.21](http://www.gnu.org/software/coreutils/), will be installed into `$HOME/bin`, allowing for an elevated terminal color experience on Mac OS X 10.8.x via true `LS_COLORS` support.
+
+#### LazyProdigy ZSH Theme
+[LazyProdigy terminal theme](https://github.com/drewlustro/lazyprodigy-zsh-theme) for local machines and servers. Theme changes are easy from `~/.zshrc`
+
+`lazyprodigy.zsh-theme`
+![lazyprodigy.zsh-theme](http://pool.drewlustro.com/img/github/lazyprodigy-ss.png "lazyprodigy.zsh-theme")
+
+`lazyprodigy-server.zsh-theme`
+![lazyprodigy-server.zsh-theme](http://pool.drewlustro.com/img/github/lazyprodigy-server-ss.png "lazyprodigy-server.zsh-theme")
+
 
 #### npm auto-completion
-Auto-completion support has been added for the node package manager.
+Auto-completion support has been added for the node package manager, sourced from `npm completion >> ~/.oh-my-zsh/custom/completions.zsh`
 
 #### Local user software first!
 The `$PATH` export chain checks for executables in many common local installation paths first, preferring user-installed binaries.
@@ -93,14 +103,13 @@ Too good to remove from this fork. When setting up a new Mac, you may want to se
 ./.osx
 ```
 
-## Contact Me & Feedback
+## Contact & Feedback
 
 | [![twitter/msodrew](http://drewlustro.com/shared_static/img/commodore_normal.png)](http://twitter.com/msodrew "Follow @msodrew on Twitter") |
 |---|
 | [Drew Lustro](http://drewlustro.com) |
 
-Suggestions/improvements
-[welcome](https://github.com/drewlustro/dotfiles/issues)!
+Suggestions & improvements [welcome](https://github.com/drewlustro/dotfiles/issues)!
 
 ### Original Author Credit & Huge Thanks...
 

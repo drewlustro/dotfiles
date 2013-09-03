@@ -1,11 +1,13 @@
-export GIT_EDITOR=subl
+export GIT_EDITOR=vim
 export VISUAL=subl
 export EDITOR=subl
 
 export WORKON_HOME=~/.envs
 export TM_PYCHECKER=pylint
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/local/lib
 
+# PATH export additions for macports
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/opt/local/bin
 export PATH=$PATH:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
 export PATH=$PATH:/usr/local/git/bin:/usr/X11/bin
@@ -14,6 +16,7 @@ export PATH=$PATH:/usr/local/git/bin:/usr/X11/bin
 export HISTSIZE=32768
 export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoredups
+
 # Make some commands not show up in history
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 

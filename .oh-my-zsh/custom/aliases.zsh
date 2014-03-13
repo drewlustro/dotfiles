@@ -1,5 +1,6 @@
 
-
+# new ones
+alias hh="history | grep"
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."

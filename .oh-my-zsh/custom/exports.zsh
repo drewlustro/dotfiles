@@ -1,8 +1,8 @@
 export GIT_EDITOR=vim
-export VISUAL=subl
-export EDITOR=subl
+export VISUAL=atom
+export EDITOR=atom
 
-export WORKON_HOME=~/.envs
+export WORKON_HOME=/sites/envs
 export TM_PYCHECKER=pylint
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/local/lib

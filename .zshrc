@@ -36,7 +36,10 @@ plugins=()
 export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:$PATH
 
 # Load RVM scripts if RVM is installed
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+if [[ -s "$HOME/.rvm/scripts/rvm" ]] then
+    # echo "[Notice] Detected RVM and added ~/.rvm/bin to PATH"
+    . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+    export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+fi
 
 source $ZSH/oh-my-zsh.sh

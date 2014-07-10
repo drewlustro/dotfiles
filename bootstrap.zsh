@@ -35,7 +35,7 @@ function installDotfiles() {
         hr
         mkdir "$ZSH/custom" > /dev/null 2>&1
         mkdir "$ZSH/themes" > /dev/null 2>&1
-        rsync -av --no-perms --exclude ".git/" --exclude ".gitignore" .vim .vimrc .osx .zshrc .oh-my-zsh ~ 
+        rsync -av --no-perms --exclude ".git/" --exclude ".gitignore" .vim .vimrc .osx .zshrc .oh-my-zsh ~
 
         br
         br
@@ -67,10 +67,10 @@ else
     hr
     br
     echo "This may overwrite existing files in your home directory"
-    read "REPLY?and zsh/vim config directories. Are you sure? (y/n) " -k 1
+    read "REPLY?and zsh/vim config directories. Are you sure? (y/n) "
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-        installDotfiles        
+        installDotfiles
     else
         echo "Aborted installation."
     fi
@@ -78,4 +78,3 @@ fi
 unset installDotfiles
 unset hr
 unset br
-

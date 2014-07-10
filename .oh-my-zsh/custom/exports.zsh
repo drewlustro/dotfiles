@@ -33,5 +33,8 @@ export MANPAGER="less -X"
 # Always enable colored `grep` output
 export GREP_OPTIONS="--color=auto"
 
+# Prefer 64-bit architecture when building
+export ARCHFLAGS='-arch x86_64'
+
 # Export-dependent aliases
 alias zshconfig="$EDITOR ~/.zshrc ~/.oh-my-zsh"

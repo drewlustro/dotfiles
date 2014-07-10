@@ -11,18 +11,18 @@ alias .....="cd ../../../.."
 # Shortcuts
 alias zshdotfiles="open $ZSH/custom"
 alias dropbox="cd ~/Dropbox"
-alias dl="cd ~/Downloads"
+alias downloads="cd ~/Downloads"
 alias desktop="cd ~/Desktop"
 alias torrents="cd ~/Torrents"
 alias space="du -h -d 1"
-alias dev="cd ~/dev"
+alias dev="cd ~/dev-local"
 alias g="git"
 alias h="history"
-alias m="mate ."
 alias s="subl ."
 alias o="open"
 alias oo="open ."
-alias resourcezsh="source ~/.zshrc"
+alias refresh="source ~/.zshrc"
+alias k="clear"
 
 # Ubuntu/Debian server mgmt
 alias nginx='sudo /etc/init.d/nginx'
@@ -30,7 +30,11 @@ alias supervisor='sudo supervisorctl'
 
 # Git
 alias gs='git status'
-alias ga='git add --all .'
+alias gp='git pull'
+alias gitpush-originmaster='git push origin master'
+alias gitadd-all='git add --all && git add -u'
+alias gitcommit-message='git commit -m'
+
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU coreutils `ls`

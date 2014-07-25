@@ -129,3 +129,15 @@ done
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 7'"
 alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
+
+
+# Converts 24bit / 96kHz FLAC to 16bit / 44.1kHz FLAC using SoX
+# (install SoX with homebrew: brew install sox)
+if [[ -x "/usr/local/bin/sox" ]] then
+    alias flac2496-to-flac1644='mkdir 16-44; for i in *.flac; do sox "$i" -S -r 44100 -b 16 "16-44/$i"; done'
+fi
+
+# node-webkit alias - https://github.com/rogerwang/node-webkit
+if [[ -s "/Applications/node-webkit.app/Contents/MacOS/node-webkit" ]] then
+    alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"
+fi

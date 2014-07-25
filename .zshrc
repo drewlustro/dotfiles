@@ -49,7 +49,6 @@ fi
 # * ~/.extra can be used for other settings you don’t want to commit.
 CUSTOM_FILES=($HOME/.path $HOME/.exports $HOME/.aliases $HOME/.functions $HOME/.extras)
 for file in $CUSTOM_FILES; do
-    echo "Import '${file}'"
 	[[ -r "${file}" ]] && [[ -f "${file}" ]] && source "${file}"
 done
 

@@ -17,7 +17,7 @@ Upon successful install of ZSH, close the current bash shell and open up a new t
 
 Install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) via **`curl`**
 ```bash
-curl -L http://install.ohmyz.sh | s
+curl -L http://install.ohmyz.sh | sh
 ```
 
 Install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) via **`wget`**

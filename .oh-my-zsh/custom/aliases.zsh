@@ -1,4 +1,3 @@
-
 # new ones
 alias hh="history | grep"
 
@@ -21,8 +20,8 @@ alias h="history"
 alias s="subl ."
 alias o="open"
 alias oo="open ."
-alias refresh="source ~/.zshrc"
 alias k="clear"
+alias allgroups="cut -d: -f1 /etc/group"
 
 # Ubuntu/Debian server mgmt
 alias nginx='sudo /etc/init.d/nginx'

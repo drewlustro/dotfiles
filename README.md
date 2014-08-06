@@ -2,6 +2,8 @@
 ##### (an oh-my-zsh variant of Mathias' dotfiles for Bash)
 
 
+## Installation
+
 This dotfiles setup is specially customized for **ZSH** (oh-my-zsh) on Mac OS X. It is a near-complete port of Mathias' original BASH dotfiles but with some bonus goodies that I've customized & added. My goal is to make this ZSH dotfiles distribution widely compatible and robust yet opinionated.
 
 ## Installation
@@ -35,6 +37,7 @@ You can clone the repository wherever you want. (I like to keep it in `~/dev/dot
 ```zsh
 git clone https://github.com/drewlustro/dotfiles.git && cd dotfiles && source bootstrap.zsh
 ```
+
 
 ### Manual installation
 
@@ -128,17 +131,17 @@ Too good to remove from this fork. When setting up a new Mac, you may want to se
 
 ## Contact & Feedback
 
+
 | [![twitter/msodrew](http://io.drewlustro.com/img/malibu-400.jpg)](http://twitter.com/msodrew "@msodrew on Twitter") |
 |---|
 | [Drew Lustro](http://drewlustro.com) |
 
+
 Suggestions & improvements [welcome](https://github.com/drewlustro/dotfiles/issues)!
 
-### Original Author Credit & Huge Thanks...
+### Original Author Credit & Huge Thanks:
 
-##### [Mathias Bynens](http://mathiasbynens.be/)
-
-#### Mathias' Thanks to…
+> [Mathias'](http://mathiasbynens.be/) thanks to…
 
 * @ptb and [his _OS X Lion Setup_ repository](https://github.com/ptb/Mac-OS-X-Lion-Setup)
 * [Ben Alman](http://benalman.com/) and his [dotfiles repository](https://github.com/cowboy/dotfiles)
@@ -146,9 +149,11 @@ Suggestions & improvements [welcome](https://github.com/drewlustro/dotfiles/issu
 * [Cãtãlin Mariş](https://github.com/alrra) and his [dotfiles repository](https://github.com/alrra/dotfiles)
 * [Gianni Chiappetta](http://gf3.ca/) for sharing his [amazing collection of dotfiles](https://github.com/gf3/dotfiles)
 * [Jan Moesen](http://jan.moesen.nu/) and his [ancient `.bash_profile`](https://gist.github.com/1156154) + [shiny _tilde_ repository](https://github.com/janmoesen/tilde)
-* [Lauri ‘Lri’ Ranta](http://lri.me/) for sharing [loads of hidden preferences](http://lri.me/osx.html#hidden-preferences)
+* [Lauri ‘Lri’ Ranta](http://lri.me/) for sharing [loads of hidden preferences](http://osxnotes.net/defaults.html)
 * [Matijs Brinkhuis](http://hotfusion.nl/) and his [dotfiles repository](https://github.com/matijs/dotfiles)
 * [Nicolas Gallagher](http://nicolasgallagher.com/) and his [dotfiles repository](https://github.com/necolas/dotfiles)
 * [Sindre Sorhus](http://sindresorhus.com/)
 * [Tom Ryder](http://blog.sanctum.geek.nz/) and his [dotfiles repository](https://github.com/tejr/dotfiles)
+* [Kevin Suttle](http://kevinsuttle.com/) and his [dotfiles repository](https://github.com/kevinSuttle/dotfiles) and [OSXDefaults project](https://github.com/kevinSuttle/OSXDefaults), which aims to provide better documentation for [`~/.osx`](http://mths.be/osx)
+* [Haralan Dobrev](http://hkdobrev.com/)
 * anyone who [contributed a patch](https://github.com/mathiasbynens/dotfiles/contributors) or [made a helpful suggestion](https://github.com/mathiasbynens/dotfiles/issues)

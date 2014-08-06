@@ -47,7 +47,7 @@ fi
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-CUSTOM_FILES=($HOME/.path $HOME/.exports $HOME/.aliases $HOME/.functions $HOME/.extras)
+CUSTOM_FILES=($HOME/.path $HOME/.exports $HOME/.aliases $HOME/.functions $HOME/.extra)
 for file in $CUSTOM_FILES; do
 	[[ -r "${file}" ]] && [[ -f "${file}" ]] && source "${file}"
 done

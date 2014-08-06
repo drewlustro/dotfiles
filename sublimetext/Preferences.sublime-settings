@@ -1,0 +1,57 @@
+{
+	"color_scheme": "Packages/User/Flatland Dark (SL).tmTheme",
+	"theme": "Flatland Dark.sublime-theme",
+	"flatland_square_tabs": true,
+	"draw_white_space": "all",
+	"font_face": "Inconsolata",
+	"font_size": 17,
+	"git_command": "/usr/bin/git",
+	"indent_to_bracket": true,
+	"default_encoding": "UTF-8",
+	"default_line_ending": "unix",
+	"highlight_modified_tabs": true,
+	"hot_exit": false,
+	"line_padding_bottom": 5,
+	"match_brackets": true,
+	"match_brackets_angle": true,
+	"remember_open_files": false,
+	"show_encoding": true,
+	"show_line_endings": true,
+	"tab_size": 4,
+	"translate_tabs_to_spaces": false,
+	"trim_trailing_white_space_on_save": true,
+	"word_wrap": true,
+	"ignored_packages":
+	[
+		"Dayle Rees Color Schemes",
+		"JavaScript",
+		"Vintage"
+	],
+	"index_exclude_patterns":
+	[
+		"/Users/drew/dev-local/maxrelax/application/node_modules*",
+		"*.log",
+		"*.sass-cache*",
+		"*node_modules*",
+		"*.tmp*"
+	],
+	"folder_exclude_patterns":
+	[
+		".git",
+		"node_modules"
+	],
+	"file_exclude_patterns":
+	[
+		".DS_Store",
+		"Desktop.ini",
+		"*.pyc",
+		"._*",
+		"Thumbs.db",
+		".Spotlight-V100",
+		".Trashes"
+	],
+	"rulers":
+	[
+		80
+	]
+}

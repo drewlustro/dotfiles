@@ -20,7 +20,7 @@ function br() {
 
 function sayDone() {
 	echo "- Done";
-	hr; br;
+	br; hr;
 }
 
 function doIt() {
@@ -32,33 +32,57 @@ function doIt() {
 		--exclude "Brewfile" --exclude "Caskfile" --exclude ".osx" \
 		--exclude "*.sample" --exclude ".gitignore" \
 		--exclude "README.md" --exclude "LICENSE-MIT.txt" \
+		--exclude "bin/" \
 		--exclude "init/" --exclude "sublimetext" -avh --no-perms . ~;
 	sayDone;
 
+	if ls --color > /dev/null 2>&1; then # GNU coreutils `ls`
+		echo "[Notice] Detected GNU ls, not copying ./bin";
+	else
+		echo "[Notice] Detected OS X, installing GNU utils into ~/bin";
+		cp -pr ./bin ~/;
+		chmod a+x ~/bin/*;
+	fi;
+
+	hr;
 	echo "+ Installing starter no-fork files if necessary..."
 	br;
 	local overwrite_lock=0;
+	local ignore_lock=0;
 	for file in ~/.{path,aliases,exports,extra,functions}; do
 		local basename=${file##*.};
 		local overwrite=0;
 		if [ -r "$file" ] && [ -f "$file" ]; then
 			if [ $overwrite_lock = 0 ]; then
-				echo "Detected existing $file file, would you like to overwrite it with $basename.sample?";
-				echo "[y] = Yes, overwrite existing file.";
-				echo "[n] = No, do not overwrite.";
-				echo "[o] = Overwrite all with sample files";
-				read -p "Answer: " -n 1;
+				if [ $ignore_lock = 0 ]; then
+					br;
+					echo "Detected existing $file file, would you like to overwrite it with $basename.sample?";
+					echo "[y] = Yes, overwrite existing file.";
+					echo "[Y] = Yes, overwrite ALL with sample files.";
+					echo "[n] = No, do not overwrite.";
+					echo "[N] = No, do not overwrite for all."
+					read -n 1 -p "Answer: " REPLY;
+					br;
+				else
+					REPLY='n';
+				fi;
 
-				if [[ $REPLY =~ ^[Yy]$ ]]; then
+				[ -z "$REPLY" ] && REPLY='n';
+				[ $REPLY = "\n" ] && REPLY='n';
+
+				if [ $REPLY = "y" ]; then
 					overwrite=1;
-				elif [[ $REPLY =~ ^[Oo]$ ]]; then
-					echo "Overwrite all."
+				elif [ $REPLY = "Y" ]; then
+					echo "Overwrite all.";
 					br;
 					overwrite=1;
 					overwrite_lock=1;
+				elif [ $REPLY = "N" ]; then
+					echo "Okay, not overwriting anything else.";
+					overwrite=0;
+					ignore_lock=1;
 				else
-					echo "Not overwriting."
-					br;
+					echo "Not overwriting .$basename"
 					overwrite=0;
 				fi;
 			else

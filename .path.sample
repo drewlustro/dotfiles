@@ -1,0 +1,6 @@
+# Sample ~/.path file
+# Add custom additions to $PATH here.
+#
+# Example: Prepend GNU Coreutils path and manpath to existing $PATH/$MANPATH
+# export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+# export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"

@@ -53,6 +53,7 @@ fi
 
 # List all files colorized in long format
 alias l="ls -lF ${colorflag}"
+alias ll="ls -lF ${colorflag}"
 
 # List all files colorized in long format, including dot files
 alias la="ls -laF ${colorflag}"

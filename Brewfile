@@ -24,10 +24,6 @@ install bash-completion
 # Install wget with IRI support
 install wget --enable-iri
 
-# Install RingoJS and Narwhal
-# Note that the order in which these are installed is important; see http://git.io/brew-narwhal-ringo.
-install ringojs
-install narwhal
 
 # Install more recent versions of some OS X tools
 install vim --override-system-vi
@@ -56,6 +52,7 @@ install tree
 install ucspi-tcp # `tcpserver` et al.
 install webkit2png
 install xpdf
+install sox
 install zopfli
 
 install homebrew/versions/lua52

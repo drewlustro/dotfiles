@@ -3,7 +3,12 @@
 #
 # Example: Prepend GNU Coreutils path and manpath to existing $PATH/$MANPATH
 
-# COREUTILS_BIN="/usr/local/opt/coreutils/bin";
-# COREUTILS_MAN="/usr/local/opt/coreutils/share/man";
-# [ -d $COREUTILS_BIN ] && export PATH="$COREUTILS_BIN:$PATH"
-# [ -d $COREUTILS_MAN ] && export MANPATH="$COREUTILS_MAN:$MANPATH"
+if [ -x "$(which brew)" ]; then
+
+    # Add GNU coreutils path/man (installed with 'brew install coreutils')
+    COREUTILS_BIN="$(brew --prefix coreutils)/libexec/gnubin";
+    COREUTILS_MAN="$(brew --prefix coreutils)/libexec/gnuman";
+    [ -d $COREUTILS_BIN ] && export PATH="$COREUTILS_BIN:$PATH";
+    [ -d $COREUTILS_MAN ] && export MANPATH="$COREUTILS_MAN:$MANPATH";
+
+fi;

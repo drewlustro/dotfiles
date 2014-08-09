@@ -14,27 +14,17 @@ ZSH_THEME="robbyrussell"
 #ZSH_THEME="lazyprodigy-server"
 
 DISABLE_CORRECTION="true"
-# CASE_SENSITIVE="true"
-# DISABLE_AUTO_UPDATE="true"
-# DISABLE_LS_COLORS="true"
-# DISABLE_AUTO_TITLE="true"
-
 COMPLETION_WAITING_DOTS="true"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-
 # Drew's Plugins
-plugins=(git bower gem node npm pip python osx virtualenv zsh-syntax-highlighting)
-
-# plugins=(git bower coffee extract gem node npm pip python rvm virtualenv virtualenvwrapper zsh-syntax-highlighting)
+plugins=(colored-man bower brew git gem node npm pip python osx themes virtualenv zsh-syntax-highlighting)
+# plugins=()
 
 # use 'default' virtualenv for python (environments live in /sites/envs)
 # workon default
 
-# setup PATH to check /usr/local and /usr/bin first!
-export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:$PATH
+# setup PATH to check $HOME/bin first, (then /usr/local/bin, /usr/bin ... etc)
+export PATH=$HOME/bin:$PATH
 
 # Load RVM scripts if RVM is installed
 if [[ -s "$HOME/.rvm/scripts/rvm" ]] then

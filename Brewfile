@@ -24,8 +24,20 @@ install bash-completion
 # Install wget with IRI support
 install wget --enable-iri
 
+# Dependency libs
+install cmake
+install zlib
+install libpng
+install libtool
+install libogg
+install libvorbis
+install libyaml
+install freetype
+install x264
+install x265
+install jpeg
 
-# Install more recent versions of some OS X tools
+# Install more recent versions of some OSX tools
 install vim --override-system-vi
 install homebrew/dupes/grep
 install homebrew/dupes/screen
@@ -33,29 +45,19 @@ install homebrew/php/php55 --with-gmp
 
 # Install other useful binaries
 install ack
-install bfg
-#install exiv2
-install foremost
 install git
-install hashpump
-install imagemagick --with-webp
-install lynx
 install nmap
-install node # This installs `npm` too using the recommended installation method
-install p7zip
-install pigz
-install pv
+install node # includes 'npm'
 install rename
-install rhino
-install sqlmap
-install tree
-install ucspi-tcp # `tcpserver` et al.
-install webkit2png
-install xpdf
-install sox
-install zopfli
+install tree # tree display of directory structure
 
-install homebrew/versions/lua52
+
+# Multimedia
+install flac
+install ffmpeg --with-freetype --with-theora --with-tools --with-libvorbis --with-x265
+install webkit2png
+install imagemagick --with-webp
+install sox # audio transcoding swiss-army knife
 
 # Remove outdated versions from the cellar
 cleanup

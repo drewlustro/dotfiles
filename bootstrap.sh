@@ -29,6 +29,7 @@ function doIt() {
 	br;
 	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
 		--exclude "bootstrap.zsh" --exclude "iterm2/" --exclude ".zshrc" \
+		--exclude ".oh-my-zsh/" \
 		--exclude "Brewfile" --exclude "Caskfile" --exclude ".osx" \
 		--exclude "*.sample" --exclude ".gitignore" \
 		--exclude "README.md" --exclude "LICENSE-MIT.txt" \

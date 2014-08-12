@@ -7,10 +7,11 @@ set show-all-if-ambiguous on
 # Immediately add a trailing slash when autocompleting symlinks to directories
 set mark-symlinked-directories on
 
-# Use the text that has already been typed as the prefix for searching through
-# commands (i.e. more intelligent Up/Down behavior)
-"\e[B": history-search-forward
-"\e[A": history-search-backward
+# Automatically append "/" to directories when doing tab completion
+set mark-directories on
+
+# Indicate an error when trying to use an undefined environment variable
+set nounset on
 
 # Do not autocomplete hidden files unless the pattern explicitly begins with a dot
 set match-hidden-files off
@@ -36,5 +37,14 @@ set input-meta on
 set output-meta on
 set convert-meta off
 
+# Use the text that has already been typed as the prefix for searching through
+# commands (i.e. more intelligent Up/Down behavior)
+"\e[B": history-search-forward
+"\e[A": history-search-backward
+
 # Use Alt/Meta + Delete to delete the preceding word
 "\e[3;3~": kill-word
+
+# Use OS X Option/Alt for word movement
+"\e[1;9D": backward-word
+"\e[1;9C": forward-word

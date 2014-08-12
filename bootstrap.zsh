@@ -35,7 +35,10 @@ function installDotfiles() {
         hr
         mkdir "$ZSH/custom" > /dev/null 2>&1
         mkdir "$ZSH/themes" > /dev/null 2>&1
-        rsync -av --no-perms --exclude ".git/" --exclude ".gitignore" .vim .vimrc .zshrc .oh-my-zsh ~
+        rsync -av --no-perms --exclude ".git/" --exclude ".gitignore" \
+                --exclude "init/" --exclude "bin/" --exclude "iterm2/" \
+                --exclude "sublimetext/" \
+                .vim .vimrc .zshrc .oh-my-zsh .inputrc ~
 
         br
         br
@@ -63,7 +66,7 @@ if [[ "$1" == "--force" || "$1" == "-f" ]]; then
     installDotfiles
 else
     br
-    echo "Lustro ZSH dotfiles installation"
+    echo "Drew's ZSH dotfiles installation"
     hr
     br
     echo "This may overwrite existing files in your home directory"

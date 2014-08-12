@@ -35,7 +35,7 @@ function installDotfiles() {
         hr
         mkdir "$ZSH/custom" > /dev/null 2>&1
         mkdir "$ZSH/themes" > /dev/null 2>&1
-        rsync -av --no-perms --exclude ".git/" --exclude ".gitignore" .vim .vimrc .osx .zshrc .oh-my-zsh ~
+        rsync -av --no-perms --exclude ".git/" --exclude ".gitignore" .vim .vimrc .zshrc .oh-my-zsh ~
 
         br
         br

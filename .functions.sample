@@ -10,7 +10,7 @@ if [ -x "$(which convert)" ]; then
 		find . -type f -iname "${source_files}" -print | cut -d'/' -f2 | \
 			xargs -n 1 -P 8 -I {} convert -verbose -units PixelsPerInch {} \
 			-colorspace sRGB -resize ${max_dim}x${max_dim} -set filename:new '%t-web-%wx%h' \
-			-density 72 -format JPG -quality ${quality} 'jpeg/%[filename:new].jpg';
+			-density 72 -format JPG -quality ${quality} 'output/%[filename:new].jpg';
 		echo 'Done.';
 
 	}

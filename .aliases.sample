@@ -152,7 +152,7 @@ alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 
 # Converts 24bit / 96kHz FLAC to 16bit / 44.1kHz FLAC using SoX
 # (install SoX with homebrew: brew install sox)
-if [ -x "/usr/local/bin/sox" ]; then
+if [ -x "$(which sox)" ]; then
     alias flac2496-to-flac1644='mkdir 16-44; for i in *.flac; do sox "$i" -S -r 44100 -b 16 "16-44/$i"; done';
 fi;
 

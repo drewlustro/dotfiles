@@ -56,6 +56,7 @@ install tree # tree display of directory structure
 install flac
 install ffmpeg --with-freetype --with-theora --with-tools --with-libvorbis --with-x265
 install webkit2png
+install ufraw --with-exiv2 # RAW image support for imagemagick
 install imagemagick --with-webp
 install sox # audio transcoding swiss-army knife
 

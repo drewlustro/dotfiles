@@ -28,7 +28,6 @@
 	],
 	"index_exclude_patterns":
 	[
-		"/Users/drew/dev-local/maxrelax/application/node_modules*",
 		"*.log",
 		"*.sass-cache*",
 		"*node_modules*",

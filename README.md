@@ -133,7 +133,7 @@ Suggestions & improvements [welcome](https://github.com/drewlustro/dotfiles/issu
 
 ### Original Author Credit & Huge Thanks To:
 
-#### &nbsp;&nbsp;&nbsp;&nbsp;[Mathias](http://mathiasbynens.be/) &amp; Jason Hsieh (but not really)
+#### &nbsp;&nbsp;&nbsp;&nbsp;[Mathias](http://mathiasbynens.be/) &amp; Jason Hsieh (but not really) yep.
 
 ### License
 

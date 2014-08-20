@@ -1,4 +1,6 @@
 # extra.sh
 
 # virtualenvwrapper support
-[ -x $(which virtualenvwrapper.sh) ] && source $(which virtualenvwrapper.sh);
+VEWPATH=$(which virtualenvwrapper.sh);
+[ -f "$VEWPATH" ] && [ -x "$VEWPATH" ] && source "$VEWPATH";
+unset VEWPATH;

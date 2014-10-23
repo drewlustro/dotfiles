@@ -2,7 +2,26 @@ root = true
 
 [*]
 charset = utf-8
-indent_style = tab
+indent_style = space
 end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
+
+[*.js]
+indent_style = space
+indent_size = 4
+
+[*.sass]
+indent_style = space
+indent_size = 4
+
+[*.scss]
+indent_style = space
+indent_size = 4
+
+[*.glsl]
+indent_style = space
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false

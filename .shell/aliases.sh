@@ -51,7 +51,7 @@ elif [ "$PLATFORM" = "osx" ]; then # OS X `ls`
 fi;
 
 # List all files colorized in long format
-alias l="ls -lF ${colorflag}"
+alias l="ls -lrthF ${colorflag}"
 alias ll="ls -lF ${colorflag}"
 
 # List all files colorized in long format, including dot files

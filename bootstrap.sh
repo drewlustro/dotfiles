@@ -5,8 +5,8 @@
 # License: MIT
 
 DOTFILES_URL="https://github.com/drewlustro/dotfiles"
-DOTFILES_VERSION="1.2";
-DOTFILES_UPDATED="August 13, 2014"
+DOTFILES_VERSION="1.3";
+DOTFILES_UPDATED="November 5, 2014"
 cd "$(dirname "${BASH_SOURCE}")";
 
 function hr() {
@@ -28,7 +28,8 @@ function doIt() {
     br;
     rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
         --exclude "bootstrap.zsh" --exclude "iterm2/" \
-        --exclude "Brewfile" --exclude "Caskfile" --exclude ".osx" \
+        --exclude "brew-cask-apps.sh" --exclude "brew-install-cli.sh" \
+        --exclude "brew-cask-fonts.sh" --exclude ".osx" \
         --exclude "*.sample" --exclude ".gitignore" \
         --exclude "README.md" --exclude "LICENSE-MIT.txt" \
         --exclude "bin/" \

@@ -8,3 +8,4 @@
 # export GIT_EDITOR=vim
 # export VISUAL=atom
 # export EDITOR=atom
+# export HOMEBREW_CASK_OPTS="--appdir=/Applications"

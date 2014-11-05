@@ -180,6 +180,11 @@ if [ "$PLATFORM" = "osx" ]; then
     # Make Grunt print stack traces by default
     command -v grunt > /dev/null && alias grunt="grunt --stack"
 
+    # Allow instantiating duplicate Slack.app instances (for multiple teams)
+    if [ -s "/Applications/Slack.app" ]; then
+        alias slack-dupe="open -n /Applications/Slack.app"
+    fi;
+
 fi;
 
 

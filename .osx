@@ -405,7 +405,7 @@ defaults write com.apple.dock no-glass -bool true
 # defaults write com.apple.dock autohide -bool true
 
 # Make Dock icons of hidden applications translucent
-defaults write com.apple.dock showhidden -bool true
+# defaults write com.apple.dock showhidden -bool true
 
 # Make Dock more transparent
 defaults write com.apple.dock hide-mirror -bool true

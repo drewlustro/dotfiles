@@ -39,6 +39,7 @@ function doIt() {
         --exclude "bootstrap.zsh" --exclude "iterm2/" \
         --exclude "brew-cask-apps.sh" --exclude "brew-install-cli.sh" \
         --exclude "brew-cask-fonts.sh" --exclude ".osx" \
+        --exclude "Xcode/" \
         --exclude "*.sample" --exclude ".gitignore" \
         --exclude "README.md" --exclude "LICENSE-MIT.txt" \
         --exclude "bin/" \

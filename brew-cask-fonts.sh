@@ -30,6 +30,7 @@ FONTS=(
 
 echo "Installing fonts..."
 for font in ${FONTS[@]}; do
+    echo "Installing typeface '$font'..."
     brew cask install $font
 done;
 

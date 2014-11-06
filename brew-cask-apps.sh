@@ -56,11 +56,14 @@ APPS=(
 
 echo "Installing apps.."
 for app in ${APPS[@]}; do
+    echo "Installing '$app'..."
     brew cask install $app
 done;
 
 brew cask alfred link
 brew cask cleanup
+echo ""
+echo "Installed applications via brew-cask:"
 brew cask list
 echo ""
-echo "Done installing cask apps."
+echo "Done installing brew cask apps."

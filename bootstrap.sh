@@ -18,7 +18,16 @@ function br() {
 }
 
 function sayDone() {
-    echo "- Done";
+    echo "- Done bootstrapping!";
+    echo "- If you would like to install tons of convenient extras, run the following:"
+    echo "------------------------"
+    echo "$ ./brew-cask-apps.sh   # installs many useful OS X applications via brew-cask"
+    echo "$ ./brew-cask-fonts.sh  # installs a handful of useful public-domain typefaces, including many coding fonts"
+    echo "$ ./brew-install-cli.sh # installs TONS of useful binaries, libs, and CLI tools via brew"
+    echo "------------------------"
+    echo "- See each shell file above to see which components will be (non-destructively) installed."
+    echo "- Hope you enjoy! –Drew"
+    echo "------------------------"
     br; hr;
 }
 

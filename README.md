@@ -29,13 +29,22 @@ wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 
 
 
-# ✪ Easy Install of dotfiles for both Bash & ZSH
+# ✪ Easy Install of dotfiles for Bash & ZSH
 
 You can clone the repository wherever you want. (I like to keep it in `~/dev/dotfiles`. The bootstrapper script will pull in the latest version from the master branch before installing. Remember to run these commands from a *bash shell!*
 
 ```bash
 git clone https://github.com/drewlustro/dotfiles.git && cd dotfiles && source bootstrap.sh
 ```
+
+### Homebrew convenience install scripts
+
+```bash
+./brew-install-cli.sh # installs TONS of useful binaries, libs, and CLI tools via brew
+./brew-cask-fonts.sh  # installs a handful of useful public-domain typefaces, including many coding fonts
+./brew-cask-apps.sh   # installs many useful OS X applications via brew-cask
+```
+
 
 
 ### Manual installation

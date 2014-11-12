@@ -5,8 +5,8 @@
 # License: MIT
 
 DOTFILES_URL="https://github.com/drewlustro/dotfiles"
-DOTFILES_VERSION="1.3";
-DOTFILES_UPDATED="November 5, 2014"
+DOTFILES_VERSION="1.4";
+DOTFILES_UPDATED="November 12, 2014 – 6:00a EST"
 cd "$(dirname "${BASH_SOURCE}")";
 
 function hr() {
@@ -29,6 +29,20 @@ function sayDone() {
     echo "- Hope you enjoy! –Drew"
     echo "------------------------"
     br; hr;
+}
+
+function installInputFont() {
+    echo "+ Rsync'ing essential config files to /Library/Fonts directory..."
+    br;
+    rsync -avh --no-perms Library/Fonts/*.ttf /Library/Fonts/;
+    hr;
+    br;
+    echo "+ Installed Input Font into /Library/Fonts "
+    echo "+ Please LOGOUT and LOGIN to see changes."
+    echo "- Remove .tff files from /Libary/Fonts/InputSystem* to uninstall."
+    br;
+    hr;
+
 }
 
 function doIt() {
@@ -146,7 +160,7 @@ else
         echo "Shell is: $SHELL";
         echo "Please run this install script from bash.";
     elif [[ "$SHELL" == *bash ]]; then
-        read -p "Are you sure you would like to proceed? (y/n) " -n 1;
+        read -p "Are you sure you would like to proceed? (y/N) " -n 1;
         br;
         if [[ $REPLY =~ ^[Yy]$ ]]; then
             doIt;
@@ -154,7 +168,39 @@ else
     fi;
 fi;
 
+if [[ "$SHELL" == *zsh ]]; then
+    echo "Shell is: $SHELL";
+    echo "Please run this install script from bash.";
+elif [[ "$SHELL" == *bash ]]; then
+    hr;
+    echo "Extra: Input system typeface replacement.";
+    echo "You can (non-desctructively) replace the OS X system font with Input, a typeface from Font Bureau.";
+    echo "It's license file is included in the git repository.";
+    echo "More Info: http://input.fontbureau.com/systemfont/"
+    hr;
+    read -p "Would you like to install Input? (y/N) " -n 1;
+    br;
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        installInputFont;
+    fi;
+fi;
+
+hr;
+br;
+br;
+br;
+br;
+
+echo "          Later!"
+
+br;
+br;
+br;
+br;
+hr;
+
 unset doIt;
 unset hr;
 unset br;
 unset sayDone;
+unset installInputFont;

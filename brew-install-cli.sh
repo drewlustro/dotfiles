@@ -62,3 +62,9 @@ echo ""
 echo "Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `\$PATH`."
 echo ""
 echo "Done installing common CLI apps and libs."
+
+echo "Installing super-common npm tools..."
+npm install -g grunt-cli gulp bower yo
+echo ""
+echo "Done."
+

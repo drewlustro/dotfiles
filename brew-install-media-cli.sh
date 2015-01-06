@@ -14,7 +14,8 @@ brew update
 # Upgrade any already-installed formulae
 brew upgrade
 
-echo "Installing common CLI apps and libs..."
+echo "Installing heavy multimedia libs and CLI apps (x264, flac, sox, etc)."
+echo "This may take a while..."
 echo ""
 # Install GNU core utilities (those that come with OS X are outdated)
 brew install coreutils
@@ -29,31 +30,30 @@ brew install gnu-sed --default-names
 brew install bash
 brew install bash-completion
 
-# Install wget with IRI support
-brew install wget --enable-iri
-
-# Install more recent versions of some OSX tools
-brew install vim --override-system-vi
-brew install homebrew/dupes/grep
-brew install homebrew/dupes/screen
-
 # Dependency libs
 brew install cmake
 brew install zlib
 brew install libpng
 brew install libtool
+brew install libogg
+brew install libvorbis
+brew install freetype
 brew install libyaml
 brew install jpeg
 
-# Install other useful binaries
-brew install ack
-brew install git
-brew install nmap
-brew install node # includes 'npm'
-brew install rename
-brew install tree # tree display of directory structure
-brew install autojump # j command to move to directories quickly
-brew install mackup
+# Multimedia
+brew install x264
+brew install x265
+brew install flac
+brew install ffmpeg --with-freetype --with-theora --with-tools --with-libvorbis --with-x265
+brew install webkit2png
+brew install ufraw --with-exiv2 # RAW image support for imagemagick
+brew install imagemagick --with-webp
+brew install sox # audio transcoding swiss-army knife
+
+# Superfluous (PHP)
+brew install homebrew/php/php55 --with-gmp
+
 
 # Remove outdated versions from the cellar
 brew cleanup
@@ -62,9 +62,3 @@ echo ""
 echo "Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `\$PATH`."
 echo ""
 echo "Done installing common CLI apps and libs."
-
-echo "Installing super-common npm tools..."
-npm install -g grunt-cli gulp bower yo
-echo ""
-echo "Done."
-

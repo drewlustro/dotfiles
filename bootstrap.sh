@@ -49,10 +49,17 @@ function doIt() {
 
     echo "+ Rsync'ing essential config files to home directory..."
     br;
-    rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
-        --exclude "bootstrap.zsh" --exclude "iterm2/" \
-        --exclude "brew-cask-apps.sh" --exclude "brew-install-cli.sh" \
-        --exclude "brew-cask-fonts.sh" --exclude ".osx" \
+    rsync --exclude ".git/" \
+        --exclude ".DS_Store" \
+        --exclude "bootstrap.sh" \
+        --exclude "bootstrap.zsh" \
+        --exclude "brew-cask-apps.sh" \
+        --exclude "brew-install-cli.sh" \
+        --exclude "brew-install-media-cli.sh" \
+        --exclude "brew-cask-fonts.sh" \
+        --exclude ".osx" \
+        --exclude "iterm2/" \
+        --exclude "Library/" \
         --exclude "Xcode/" \
         --exclude "*.sample" --exclude ".gitignore" \
         --exclude "README.md" --exclude "LICENSE-MIT.txt" \
@@ -182,6 +189,8 @@ elif [[ "$SHELL" == *bash ]]; then
     br;
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         installInputFont;
+    else
+        echo "Skipping Input system font install.";
     fi;
 fi;
 

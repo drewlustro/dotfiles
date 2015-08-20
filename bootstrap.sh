@@ -67,6 +67,9 @@ function doIt() {
         --exclude "init/" --exclude "sublimetext" -avh --no-perms . ~;
     sayDone;
 
+    # make local npm packages dir to allow non-sudo global npm packages
+    mkdir "$HOME/.npm-packages" 2> /dev/null;
+
     if ls --color > /dev/null 2>&1; then # GNU coreutils `ls`
         echo "[Notice] Detected GNU ls, not copying ./bin";
     else

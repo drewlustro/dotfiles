@@ -23,7 +23,8 @@
 # DEFAULT_PYTHON_ENV="default";
 # DEFAULT_WORKON_HOME="/sites/envs";
 # [ -d "$DEFAULT_WORKON_HOME" ] && export WORKON_HOME="/sites/envs";
-# [ -x "$(which workon)" ] && [ -d "$DEFAULT_WORKON_HOME/$DEFAULT_PYTHON_ENV" ] && workon $DEFAULT_PYTHON_ENV;
+# [ -x "$(which virtualenvwrapper.sh)" ] && source "$(which virtualenvwrapper.sh)";
+# [ -d "$DEFAULT_WORKON_HOME/$DEFAULT_PYTHON_ENV" ] && workon $DEFAULT_PYTHON_ENV;
 #
 # Autojump support "j" command from autojump binary installed via `brew install autojump`
 # [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh

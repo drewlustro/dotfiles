@@ -11,3 +11,5 @@
 # alias dropbox="cd ~/Dropbox"
 # alias torrents="cd ~/Torrents"
 # alias dev="cd ~/dev-local"
+
+# alias slack="open -n /Applications/Slack.app"

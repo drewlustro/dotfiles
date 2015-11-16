@@ -13,3 +13,6 @@
 # alias dev="cd ~/dev-local"
 
 # alias slack="open -n /Applications/Slack.app"
+
+# alias beet-rm="beet rm -a -d"
+# alias beet-ls="beet ls -a | grep -i"

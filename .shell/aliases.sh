@@ -11,8 +11,8 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
 # Simple shortcuts
-alias h="history"
-alias hh="history | grep" # usage: hh sometext
+alias h="history 0"
+alias hh="history 0 | grep -i" # usage: hh sometext
 alias space="du -h -d 1"
 alias downloads="cd ~/Downloads"
 alias desktop="cd ~/Desktop"
@@ -27,6 +27,8 @@ alias reload="exec $SHELL -l" # Reload the shell (i.e. invoke as a login shell)
 alias g="git"
 alias gs="git status"
 alias gp="git pull"
+alias gf="git fetch"
+alias gb="git branch -a"
 alias gitpush-originmaster="git push origin master"
 alias gitadd-all="git add --all && git add -u"
 alias gitcommit-message="git commit -m"

@@ -31,6 +31,12 @@ export GREP_OPTIONS="--color=auto"
 # Prefer native architecture when building
 export ARCHFLAGS="-arch $(uname -m)";
 
+# Link Homebrew casks in `/Applications` rather than `~/Applications`
+export HOMEBREW_CASK_OPTS="--appdir=/Applications";
+
+# Node default environment
+export NODE_ENV=development
+
 # ----------------------------------------
 # Mac OS X
 # ----------------------------------------
@@ -44,8 +50,8 @@ if [ "$PLATFORM" = "osx" ]; then
         export VISUAL=atom;
         export EDITOR=atom;
     elif [ -x "$(which subl)" ]; then
-        export VISUAL=atom;
-        export EDITOR=atom;
+        export VISUAL=subl;
+        export EDITOR=subl;
     fi;
 fi;
 

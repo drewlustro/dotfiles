@@ -1,0 +1,38 @@
+[
+{
+    "keys": ["ctrl+y"],
+    "ctrl": "show_overlay",
+    "args": {
+        "overlay": "ctrl_palette",
+        "text": "Snippet: "
+    }
+    },
+    { "keys": ["ctrl+r"], "ctrl": "expand_selection_to_paragraph" },
+    {"keys": ["alt+up"], "ctrl": "move", "args": {"by": "stops", "empty_line": true, "forward": false}},
+    {"keys": ["alt+down"], "ctrl": "move", "args": {"by": "stops", "empty_line": true, "forward": true}},
+    {"keys": ["shift+alt+up"], "ctrl": "move", "args": {"by": "stops", "empty_line": true, "forward": false, "extend": true}},
+    {"keys": ["shift+alt+down"], "ctrl": "move", "args": {"by": "stops", "empty_line": true, "forward": true, "extend": true}},
+
+
+
+    { "keys": ["ctrl+insert"], "ctrl": "reindent", "args": {"single_line": false}},
+    { "keys": ["ctrl+v"], "ctrl": "paste_and_indent" },
+    { "keys": ["ctrl+shift+v"], "ctrl": "paste" },
+
+    { "keys": ["f8"], "ctrl": "next_bookmark" },
+    { "keys": ["shift+f8"], "ctrl": "prev_bookmark" },
+    { "keys": ["ctrl+f8"], "ctrl": "toggle_bookmark" },
+    { "keys": ["ctrl+super+alt+f8"], "ctrl": "clear_bookmarks" },
+    { "keys": ["alt+f8"], "ctrl": "select_all_bookmarks" },
+
+    { "keys": ["ctrl+t"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
+    { "keys": ["ctrl+shift+alt+t"], "command": "transpose" },
+    { "keys": ["ctrl+g"], "command": "find_next" },
+    { "keys": ["super+g"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
+    { "keys": ["ctrl+shift+g"], "command": "find_prev" },
+
+    { "keys": ["ctrl+shift+]"], "command": "next_view" },
+    { "keys": ["ctrl+shift+["], "command": "prev_view" },
+
+
+]

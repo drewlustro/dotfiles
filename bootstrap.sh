@@ -60,6 +60,7 @@ function doIt() {
         --exclude ".osx" \
         --exclude "iterm2/" \
         --exclude "Library/" \
+        --exclude "linux/" \
         --exclude "Xcode/" \
         --exclude "*.sample" --exclude ".gitignore" \
         --exclude "README.md" --exclude "LICENSE-MIT.txt" \

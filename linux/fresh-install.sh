@@ -9,7 +9,7 @@ sudo apt-get install -y linux-headers-$(uname -r)
 sudo apt-get install -y build-essential
 
 # libraries
-sudo apt-get install -y ubuntu-restricted-extras openjdk-8-jdk flac lame
+sudo apt-get install -y ubuntu-restricted-extras openjdk-8-jdk flac lame automake libtool
 
 # apps
 sudo apt-get install -y git synaptic gdebi vim  pidgin skype transmission compizconfig-settings-manager compiz-plugins-extra unity-tweak-tool clementine

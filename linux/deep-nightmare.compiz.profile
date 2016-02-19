@@ -864,13 +864,13 @@ s0_right_edge_action = 6
 s0_bottom_left_corner_action = 4
 s0_bottom_edge_action = 0
 s0_bottom_right_corner_action = 6
-s0_snapback_windows = true
+s0_snapback_windows = false
 s0_cycle_sizes = true
 s0_left_edge_threshold = 15
 s0_right_edge_threshold = 15
 s0_top_edge_threshold = 20
 s0_bottom_edge_threshold = 5
-s0_snapoff_threshold = 50
+s0_snapoff_threshold = 200
 s0_draw_indicator = true
 s0_draw_stretched_window = true
 s0_animation_duration = 350
@@ -945,7 +945,7 @@ s0_directory =
 s0_launch_app = 
 
 [core]
-s0_active_plugins = core;composite;opengl;compiztoolbox;regex;copytex;grid;place;screenshot;imgpng;session;imgjpeg;resize;move;animation;workarounds;snap;commands;expo;mousepoll;fade;unitymtgrabhandles;ezoom;scale;unityshell;switcher;showrepaint;
+s0_active_plugins = core;composite;opengl;compiztoolbox;regex;copytex;grid;place;screenshot;imgpng;session;imgjpeg;resize;move;animation;workarounds;snap;commands;expo;mousepoll;fade;unitymtgrabhandles;ezoom;scale;unityshell;switcher;showrepaint;bench;
 s0_audible_bell = true
 s0_ignore_hints_when_maximized = true
 s0_hide_skip_taskbar_windows = true

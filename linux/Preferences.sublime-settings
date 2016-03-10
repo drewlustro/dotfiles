@@ -16,7 +16,6 @@
 	"draw_white_space": "all",
 	"env":
 	{
-
 	},
 	"fade_fold_buttons": false,
 	"file_exclude_patterns":
@@ -50,12 +49,7 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"JavaScript",
-		"Seti_UI",
-		"SideBarEnhancements",
-		"SublimeLinter",
-		"Vintage",
-		"Vue Syntax Highlight"
+		"Vintage"
 	],
 	"indent_guide_options":
 	[

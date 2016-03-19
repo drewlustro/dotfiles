@@ -1,0 +1,17 @@
+clear control
+clear mod1
+! clear Super
+clear mod4
+
+! left keys [37] [133] [64] [spacebar] [108] [134] [?menu] [105]
+keycode 37 = Super_L
+keycode 133 = Alt_L
+keycode 64 = Control_L
+
+! right keys
+keycode 108 = Control_R
+keycode 134 = Alt_R
+add control = Control_L Control_R
+add mod1 = Alt_L Alt_R
+! add Super = Super_L Super_R
+add mod4 = Super_L Super_R

@@ -19,3 +19,6 @@ alias slack="open -n /Applications/Slack.app"
 
 alias beet-rm="beet rm -a -d"
 alias beet-ls="beet ls -a | grep -i"
+
+# make readable xev output for monitoring X session keystrokes
+[ -f "/usr/bin/xev" ] && alias xev-readable="xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'";

@@ -34,5 +34,13 @@
     { "keys": ["ctrl+shift+]"], "command": "next_view" },
     { "keys": ["ctrl+shift+["], "command": "prev_view" },
 
+    { "keys": ["super+a"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+    { "keys": ["super+e"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+    { "keys": ["super+shift+a"], "command": "move_to", "args": {"to": "bol", "extend": true} },
+    { "keys": ["super+shift+e"], "command": "move_to", "args": {"to": "eol", "extend": true} },
+
+    { "keys": ["super+ctrl+p"], "command": "prompt_select_workspace" }
+
 
 ]
+

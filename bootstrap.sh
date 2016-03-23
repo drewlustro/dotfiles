@@ -58,14 +58,16 @@ function doIt() {
         --exclude "brew-install-media-cli.sh" \
         --exclude "brew-cask-fonts.sh" \
         --exclude ".osx" \
+        --exclude ".xmodmaprc*" \
         --exclude "iterm2/" \
         --exclude "Library/" \
         --exclude "linux/" \
         --exclude "Xcode/" \
+        --exclude "sublimetext/" \
         --exclude "*.sample" --exclude ".gitignore" \
         --exclude "README.md" --exclude "LICENSE-MIT.txt" \
         --exclude "bin/" \
-        --exclude "init/" --exclude "sublimetext" -avh --no-perms . ~;
+        --exclude "init/" -avh --no-perms . ~;
     sayDone;
 
     # make local npm packages dir to allow non-sudo global npm packages
@@ -81,64 +83,8 @@ function doIt() {
     fi;
 
     hr;
-    echo "+ Installing starter no-fork files if necessary..."
+    echo "+ [DEPRECATED] Installing starter no-fork files if necessary..."
     br;
-    local overwrite_lock=0;
-    local ignore_lock=0;
-    for file in ~/.{path,aliases,exports,extra,functions}; do
-        local basename=${file##*.};
-        local overwrite=0;
-        if [ -r "$file" ] && [ -f "$file" ]; then
-            if [ $overwrite_lock = 0 ]; then
-                if [ $ignore_lock = 0 ]; then
-                    br;
-                    echo "Detected existing $file file, would you like to overwrite it with $basename.sample?";
-                    echo "[y] = Yes, overwrite existing file.";
-                    echo "[Y] = Yes, overwrite ALL with sample files.";
-                    echo "[n] = No, do not overwrite.";
-                    echo "[N] = No, do not overwrite for all."
-                    read -n 1 -p "Answer: " REPLY;
-                    br;
-                else
-                    REPLY='n';
-                fi;
-
-                [ -z "$REPLY" ] && REPLY='n';
-                [ $REPLY = "\n" ] && REPLY='n';
-
-                if [ $REPLY = "y" ]; then
-                    overwrite=1;
-                elif [ $REPLY = "Y" ]; then
-                    echo "Overwrite all.";
-                    br;
-                    overwrite=1;
-                    overwrite_lock=1;
-                elif [ $REPLY = "N" ]; then
-                    echo "Okay, not overwriting anything else.";
-                    overwrite=0;
-                    ignore_lock=1;
-                else
-                    echo "Not overwriting .$basename"
-                    overwrite=0;
-                fi;
-            else
-                overwrite=1;
-            fi;
-
-            if [ $overwrite = 1 ]; then
-                overwrite=0;
-                echo "Overwrite $basename.sample to ~/.$basename"
-                cp ./.$basename.sample ~/.$basename
-                br;
-            fi;
-
-        else
-            echo "Installing $basename.sample to ~/.$basename"
-            cp ./.$basename.sample ~/.$basename
-            br;
-        fi;
-    done;
-    unset file;
     sayDone;
 
     source ~/.bash_profile;

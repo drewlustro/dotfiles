@@ -28,14 +28,20 @@ integrated-menus=true
 blacklist=['D45A-4959-Iverson', 'c2eeb437-07f5-4d16-8275-a99eb5b95c99-Permafrost', 'ac3616fe-8033-46db-b9d9-e93e373fcd97-Tokyo', '6FF2-090A-MOTHER', '322E4AA32E4A6049-', 'd3c728a9-e2a4-4d32-9da8-f49c24b54a52-']
 
 [com/canonical/unity/interface]
-text-scale-factor=1.5
+text-scale-factor=2.0625
 
 [com/canonical/unity/launcher]
 favorites=['application://org.gnome.Nautilus.desktop', 'application://sublime_text.desktop', 'application://google-chrome.desktop', 'application://gnome-terminal.desktop', 'application://unity-control-center.desktop', 'application://ccsm.desktop', 'application://vlc.desktop', 'application://audacity.desktop', 'application://clementine.desktop', 'application://slack.desktop', 'application://ubuntu-software-center.desktop', 'application://gparted.desktop', 'application://unity-tweak-tool.desktop', 'application://org.gnome.baobab.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']
 
+[com/canonical/unity/lenses/files]
+use-locate=false
+
 [com/canonical/unity/lenses]
 disabled-scopes=['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']
 remote-content-search='none'
+
+[com/canonical/unity/lenses/applications]
+display-available-apps=false
 
 [com/canonical/desktop/interface]
 scrollbar-mode='normal'
@@ -45,6 +51,23 @@ scale-factor={'DisplayPort-9': 8, 'DisplayPort-7': 8, 'DP-4': 11}
 
 [system/proxy]
 use-same-proxy=false
+
+[org/onboard]
+use-system-defaults=false
+theme='Nightshade'
+system-theme-associations={'LowContrast': 'LowContrast', 'Default': '', 'HighContrast': 'HighContrast', 'HighContrastInverse': 'HighContrastInverse'}
+key-label-overrides=['RWIN::super', 'LWIN::super']
+xembed-onboard=true
+layout='Compact'
+schema-version='2.2'
+key-label-font='Ubuntu'
+
+[org/onboard/window/landscape]
+height=208
+y=47
+
+[org/onboard/window]
+force-to-top=true
 
 [org/gnome/empathy]
 sanity-cleaning-number=uint32 4
@@ -175,12 +198,19 @@ base=10
 source-units='degree'
 accuracy=9
 
+[org/gnome/gnome-screenshot]
+include-pointer=false
+include-border=true
+border-effect='none'
+delay=3
+last-save-directory='file:///home/drew/Desktop'
+
 [org/gnome/gedit/preferences/ui]
 statusbar-visible=true
 notebook-show-tabs-mode='always'
 
 [org/gnome/gedit/plugins/filebrowser]
-virtual-root='file:///etc'
+virtual-root='file:///usr/bin'
 tree-view=true
 root='file:///'
 
@@ -199,8 +229,8 @@ default-folder-viewer='list-view'
 default-sort-order='type'
 
 [org/gnome/nautilus/window-state]
-sidebar-width=449
-geometry='1380x1821+2177+130'
+sidebar-width=377
+geometry='1742x1441+1628+257'
 maximized=false
 
 [org/gnome/nautilus/desktop]
@@ -238,13 +268,20 @@ window-width=682
 [org/gnome/evolution-data-server]
 migrated=true
 
+[org/gnome/deja-dup]
+periodic=true
+backend='file'
+last-run='2016-04-02T02:20:14.461781Z'
+nag-check='2016-03-10T08:13:17.105291Z'
+prompt-check='disabled'
+exclude-list=['$TRASH', '$DOWNLOAD', '/home/drew/.dbus', '/home/drew/.dropbox', '/home/drew/.dropbox-dist', '/home/drew/.steam']
+last-backup='2016-04-02T02:20:14.461781Z'
+
 [org/gnome/deja-dup/s3]
 folder='deep-nightmare'
 
-[org/gnome/deja-dup]
-backend='file'
-periodic=true
-prompt-check='disabled'
+[org/gnome/deja-dup/gdrive]
+folder='/deja-dup/deep-nightmare'
 
 [org/gnome/deja-dup/rackspace]
 container='deep-nightmare'
@@ -257,9 +294,6 @@ icon='. GThemedIcon drive-harddisk drive'
 relpath=b'Backups'
 name='WDC WD20EZRX-00DC0B0: Tokyo'
 type='volume'
-
-[org/gnome/deja-dup/gdrive]
-folder='/deja-dup/deep-nightmare'
 
 [org/gnome/desktop/interface]
 text-scaling-factor=2.0625
@@ -365,6 +399,9 @@ move-to-workspace-4=['disabled']
 [org/gnome/desktop/a11y/magnifier]
 mag-factor=4.0
 
+[org/gnome/desktop/a11y/applications]
+screen-reader-enabled=false
+
 [org/gnome/desktop/background]
 picture-uri='file:///home/drew/Dropbox/Wallpaper/airsky.JPG'
 color-shading-type='solid'
@@ -385,7 +422,7 @@ use-background-color=true
 seconds=1
 
 [org/gnome/eog/ui]
-statusbar=true
+statusbar=false
 sidebar=false
 image-gallery=true
 
@@ -459,10 +496,10 @@ col-6-width=0
 [org/gtk/settings/file-chooser]
 sort-column='name'
 sidebar-width=148
-window-position=(1843, 1018)
+window-position=(457, 344)
 show-size-column=true
-show-hidden=false
-window-size=(1050, 682)
+show-hidden=true
+window-size=(1569, 1212)
 sort-directories-first=true
 sort-order='ascending'
 location-mode='path-bar'
@@ -1302,9 +1339,15 @@ enabled=false
 [apps/indicators/multiload/graphs/load]
 enabled=false
 
+[apps/light-locker]
+late-locking=false
+lock-after-screensaver=uint32 0
+lock-on-suspend=true
+lock-on-lid=false
+
 [apps/update-manager]
 first-run=false
-launch-time=1457590420
+launch-time=1458692335
 window-height=402
 show-details=true
 window-width=789
@@ -1321,12 +1364,6 @@ window-is-fullscreen=false
 window-height=600
 window-width=800
 window-is-maximized=false
-
-[desktop/unity/lenses/files]
-use-locate=false
-
-[desktop/unity/lenses/applications]
-display-available-apps=false
 
 [desktop/ibus/general]
 engines-order=['xkb:us::eng']

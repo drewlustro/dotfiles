@@ -45,7 +45,7 @@ sudo apt-get install -y nodejs
 sudo apt-get install -y npm
 
 # npm packges
-npm install -g bower yo grunt-cli gulp babel webpack npm-check-updates
+npm install -g bower yo grunt-cli gulp babel webpack npm-check-updates n
 
 # essentials
 sudo apt-get install -y \

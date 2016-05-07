@@ -56,6 +56,13 @@ if [ "$PLATFORM" = "osx" ]; then
 fi;
 
 
+# ----------------------------------------
+# Linux Shortcuts
+# ----------------------------------------
+if [ "$PLATFORM" = "linux" ]; then
+    export N_PREFIX="$HOME/.local";
+fi;
+
 
 
 

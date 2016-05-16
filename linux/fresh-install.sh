@@ -13,25 +13,25 @@ sudo apt-get install -y linux-headers-$(uname -r)
 sudo apt-get install -y build-essential
 
 # libraries
-sudo apt-get install -y ubuntu-restricted-extras openjdk-8-jdk flac lame automake libtool
+#sudo apt-get install -y ubuntu-restricted-extras openjdk-8-jdk flac lame automake libtool
 
 # apps
-sudo apt-get install -y \
-audacity \
-clementine \
-gdebi \
-git \
-pidgin \
-transmission \
-vim \
-vlc \
-;
+#sudo apt-get install -y \
+#audacity \
+#clementine \
+#gdebi \
+#git \
+#pidgin \
+#transmission \
+#vim \
+#vlc \
+#;
 
 
 # fonts
-sudo apt-get install -y fonts-inconsolata ttf-anonymous-pro fonts-roboto fonts-droid
+#sudo apt-get install -y fonts-inconsolata ttf-anonymous-pro fonts-roboto fonts-droid
 # kill cache
-fc-cache -f -v
+#fc-cache -f -v
 
 # python
 sudo apt-get install python-pip python-dev
@@ -41,11 +41,14 @@ sudo pip install pylint
 
 # node 4.x LTS
 curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+sudo apt-get update
 sudo apt-get install -y nodejs
 sudo apt-get install -y npm
 
+mkdir ~/.npm-packages ~/.npm 2>/dev/null;
+
 # npm packges
-npm install -g bower yo grunt-cli gulp babel webpack npm-check-updates n
+npm install -g npm bower yo grunt-cli gulp babel webpack npm-check-updates n
 
 # essentials
 sudo apt-get install -y \
@@ -64,6 +67,7 @@ libcairo2 \
 libcairo2-dev \
 libjpeg-dev \
 libjpeg8 \
+libtool \
 openssh-client \
 openssh-server \
 openssh-sftp-server \
@@ -86,6 +90,9 @@ xdotool \
 zlib1g \
 zlib1g-dev \
 ;
+
+# audio codecs
+sudo apt-get install -y flac lame;
 
 # y-ppa-manager
 

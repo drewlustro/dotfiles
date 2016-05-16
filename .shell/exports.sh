@@ -25,9 +25,6 @@ export LESS_TERMCAP_md="$ORANGE"
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
 
-# Always enable colored `grep` output
-export GREP_OPTIONS="--color=auto"
-
 # Prefer native architecture when building
 export ARCHFLAGS="-arch $(uname -m)";
 
@@ -45,6 +42,9 @@ if [ "$PLATFORM" = "osx" ]; then
     export HOMEBREW_CASK_OPTS="--appdir=/Applications";
     export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/local/lib;
 
+    # Always enable colored `grep` output
+    export GREP_OPTIONS="--color=auto"
+
     # prefer Atom.app as default editor, then Sublime Text, if either exist
     if [ -x "$(which atom)" ]; then
         export VISUAL=atom;
@@ -57,7 +57,7 @@ fi;
 
 
 # ----------------------------------------
-# Linux Shortcuts
+# Linux Exports
 # ----------------------------------------
 if [ "$PLATFORM" = "linux" ]; then
     export N_PREFIX="$HOME/.local";

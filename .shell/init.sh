@@ -13,7 +13,7 @@ fi;
 
 
 ORIGINAL_SHELL=$SHELL;
-SHELL_CHECK = $(env | grep SHELL\=);
+SHELL_CHECK=$(env | grep SHELL\=);
 if [[ "$SHELL_CHECK" == *zsh ]]; then
     ORIGINAL_SHELL="zsh";
 elif [[ "$SHELL_CHECK" == *bash ]]; then
@@ -22,6 +22,25 @@ elif [[ "$SHELL_CHECK" == *sh ]]; then
     ORIGINAL_SHELL="sh";
 fi;
 
+LINUX_DESKTOP="none";
+if [ "$PLATFORM" = "linux" ]; then
+    if [[ "$XDG_CURRENT_DESKTOP" == *XFCE ]]; then
+        LINUX_DESKTOP="xfce";
+    elif [[ "$XDG_CURRENT_DESKTOP" == *Gnome ]]; then
+        LINUX_DESKTOP="gnome";
+    elif [[ "$XDG_CURRENT_DESKTOP" == *Unity ]]; then
+        LINUX_DESKTOP="unity";
+    elif [[ "$XDG_CURRENT_DESKTOP" == *kde ]]; then
+        LINUX_DESKTOP="kde";
+    else
+        LINUX_DESKTOP="generic";
+    fi;
+fi;
+
 unset unamestr;
 unset SHELL_CHECK;
+
+# save for later
 export PLATFORM;
+export LINUX_DESKTOP;
+

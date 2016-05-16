@@ -16,23 +16,6 @@ if [ -x "$(which convert)" ]; then
 	}
 fi;
 
-# Simple calculator
-function calc() {
-	local result="";
-	result="$(printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')";
-	#                       └─ default (when `--mathlib` is used) is 20
-	#
-	if [[ "$result" == *.* ]]; then
-		# improve the output for decimal numbersf
-		printf "$result" |
-		sed -e 's/^\./0./'        `# add "0" for cases like ".5"` \
-		    -e 's/^-\./-0./'      `# add "0" for cases like "-.5"`\
-		    -e 's/0*$//;s/\.$//';  # remove trailing zeros
-	else
-		printf "$result";
-	fi;
-	printf "\n";
-}
 
 # Create a new directory and enter it
 function mkd() {
@@ -215,46 +198,6 @@ function getcertnames() {
 	fi;
 }
 
-# `s` with no arguments opens the current directory in Sublime Text, otherwise
-# opens the given location
-function s() {
-	if [ $# -eq 0 ]; then
-		subl .;
-	else
-		subl "$@";
-	fi;
-}
-
-# `a` with no arguments opens the current directory in Atom Editor, otherwise
-# opens the given location
-function a() {
-	if [ $# -eq 0 ]; then
-		atom .;
-	else
-		atom "$@";
-	fi;
-}
-
-# `v` with no arguments opens the current directory in Vim, otherwise opens the
-# given location
-function v() {
-	if [ $# -eq 0 ]; then
-		vim .;
-	else
-		vim "$@";
-	fi;
-}
-
-# `o` with no arguments opens the current directory, otherwise opens the given
-# location
-function o() {
-	if [ $# -eq 0 ]; then
-		open .;
-	else
-		open "$@";
-	fi;
-}
-
 # `tree-pretty` is a shorthand for `tree` with hidden files and color enabled, ignoring
 # the `.git` directory, listing directories first. The output gets piped into
 # `less` with options to preserve color and line numbers, unless the output is
@@ -262,3 +205,20 @@ function o() {
 function tree-pretty() {
     tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+# ----------------------------------------
+# Linux Shortcuts
+# ----------------------------------------
+if [ "$PLATFORM" = "linux" ]; then
+
+    if [ "$LINUX_DESKTOP" = "xfce" ]; then
+        # launches Xfce4 FileManager; behaves similar to OS X's "open" command
+        function open() {
+            if [ -z "$1" ]; then
+                exo-open --launch FileManager --working-directory $(pwd);
+            else
+                exo-open --launch FileManager --working-directory $1;
+            fi;
+        }
+    fi;
+fi;

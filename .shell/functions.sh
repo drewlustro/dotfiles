@@ -266,6 +266,7 @@ function toolbelt-raspi-image-restore() {
     answer=$(bash -c "read -n 1 c; echo \$c");
     if echo "$answer" | grep -iq "^y"; then
         echo "\n\nRestoring card $(basename $2) to disk $diskNumber..."
+        sudo diskutil unmountDisk /dev/disk$diskNumber;
         eval $cmd;
         if [[ $? -eq 0 ]]; then
             echo "Success.";

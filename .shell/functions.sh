@@ -1,3 +1,4 @@
+
 # Convert RAW images to 2560 dimension max JPEG
 if [ -x "$(which convert)" ]; then
 	function convert-raw-to-jpg() {
@@ -278,6 +279,25 @@ function toolbelt-raspi-image-restore() {
     fi
 
     echo "\nAborted.";
+    return 1;
+}
+
+function toolbelt-dns-flush() {
+    # El Capitan 10.11
+    if [[ -x "$(which dscacheutil)" ]]; then
+        toolbelt-shell-debug-on;
+        sudo dscacheutil -flushcache;
+        toolbelt-shell-debug-off;
+        return 0;
+    # Yosemite 10.10
+    elif  [[ -x "$(which discoveryutil)" ]]; then
+        toolbelt-shell-debug-on;
+        sudo discoveryutil mdnsflushcache;
+        toolbelt-shell-debug-off;
+        return 0;
+    fi;
+
+    echo "Cannot determine proper tool to flush dns on this OS.";
     return 1;
 }
 

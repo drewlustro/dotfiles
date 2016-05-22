@@ -248,7 +248,6 @@ function toolbelt-raspi-image-dump() {
 }
 
 function toolbelt-raspi-image-restore() {
-    local now=$(date +"%Y-%m-%d__%H-%M-%S");
     local diskNumber=${1:--1}
     local bs="1M"
     local cmd="gzip -dc $2 | sudo dd of=/dev/rdisk$1 bs=$bs"

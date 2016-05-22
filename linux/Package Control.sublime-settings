@@ -1,20 +1,21 @@
 {
-	"bootstrapped": true,
-	"in_process_packages":
-	[
-	],
-	"installed_packages":
-	[
-		"AlignTab",
-		"FileSystem Autocompletion",
-		"JavaScriptNext - ES6 Syntax",
-		"Material Theme",
-		"OpenGL Shading Language (GLSL)",
-		"Package Control",
-		"Pretty JSON",
-		"Pylinter",
-		"Sass",
-		"Three.js Autocomplete",
-		"Vue Syntax Highlight"
-	]
+    "bootstrapped": true,
+    "in_process_packages":
+    [
+    ],
+    "installed_packages":
+    [
+        "AlignTab",
+        "EditorConfig",
+        "FileSystem Autocompletion",
+        "JavaScriptNext - ES6 Syntax",
+        "Material Theme",
+        "OpenGL Shading Language (GLSL)",
+        "Package Control",
+        "Pretty JSON",
+        "Pylinter",
+        "Sass",
+        "Three.js Autocomplete",
+        "Vue Syntax Highlight"
+    ]
 }

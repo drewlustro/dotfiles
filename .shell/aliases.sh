@@ -189,6 +189,11 @@ if [ "$PLATFORM" = "osx" ]; then
 
 fi;
 
-
+# ----------------------------------------
+# Linux Shortcuts
+# ----------------------------------------
+if [ "$PLATFORM" = "linux" ]; then
+    alias ainstall="sudo apt-get install -y ";
+fi;
 
 

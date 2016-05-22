@@ -27,3 +27,12 @@ sudo apt-get install -y nodejs
 # npm packges
 npm install -g bower yo grunt-cli gulp babel webpack npm-check-updates
 
+
+# /sites setup
+cd /
+sudo mkdir -p /sites/envs
+sudo chown -R $(whoami):www-data /sites
+sudo mkdir -p /sites/logs
+sudo mkdir -p /sites/pool
+sudo mkdir -p /sites/maxrelax
+sudo chmod -R 0755 /sites

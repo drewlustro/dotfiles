@@ -187,6 +187,9 @@ if [ "$PLATFORM" = "osx" ]; then
         alias slack-dupe="open -n /Applications/Slack.app"
     fi;
 
+    alias toolbelt-shell-debug-on="setopt verbose; set -xv"
+    alias toolbelt-shell-debug-off="set +xv; unsetopt verbose;"
+
 fi;
 
 # ----------------------------------------

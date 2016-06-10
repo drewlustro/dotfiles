@@ -21,17 +21,17 @@ interested-media-players=['spotify.desktop', 'clementine.desktop']
 preferred-media-players=['clementine.desktop']
 
 [com/canonical/unity]
-minimize-count=35
+minimize-count=4
 integrated-menus=true
 
 [com/canonical/unity/devices]
-blacklist=['D45A-4959-Iverson', 'c2eeb437-07f5-4d16-8275-a99eb5b95c99-Permafrost', 'ac3616fe-8033-46db-b9d9-e93e373fcd97-Tokyo', '6FF2-090A-MOTHER', '322E4AA32E4A6049-', 'd3c728a9-e2a4-4d32-9da8-f49c24b54a52-']
+blacklist=['D45A-4959-Iverson', 'c2eeb437-07f5-4d16-8275-a99eb5b95c99-Permafrost', 'ac3616fe-8033-46db-b9d9-e93e373fcd97-Tokyo', '6FF2-090A-MOTHER', '322E4AA32E4A6049-', 'd3c728a9-e2a4-4d32-9da8-f49c24b54a52-', '8ec8c1bf-7fdb-4c66-a498-5479cb649e29-', '4e7c29ef-24e3-46a9-ac1c-44e7d56c1ef6-']
 
 [com/canonical/unity/interface]
-text-scale-factor=2.0625
+text-scale-factor=1.25
 
 [com/canonical/unity/launcher]
-favorites=['application://org.gnome.Nautilus.desktop', 'application://sublime_text.desktop', 'application://google-chrome.desktop', 'application://gnome-terminal.desktop', 'application://unity-control-center.desktop', 'application://ccsm.desktop', 'application://vlc.desktop', 'application://audacity.desktop', 'application://clementine.desktop', 'application://slack.desktop', 'application://ubuntu-software-center.desktop', 'application://gparted.desktop', 'application://unity-tweak-tool.desktop', 'application://org.gnome.baobab.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']
+favorites=['application://org.gnome.Nautilus.desktop', 'application://sublime_text.desktop', 'application://google-chrome.desktop', 'application://gnome-terminal.desktop', 'application://vlc.desktop', 'application://audacity.desktop', 'application://clementine.desktop', 'application://slack.desktop', 'application://gparted.desktop', 'application://org.gnome.baobab.desktop', 'unity://running-apps', 'application://unity-control-center.desktop', 'application://ccsm.desktop', 'application://unity-tweak-tool.desktop', 'unity://expo-icon', 'unity://devices']
 
 [com/canonical/unity/lenses/files]
 use-locate=false
@@ -44,30 +44,13 @@ remote-content-search='none'
 display-available-apps=false
 
 [com/canonical/desktop/interface]
-scrollbar-mode='normal'
+scrollbar-mode='overlay-auto'
 
 [com/ubuntu/user-interface]
-scale-factor={'DisplayPort-9': 8, 'DisplayPort-7': 8, 'DP-4': 11}
+scale-factor={'DisplayPort-9': 8, 'DisplayPort-7': 8, 'DP-4': 10}
 
 [system/proxy]
 use-same-proxy=false
-
-[org/onboard]
-use-system-defaults=false
-theme='Nightshade'
-system-theme-associations={'LowContrast': 'LowContrast', 'Default': '', 'HighContrast': 'HighContrast', 'HighContrastInverse': 'HighContrastInverse'}
-key-label-overrides=['RWIN::super', 'LWIN::super']
-xembed-onboard=true
-layout='Compact'
-schema-version='2.2'
-key-label-font='Ubuntu'
-
-[org/onboard/window/landscape]
-height=208
-y=47
-
-[org/onboard/window]
-force-to-top=true
 
 [org/gnome/empathy]
 sanity-cleaning-number=uint32 4
@@ -81,39 +64,60 @@ decrease-text-size='<Primary><Alt><Super>minus'
 next='F8'
 play='F9'
 screenshot='<Shift><Control>numbersign'
-terminal='F3'
+terminal=''
 volume-down='F11'
-volume-up='F12'
+email=''
 media='F6'
 window-screenshot='<Shift><Control>percent'
+volume-up='F12'
 www=''
 magnifier-zoom-in='<Alt><Super>equal'
 increase-text-size='<Primary><Alt><Super>equal'
-home='F5'
+home=''
 stop='F6'
 help=''
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/']
 volume-mute='F10'
 previous='F7'
 
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
-binding='<Super>F3'
-command='~/.app-focus/app-focus.sh gnome-terminal'
-name='Terminal Focus'
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Shift>F1'
+command='subl'
+name='SublimeText Launch'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
-binding='<Super>F2'
-command='bash ~/.app-focus/chrome-focus.sh'
-name='Focus Chrome'
+binding='<Shift>F2'
+command='google-chrome'
+name='Chrome Launch'
 
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
-binding='<Super>F1'
-command='~/.app-focus/app-focus.sh atom'
-name='Focus Atom'
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
+binding='<Shift>F3'
+command='gnome-terminal'
+name='Terminal Launch'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
-binding='<Super>F4'
-command='~/.app-focus/app-focus.sh zeal'
+binding='<Shift>F4'
+command='zeal'
+name='Zeal Launch'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4]
+binding=''
+command='~/dev-local/livvy/hideshow-sublimetext.sh'
+name='SublimeText Focus'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5]
+binding=''
+command='~/dev-local/livvy/hideshow-chrome.sh'
+name='Chrome Focus'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6]
+binding=''
+command='~/dev-local/livvy/hideshow-gnome-terminal.sh'
+name='Terminal Focus'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7]
+binding=''
+command='~/dev-local/livvy/hideshow-zeal.sh'
 name='Zeal Focus'
 
 [org/gnome/settings-daemon/plugins/xsettings]
@@ -198,12 +202,11 @@ base=10
 source-units='degree'
 accuracy=9
 
-[org/gnome/gnome-screenshot]
-include-pointer=false
-include-border=true
-border-effect='none'
-delay=3
-last-save-directory='file:///home/drew/Desktop'
+[org/gnome/charmap/window-state]
+size=(2019, 1215)
+
+[org/gnome/charmap]
+last-char=uint32 197
 
 [org/gnome/gedit/preferences/ui]
 statusbar-visible=true
@@ -230,7 +233,7 @@ default-sort-order='type'
 
 [org/gnome/nautilus/window-state]
 sidebar-width=377
-geometry='1742x1441+1628+257'
+geometry='1742x1441+1017+511'
 maximized=false
 
 [org/gnome/nautilus/desktop]
@@ -268,16 +271,29 @@ window-width=682
 [org/gnome/evolution-data-server]
 migrated=true
 
+[org/gnome/gnome-screenshot]
+include-pointer=false
+include-border=true
+border-effect='none'
+delay=3
+last-save-directory='file:///home/drew/Desktop'
+
 [org/gnome/deja-dup]
 periodic=true
 backend='file'
-last-run='2016-04-02T02:20:14.461781Z'
-nag-check='2016-03-10T08:13:17.105291Z'
+last-run='2016-05-23T01:21:52.398972Z'
+nag-check='disabled'
 prompt-check='disabled'
 exclude-list=['$TRASH', '$DOWNLOAD', '/home/drew/.dbus', '/home/drew/.dropbox', '/home/drew/.dropbox-dist', '/home/drew/.steam']
-last-backup='2016-04-02T02:20:14.461781Z'
+last-backup='2016-05-23T01:21:52.398972Z'
 
 [org/gnome/deja-dup/s3]
+folder='deep-nightmare'
+
+[org/gnome/deja-dup/openstack]
+container='deep-nightmare'
+
+[org/gnome/deja-dup/gcs]
 folder='deep-nightmare'
 
 [org/gnome/deja-dup/gdrive]
@@ -296,41 +312,64 @@ name='WDC WD20EZRX-00DC0B0: Tokyo'
 type='volume'
 
 [org/gnome/desktop/interface]
-text-scaling-factor=2.0625
-cursor-size=33
-font-name='Input Sans 8'
-document-font-name='Input Sans 11'
+text-scaling-factor=1.5625
+cursor-size=30
+font-name='Input Sans 10'
+document-font-name='Input Sans 12'
 scaling-factor=uint32 1
 cursor-theme='DMZ-White'
+toolkit-accessibility=false
 gtk-im-module='gtk-im-context-simple'
-icon-theme='SuperFlat'
-monospace-font-name='Input Mono Semi-Light 10'
+icon-theme='Adwaita'
+monospace-font-name='Input Mono Light 10'
 enable-animations=true
-gtk-theme='Arc-Darker'
+gtk-color-scheme='selected_bg_color:#398ee7;selected_fg_color:#eeeeee;'
+gtk-theme='Adwaita'
 clock-show-date=true
 
 [org/gnome/desktop/applications/terminal]
 exec='gnome-terminal'
 
 [org/gnome/desktop/media-handling]
-autorun-x-content-start-app=['x-content/unix-software', 'x-content/bootable-media']
-autorun-x-content-ignore=@as []
+autorun-x-content-start-app=['x-content/unix-software', 'x-content/bootable-media', 'x-content/audio-player']
+autorun-x-content-ignore=['x-content/audio-player']
 autorun-x-content-open-folder=['x-content/bootable-media']
+
+[org/gnome/desktop/app-folders]
+folder-children=['Utilities', 'Sundry']
+
+[org/gnome/desktop/app-folders/folders/Utilities]
+translate=true
+categories=['X-GNOME-Utilities']
+apps=['org.gnome.baobab.desktop', 'deja-dup-preferences.desktop', 'eog.desktop', 'evince.desktop', 'org.gnome.FileRoller.desktop', 'gnome-calculator.desktop', 'gnome-dictionary.desktop', 'org.gnome.Characters.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.font-viewer.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.Screenshot.desktop', 'gnome-system-log.desktop', 'gnome-system-monitor.desktop', 'gnome-tweak-tool.desktop', 'gucharmap.desktop', 'seahorse.desktop', 'vinagre.desktop', 'yelp.desktop']
+name='X-GNOME-Utilities.directory'
+
+[org/gnome/desktop/app-folders/folders/Sundry]
+translate=true
+categories=['X-GNOME-Sundry']
+apps=['alacarte.desktop', 'authconfig.desktop', 'ca.desrt.dconf-editor.desktop', 'fedora-release-notes.desktop', 'firewall-config.desktop', 'flash-player-properties.desktop', 'gconf-editor.desktop', 'gnome-abrt.desktop', 'gnome-power-statistics.desktop', 'ibus-setup-anthy.desktop', 'ibus-setup.desktop', 'ibus-setup-hangul.desktop', 'ibus-setup-libbopomofo.desktop', 'ibus-setup-libpinyin.desktop', 'ibus-setup-m17n.desktop', 'ibus-setup-typing-booster.desktop', 'im-chooser.desktop', 'itweb-settings.desktop', 'jhbuild.desktop', 'javaws.desktop', 'java-1.7.0-openjdk-jconsole.desktop', 'java-1.7.0-openjdk-policytool.desktop', 'log4j-chainsaw.desktop', 'log4j-logfactor5.desktop', 'nm-connection-editor.desktop', 'orca.desktop', 'setroubleshoot.desktop', 'system-config-date.desktop', 'system-config-firewall.desktop', 'system-config-keyboard.desktop', 'system-config-language.desktop', 'system-config-printer.desktop', 'system-config-users.desktop', 'vino-preferences.desktop']
+name='X-GNOME-Sundry.directory'
 
 [org/gnome/desktop/screensaver]
 lock-delay=uint32 3600
+ubuntu-lock-on-suspend=false
 lock-enabled=false
 
 [org/gnome/desktop/peripherals/mouse]
 speed=-1.0
 
+[org/gnome/desktop/session]
+idle-delay=uint32 3600
+
 [org/gnome/desktop/wm/preferences]
 mouse-button-modifier='<Alt>'
+action-middle-click-titlebar='toggle-maximize'
+theme='Adwaita'
+visual-bell=false
+action-double-click-titlebar='toggle-maximize-vertically'
 button-layout='close,minimize,maximize:'
-visual-bell=true
-theme='Arc-Darker'
-action-middle-click-titlebar='toggle-maximize-vertically'
-titlebar-font='Input Sans Semi-Light 8'
+resize-with-right-button=true
+titlebar-font='Input Sans Light 10'
 
 [org/gnome/desktop/wm/keybindings]
 move-to-workspace-5=['disabled']
@@ -345,7 +384,7 @@ move-to-workspace-11=['disabled']
 move-to-workspace-12=['disabled']
 panel-main-menu=['<Super>s']
 panel-run-dialog=['<Alt>F2']
-switch-to-workspace-down=['']
+switch-to-workspace-down=['disabled']
 move-to-corner-ne=['<Control><Alt>KP_Prior']
 move-to-side-e=['<Control><Alt>KP_Right']
 move-to-workspace-right=['<Shift><Control><Alt>Right']
@@ -384,35 +423,45 @@ maximize-vertically=['disabled']
 switch-to-workspace-10=['disabled']
 switch-to-workspace-11=['disabled']
 switch-to-workspace-12=['disabled']
-switch-to-workspace-left=['']
+switch-to-workspace-left=['disabled']
 toggle-maximized=['<Control><Alt>KP_5']
 move-to-workspace-down=['<Shift><Control><Alt>Down']
 begin-resize=['<Alt>F8']
 close=['<Shift><Control>w']
-switch-to-workspace-up=['']
+switch-to-workspace-up=['disabled']
 move-to-workspace-1=['disabled']
-switch-to-workspace-right=['']
+switch-to-workspace-right=['disabled']
 move-to-workspace-2=['disabled']
 move-to-workspace-3=['disabled']
 move-to-workspace-4=['disabled']
 
 [org/gnome/desktop/a11y/magnifier]
-mag-factor=4.0
+mag-factor=5.0
 
 [org/gnome/desktop/a11y/applications]
+screen-magnifier-enabled=false
 screen-reader-enabled=false
 
 [org/gnome/desktop/background]
-picture-uri='file:///home/drew/Dropbox/Wallpaper/airsky.JPG'
-color-shading-type='solid'
-primary-color='#00000b7828f6'
-picture-options='stretched'
+picture-uri=''
+color-shading-type='horizontal'
+primary-color='#163016301630'
+picture-options='none'
+secondary-color='#00000b7828f6'
 
 [org/gnome/desktop/input-sources]
 show-all-sources=true
 current=uint32 0
 sources=[('xkb', 'us')]
 xkb-options=['altwin:ctrl_alt_win']
+
+[org/gnome/cheese]
+photo-y-resolution=1080
+burst-delay=1000
+video-y-resolution=1080
+camera='HD Pro Webcam C920'
+photo-x-resolution=1920
+video-x-resolution=1920
 
 [org/gnome/eog/view]
 background-color='rgb(0,0,0)'
@@ -428,6 +477,7 @@ image-gallery=true
 
 [org/gnome/terminal/legacy]
 new-terminal-mode='tab'
+menu-accelerator-enabled=false
 schema-version=uint32 3
 
 [org/gnome/terminal/legacy/keybindings]
@@ -442,15 +492,38 @@ prev-tab='<Primary>braceleft'
 new-window='<Primary>n'
 close-tab='<Primary>w'
 move-tab-left='<Primary><Super>bracketleft'
+full-screen='<Primary><Super>f'
 close-window='<Primary><Shift>w'
 switch-to-tab-8='<Primary>9'
 move-tab-right='<Primary><Super>bracketright'
-help='<Shift>F1'
+help='disabled'
 switch-to-tab-7='<Primary>7'
 next-tab='<Primary>braceright'
 zoom-in='<Primary>equal'
 
+[org/gnome/terminal/legacy/profiles:]
+list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', '5914db80-a578-4079-8c61-9416b96cac37']
+default='b1dcc9dd-5262-4d8d-a863-c897e6d979b9'
+
 [org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+foreground-color='#838394949696'
+rewrap-on-resize=true
+visible-name='Drew (default)'
+palette=['#070736364242', '#DCDC32322F2F', '#858599990000', '#B5B589890000', '#26268B8BD2D2', '#D3D336368282', '#2A2AA1A19898', '#EEEEE8E8D5D5', '#00002B2B3636', '#CBCB4B4B1616', '#58586E6E7575', '#65657B7B8383', '#838394949696', '#6C6C7171C4C4', '#9393A1A1A1A1', '#FDFDF6F6E3E3']
+default-size-rows=60
+default-size-columns=140
+use-system-font=false
+use-custom-default-size=true
+use-theme-colors=false
+font='Input Mono Semi-Light 8'
+use-theme-transparency=false
+allow-bold=true
+scrollback-unlimited=true
+bold-color-same-as-fg=false
+bold-color='#9393a1a1a1a1'
+background-color='#00002B2B3636'
+
+[org/gnome/terminal/legacy/profiles:/:5914db80-a578-4079-8c61-9416b96cac37]
 foreground-color='#838394949696'
 rewrap-on-resize=true
 visible-name='Default'
@@ -458,7 +531,6 @@ palette=['#070736364242', '#DCDC32322F2F', '#858599990000', '#B5B589890000', '#2
 default-size-rows=60
 default-size-columns=140
 use-system-font=false
-use-custom-default-size=true
 use-theme-colors=false
 font='Input Mono Semi-Light 8'
 use-theme-transparency=false
@@ -476,8 +548,16 @@ ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
+[org/gnome/nm-applet/eap/8ca254e5-ebb2-4d65-ad6c-544b7ac4b5f0]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/software]
+first-run=false
+check-timestamp=int64 1463971065
+
 [org/gnome/gnome-system-monitor]
-current-tab='resources'
+current-tab='processes'
 show-whose-processes='user'
 window-state=(950, 1009, 281, 33)
 maximized=false
@@ -487,26 +567,117 @@ cpu-colors=[(uint32 0, '#FF6E00'), (1, '#CB0C29'), (2, '#49A835'), (3, '#2D7DB3'
 [org/gnome/gnome-system-monitor/proctree]
 columns-order=[0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
 sort-order=0
+col-15-visible=true
+col-15-width=167
 sort-col=8
 
 [org/gnome/gnome-system-monitor/disktreenew]
+col-0-width=242
+col-0-visible=true
 col-6-visible=true
 col-6-width=0
 
 [org/gtk/settings/file-chooser]
 sort-column='name'
-sidebar-width=148
-window-position=(457, 344)
+sidebar-width=316
+window-position=(1260, 486)
 show-size-column=true
 show-hidden=true
 window-size=(1569, 1212)
 sort-directories-first=true
+date-format='regular'
 sort-order='ascending'
 location-mode='path-bar'
 
 [org/gtk/settings/color-chooser]
-selected-color=(true, 0.0, 0.044800000000000041, 0.16, 1.0)
-custom-colors=[(0.0, 0.044800000000000041, 0.16, 1.0), (0.0, 0.085267414358739607, 0.26999313344014647, 1.0), (0.0, 0.085263157894736874, 0.27000000000000002, 1.0), (0.0078431372549019607, 0.23529411764705882, 0.53333333333333333, 1.0), (0.98431372549019602, 0.54509803921568623, 0.0, 1.0)]
+selected-color=(true, 0.82745098039215681, 0.84313725490196079, 0.81176470588235294, 1.0)
+custom-colors=[(0.22352941176470589, 0.55686274509803924, 0.90588235294117647, 1.0), (0.93333333333333335, 0.93333333333333335, 0.93333333333333335, 1.0), (0.20000000000000001, 0.20000000000000001, 0.20000000000000001, 1.0), (0.80000000000000004, 0.80000000000000004, 0.80000000000000004, 1.0), (0.69803921568627447, 0.80000000000000004, 0.83921568627450982, 1.0), (0.08666666666666667, 0.08666666666666667, 0.08666666666666667, 1.0), (0.043335622186617836, 0.043335622186617836, 0.043335622186617836, 1.0), (0.3411764705882353, 0.53725490196078429, 0.792156862745098, 1.0)]
+
+[org/blueman/general]
+plugin-list=['!NMPANSupport', '!DhcpClient']
+window-properties=[878, 655, 1384, 757]
+
+[org/blueman/transfer]
+shared-path='/home/drew/Downloads'
+
+[org/yorba/shotwell/preferences/window]
+direct-maximize=false
+direct-height=768
+direct-width=1024
+
+[org/xfce/mousepad/preferences/view]
+indent-width=-1
+show-line-marks=false
+highlight-current-line=false
+word-wrap=false
+show-right-margin=false
+font-name='DejaVu Sans Mono 10'
+color-scheme='xubuntu_light'
+show-line-numbers=false
+insert-spaces=false
+match-braces=false
+indent-on-tab=true
+right-margin-position=80
+show-line-endings=false
+tab-width=8
+show-whitespace=false
+smart-home-end='disabled'
+auto-indent=false
+
+[org/xfce/mousepad/preferences/window]
+menubar-visible=true
+
+[org/xfce/mousepad/state/window]
+width=1763
+fullscreen=false
+maximized=false
+height=1412
+
+[org/onboard/theme-settings]
+key-size=94.0
+key-stroke-width=0.0
+key-gradient-direction=-3.0
+color-scheme='/usr/share/onboard/themes/Charcoal.colors'
+key-fill-gradient=8.0
+key-style='gradient'
+key-stroke-gradient=8.0
+roundrect-radius=20.0
+
+[org/onboard]
+current-settings-page=5
+use-system-defaults=false
+theme='Nightshade'
+system-theme-associations={'LowContrast': 'LowContrast', 'Default': '', 'HighContrast': 'HighContrast', 'HighContrastInverse': 'HighContrastInverse'}
+key-label-overrides=['RWIN::super', 'LWIN::super']
+xembed-onboard=true
+layout='Compact'
+schema-version='2.2'
+key-label-font='Ubuntu'
+
+[org/onboard/window]
+docking-enabled=true
+force-to-top=true
+
+[org/onboard/window/landscape]
+dock-expand=true
+height=208
+y=47
+
+[org/baedert/corebird]
+window-geometry={'msodrew': (187, -56, 881, 2284)}
+startup-accounts=['msodrew', 'msodrew']
+round-avatars=true
+
+[org/mate/system-monitor]
+solaris-mode=false
+current-tab=2
+disks-interval=5000
+window-state=(942, 921, 2892, 6)
+update-interval=1000
+graph-update-interval=1000
+
+[org/mate/system-monitor/proctree]
+col-22-width=91
 
 [org/compiz]
 existing-profiles=['Default', 'unity', 'compiz-drew-macpro', 'compiz-macpro', 'deep-nightmare', 'deep-nightmare-failsafe']
@@ -768,6 +939,11 @@ color='#ffdf3fff'
 [org/compiz/profiles/deep-nightmare]
 plugins-with-set-keys=['move', 'animation', 'workarounds', 'snap', 'commands', 'expo', 'mousepoll', 'unityshell', 'fade', 'opengl', 'vpswitch', 'unitymtgrabhandles', 'composite', 'grid', 'place', 'core', 'session', 'wall', 'resize', 'ezoom', 'scale', 'neg', 'crashhandler', 'kdecompat', 'shift', 'annotate', 'cube', 'bench', 'td', 'staticswitcher', 'scalefilter', 'shelf', 'showrepaint', 'mag', 'wallpaper', 'scaleaddon', 'decor', 'extrawm', 'notification', 'mblur', 'water', 'put', 'freewins', 'wobbly', 'ring', 'titleinfo', 'switcher', 'fadedesktop', 'firepaint', 'showdesktop', 'obs', 'screenshot', 'wizard', 'cubeaddon', 'opacify', 'workspacenames', 'matecompat', 'splash', 'trailfocus', 'showmouse', 'imgjpeg', 'thumbnail', 'maximumize', 'addhelper', 'widget', 'resizeinfo', 'rotate', 'winrules', 'clone', 'imgsvg']
 
+[org/compiz/profiles/deep-nightmare/plugins/wall]
+thumb-highlight-gradient-shadow-color='#dfdfdfff'
+arrow-base-color='#e6e6e6d9'
+arrow-shadow-color='#dcdcdcd9'
+
 [org/compiz/profiles/deep-nightmare/plugins/showrepaint]
 toggle-key='<Control><Alt><Super>Scroll_Lock'
 intensity=50
@@ -778,9 +954,11 @@ gradient-2='#f3f3f3cc'
 gradient-3='#d9d9d9cc'
 outline-color='#e6e6e6ff'
 
-[org/compiz/profiles/deep-nightmare/plugins/thumbnail]
-thumb-color='#0000007f'
-font-background-color='#0000007f'
+[org/compiz/profiles/deep-nightmare/plugins/scale]
+opacity=50
+spacing=50
+initiate-edge='BottomLeft'
+overlay-icon=1
 
 [org/compiz/profiles/deep-nightmare/plugins/ezoom]
 zoom-box-fill-color='#2f2f2f4f'
@@ -798,21 +976,23 @@ strength=2.0
 refresh-rate=50
 
 [org/compiz/profiles/deep-nightmare/plugins/snap]
-snap-type=[0, 1]
-edges-categories=[0, 1]
+snap-type=@ai []
 
 [org/compiz/profiles/deep-nightmare/plugins/switcher]
-background-color='#333333d9'
-focus-on-switch=true
 prev-all-key='Disabled'
 prev-key='<Shift><Control>Tab'
+auto-rotate=true
+icon-only=true
 next-all-key='Disabled'
+opacity=100
 next-key='<Control>Tab'
+use-background-color=true
+focus-on-switch=true
+background-color='#333333ed'
+bring-to-front=false
 
-[org/compiz/profiles/deep-nightmare/plugins/wall]
-thumb-highlight-gradient-shadow-color='#dfdfdfff'
-arrow-base-color='#e6e6e6d9'
-arrow-shadow-color='#dcdcdcd9'
+[org/compiz/profiles/deep-nightmare/plugins/opengl]
+texture-filter=2
 
 [org/compiz/profiles/deep-nightmare/plugins/animation]
 unminimize-effects=['animation:Glide 2']
@@ -825,14 +1005,13 @@ snap-threshold=50
 circle-color='#54befb80'
 line-color='#1800ffff'
 
-[org/compiz/profiles/deep-nightmare/plugins/session]
-save-legacy=true
+[org/compiz/profiles/deep-nightmare/plugins/move]
+lazy-positioning=true
 
 [org/compiz/profiles/deep-nightmare/plugins/grid]
 put-left-key='<Control><Alt><Super>Left'
 put-right-key='<Control><Alt><Super>Right'
 put-bottom-key='<Control><Alt><Super>Down'
-snapoff-threshold=200
 put-maximize-key='<Control><Alt><Super>m'
 cycle-sizes=true
 put-center-key='<Control><Alt><Super>0'
@@ -840,7 +1019,7 @@ fill-color='#00bcfb4f'
 outline-color='#00c1ff9f'
 put-top-key='<Control><Alt><Super>Up'
 top-edge-action=0
-snapback-windows=false
+snapoff-threshold=200
 
 [org/compiz/profiles/deep-nightmare/plugins/decor]
 active-shadow-radius=16.0
@@ -850,63 +1029,79 @@ inactive-shadow-color='#000000ff'
 
 [org/compiz/profiles/deep-nightmare/plugins/expo]
 distance=0.004999999888241291
-expo-animation=2
 expo-key='Disabled'
-ground-color1='#b3b3b3cc'
 ground-color2='#b3b3b300'
+ground-color1='#b3b3b3cc'
 vp-saturation=40.0
-x-offset=80
+x-offset=73
 
 [org/compiz/profiles/deep-nightmare/plugins/screenshot]
 selection-outline-color='#2f2f4f9f'
 selection-fill-color='#2f2f4f2e'
+
+[org/compiz/profiles/deep-nightmare/plugins/session]
+save-legacy=true
+
+[org/compiz/profiles/deep-nightmare/plugins/firepaint]
+fire-color='#ff3305ff'
+
+[org/compiz/profiles/deep-nightmare/plugins/scaleaddon]
+border-size=5
+window-highlight=true
+title-bold=true
+highlight-color='#aed0ff96'
+natural-precision=3.0
+window-title=2
+
+[org/compiz/profiles/deep-nightmare/plugins/core]
+hsize=2
+outputs=['3840x2160+0+0']
+vsize=2
+active-plugins=['core', 'composite', 'crashhandler', 'opengl', 'fade', 'imgjpeg', 'copytex', 'imgpng', 'workarounds', 'resize', 'grid', 'regex', 'move', 'unitymtgrabhandles', 'place', 'expo', 'mousepoll', 'commands', 'snap', 'compiztoolbox', 'thumbnail', 'scale', 'session', 'ezoom', 'screenshot', 'scaleaddon', 'unityshell', 'showrepaint', 'bench']
 
 [org/compiz/profiles/deep-nightmare/plugins/staticswitcher]
 prev-all-key='Disabled'
 next-group-key='<Control>grave'
 next-all-key='Disabled'
 row-align=2
+use-background-color=true
 prev-group-key='<Shift><Control>asciitilde'
 mipmap=true
 focus-on-switch=true
-background-color='#333333d9'
+background-color='#190056d9'
 bring-to-front=true
 highlight-mode=1
 
-[org/compiz/profiles/deep-nightmare/plugins/firepaint]
-fire-color='#ff3305ff'
+[org/compiz/profiles/deep-nightmare/plugins/thumbnail]
+thumb-color='#0000007f'
+font-background-color='#0000007f'
 
 [org/compiz/profiles/deep-nightmare/plugins/unityshell]
-launcher-switcher-prev='Disabled'
+show-launcher='<Control>space'
 icon-size=42
-alt-tab-forward-all='Disabled'
-alt-tab-prev-all='Disabled'
-alt-tab-bias-viewport=false
+alt-tab-forward-all='<Control><Super>Tab'
+alt-tab-prev-all='<Shift><Control><Super>Tab'
+num-launchers=1
 launcher-opacity=0.76599997282028198
 lock-screen='<Control><Alt><Super>Break'
-alt-tab-forward='Disabled'
+alt-tab-forward='<Control>Tab'
 menus-discovery-fadein=100
-launcher-switcher-forward='Disabled'
+menus-discovery-fadeout=100
 menus-fadeout=80
 show-menu-bar='Disabled'
-menus-discovery-fadeout=100
 disable-show-desktop=true
-show-launcher='<Control>space'
 menus-fadein=60
+dash-blur-experimental=1
 active-shadow-radius=20
-num-launchers=1
 inactive-shadow-color='#000000a5'
 autohide-animation=2
 override-decoration-theme=true
 show-desktop-key='<Shift><Control>d'
 urgent-animation=1
-alt-tab-prev='Disabled'
+alt-tab-prev='<Shift><Control>Tab'
 background-color='#000000ff'
+switch-strictly-between-applications=true
 execute-command='<Control>Escape'
-
-[org/compiz/profiles/deep-nightmare/plugins/core]
-outputs=['2560x1440+0+0', '1200x1920+2560+0']
-active-plugins=['core', 'composite', 'opengl', 'compiztoolbox', 'regex', 'copytex', 'grid', 'place', 'screenshot', 'imgpng', 'session', 'imgjpeg', 'resize', 'move', 'workarounds', 'snap', 'commands', 'expo', 'mousepoll', 'unitymtgrabhandles', 'ezoom', 'staticswitcher', 'fade', 'switcher', 'scale', 'unityshell', 'showrepaint', 'bench']
 
 [org/compiz/profiles/deep-nightmare/plugins/shift]
 ground-color1='#b3b3b3cc'
@@ -915,6 +1110,7 @@ ground-color2='#b3b3b300'
 [org/compiz/profiles/deep-nightmare/plugins/resize]
 border-color='#00fbad9f'
 fill-color='#00fbac19'
+mode=2
 
 [org/compiz/profiles/deep-nightmare/plugins/showmouse]
 color='#ffdf3fff'
@@ -1143,7 +1339,7 @@ outline-color='#e6e6e6ff'
 
 [org/compiz/profiles/unity/plugins/scale]
 initiate-all-edge=''
-initiate-edge='|BottomLeft'
+initiate-edge='BottomLeft'
 x-offset=77
 
 [org/compiz/profiles/unity/plugins/ezoom]
@@ -1169,7 +1365,7 @@ edges-categories=[0]
 background-color='#333333d9'
 
 [org/compiz/profiles/unity/plugins/opengl]
-texture-filter=0
+texture-filter=2
 
 [org/compiz/profiles/unity/plugins/animation]
 unminimize-effects=['animation:Glide 2']
@@ -1193,13 +1389,15 @@ put-left-key='<Control><Alt><Super>Left'
 put-right-key='<Control><Alt><Super>Right'
 top-left-corner-action=0
 put-bottom-key='<Control><Alt><Super>Down'
-top-right-corner-action=0
+left-edge-action=0
 bottom-right-corner-action=0
 cycle-sizes=true
+top-right-corner-action=0
 put-center-key='<Control><Alt><Super>0'
 bottom-left-corner-action=0
 fill-color='#5c35664f'
-bottom-edge-action=2
+bottom-edge-action=0
+right-edge-action=0
 outline-color='#75507bff'
 put-top-key='<Control><Alt><Super>Up'
 top-edge-action=0
@@ -1217,7 +1415,7 @@ expo-edge=''
 vp-saturation=40.0
 expo-animation=2
 expo-key='Disabled'
-x-offset=88
+x-offset=80
 
 [org/compiz/profiles/unity/plugins/gnomecompat]
 main-menu-key='Disabled'
@@ -1233,40 +1431,43 @@ fire-color='#ff3305ff'
 mode=1
 
 [org/compiz/profiles/unity/plugins/unityshell]
+urgent-animation=1
 launcher-switcher-prev='Disabled'
-icon-size=40
+icon-size=48
+reveal-trigger=0
 alt-tab-forward-all='Disabled'
 alt-tab-prev-all='Disabled'
 alt-tab-bias-viewport=false
-launcher-opacity=0.37096774578094482
+launcher-opacity=0.37099999189376831
 lock-screen='<Shift><Super>l'
 alt-tab-forward='Disabled'
 menus-discovery-fadein=100
 launcher-switcher-forward='Disabled'
+dash-tap-duration=1000
 menus-fadeout=80
-reveal-trigger=0
 show-menu-bar='Disabled'
 disable-show-desktop=true
 show-launcher='<Primary>space'
 keyboard-focus='Disabled'
-menus-fadein=60
+dash-blur-experimental=1
 edge-responsiveness=0.47857141494750977
+menus-fadein=60
 inactive-shadow-color='#000000a5'
 override-decoration-theme=true
 show-hud='Disabled'
 show-desktop-key='<Shift><Control>d'
-urgent-animation=1
+num-launchers=0
 alt-tab-prev='Disabled'
 background-color='#000000ff'
-launcher-hide-mode=1
+launcher-hide-mode=0
 execute-command='<Control>Escape'
 
 [org/compiz/profiles/unity/plugins/core]
-hsize=1
-outputs=['2560x1440+0+0', '1200x1920+2560+0']
+hsize=2
+outputs=['3840x2160+0+0']
 show-desktop-key='<Primary><Shift>d'
 close-window-key='<Primary><Shift>w'
-active-plugins=['core', 'composite', 'opengl', 'compiztoolbox', 'vpswitch', 'copytex', 'resize', 'move', 'regex', 'grid', 'imgpng', 'commands', 'snap', 'mousepoll', 'wall', 'place', 'session', 'unitymtgrabhandles', 'animation', 'workarounds', 'fade', 'expo', 'ezoom', 'unityshell']
+active-plugins=['core', 'composite', 'opengl', 'compiztoolbox', 'vpswitch', 'copytex', 'resize', 'move', 'regex', 'grid', 'imgpng', 'commands', 'snap', 'mousepoll', 'wall', 'place', 'session', 'unitymtgrabhandles', 'animation', 'workarounds', 'fade', 'expo', 'unityshell']
 show-desktop-edge='BottomRight'
 vsize=1
 
@@ -1289,22 +1490,23 @@ color='#ffdf3fff'
 [org/compiz/integrated]
 run-command-1=['disabled']
 run-command-10=['disabled']
+command-1=''
+command-2='~/dev-local/livvy/hideshow-sublimetext.sh'
+command-3='~/dev-local/livvy/hideshow-chrome.sh'
+command-4='~/dev-local/livvy/hideshow-gnome-terminal.sh'
+command-5='~/dev-local/livvy/hideshow-zeal.sh'
+command-6='~/dev-local/livvy/hideshow-nautilus.sh'
 run-command-11=['disabled']
 run-command-12=['disabled']
-run-command-2=['disabled']
-run-command-3=['disabled']
-run-command-4=['disabled']
-run-command-5=['disabled']
-run-command-6=['disabled']
+run-command-5=['F4']
+run-command-2=['F1']
+run-command-3=['F2']
+run-command-4=['F3']
+run-command-9=['disabled']
+run-command-6=['F5']
 run-command-7=['disabled']
 run-command-8=['disabled']
-run-command-9=['disabled']
 show-hud=['disabled']
-
-[org/yorba/shotwell/preferences/window]
-direct-maximize=false
-direct-height=768
-direct-width=1024
 
 [apps/indicators/multiload/general]
 width=uint16 100
@@ -1343,6 +1545,7 @@ enabled=false
 late-locking=false
 lock-after-screensaver=uint32 0
 lock-on-suspend=true
+idle-hint=false
 lock-on-lid=false
 
 [apps/update-manager]
@@ -1351,6 +1554,11 @@ launch-time=1458692335
 window-height=402
 show-details=true
 window-width=789
+
+[apps/mugshot]
+fax=''
+email='drewlustro@gmail.com'
+initials='DL'
 
 [apps/ubuntu-tweak/janitor]
 janitor-view-width=249
@@ -1361,8 +1569,8 @@ window-size=(1, 1)
 
 [ca/desrt/dconf-editor]
 window-is-fullscreen=false
-window-height=600
-window-width=800
+window-height=2095
+window-width=1883
 window-is-maximized=false
 
 [desktop/ibus/general]
@@ -1370,4 +1578,4 @@ engines-order=['xkb:us::eng']
 preload-engine-mode=1
 preload-engines=['xkb:us::eng']
 preload-engines-inited=true
-version='1.5.10'
+version='1.5.11'

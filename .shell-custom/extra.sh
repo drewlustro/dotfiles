@@ -28,6 +28,10 @@
 #
 # Autojump support "j" command from autojump binary installed via `brew install autojump`
 # [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+#
+# beets autocompletion
+# BEETS_AUTOCOMPLETE="$INCLUDES_CUSTOM/autocompletion/beets.sh"
+# [ -r "$BEETS_AUTOCOMPLETE" ] && source "$BEETS_AUTOCOMPLETE";
 
 
 # ----------------------------------------
@@ -52,3 +56,8 @@
 # #
 # # Autojump support "j" command from autojump binary installed via `brew install autojump`
 # [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+#
+# beets autocompletion
+# BEETS_AUTOCOMPLETE="$INCLUDES_CUSTOM/autocompletion/beets.sh"
+# [ -r "$BEETS_AUTOCOMPLETE" ] && source "$BEETS_AUTOCOMPLETE";
+

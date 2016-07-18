@@ -5,161 +5,220 @@
 # License: MIT
 
 DOTFILES_URL="https://github.com/drewlustro/dotfiles"
-DOTFILES_VERSION="1.4";
-DOTFILES_UPDATED="November 12, 2014 – 6:00a EST"
-cd "$(dirname "${BASH_SOURCE}")";
-
-function hr() {
-    echo "------------------------------------------------------------";
-}
+DOTFILES_VERSION="2.0";
+DOTFILES_UPDATED="July 18, 2016 03:00 EST"
+# cd "$(dirname "${BASH_SOURCE}")";
 
 function br() {
-    echo "";
+  echo "";
 }
+
+function heavyhr() {
+  echo "==============================================================";
+}
+
+function hr() {
+  echo "+ ---------------------------------------------------------- +";
+}
+
+function minihr() {
+  echo " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -";
+}
+
+
 
 function sayDone() {
-    echo "- Done bootstrapping!";
-    echo "- If you would like to install tons of convenient extras, run the following:"
-    echo "------------------------"
-    echo "$ ./brew-cask-fonts.sh  # installs a handful of useful public-domain typefaces, including many coding fonts"
-    echo "$ ./brew-install-cli.sh # installs TONS of useful binaries, libs, and CLI tools via brew"
-    echo "$ ./brew-cask-apps.sh   # installs many useful OS X applications via brew-cask"
-    echo "------------------------"
-    echo "- See each shell file above to see which components will be (non-destructively) installed."
-    echo "- Hope you enjoy! –Drew"
-    echo "------------------------"
-    br; hr;
+  echo "  DONE!";
+  echo "  If you would like to install tons of convenient extras from homebrew, run the following:"
+  minihr;
+  echo "$ ./brew-cask-fonts.sh  # installs a handful of useful public-domain typefaces, including many coding fonts"
+  echo "$ ./brew-install-cli.sh # installs TONS of useful binaries, libs, and CLI tools via brew"
+  echo "$ ./brew-cask-apps.sh   # installs many useful OS X applications via brew-cask"
+  minihr;
+  echo "  See each shell file above to see which components will be (non-destructively) installed."
+  echo "  Hope you enjoy! –Drew"
+  br; hr; br; br;
 }
 
-function installInputFont() {
-    echo "+ Rsync'ing essential config files to /Library/Fonts directory..."
-    br;
-    rsync -avh --no-perms Library/Fonts/*.ttf /Library/Fonts/;
-    hr;
-    br;
-    echo "+ Installed Input Font into /Library/Fonts "
-    echo "+ Please LOGOUT and LOGIN to see changes."
-    echo "- Remove .tff files from /Libary/Fonts/InputSystem* to uninstall."
-    br;
-    hr;
+function inputFontInstall() {
+  br;
+  heavyhr;
+  echo "    INPUT FONT INSTALL";
+  hr;
 
+  echo "  http://input.fontbureau.com/systemfont/"
+  minihr;
+  echo "  Rsync'ing essential config files to /Library/Fonts directory..."
+  br;
+  rsync -avh --no-perms Library/Fonts/*.ttf /Library/Fonts/;
+  br;
+  minihr;
+  echo "  Installed Input Font into /Library/Fonts "
+  echo "  Please LOGOUT and LOGIN to see changes."
+  echo "  Remove .tff files from /Libary/Fonts/SystemFont* to uninstall."
+
+  br; hr; br; br;
 }
 
-function doIt() {
+function preztoInstall() {
+  br;
+  heavyhr;
+  echo "    PREZTO INSTALL"
+  hr;
 
-    echo "+ Rsync'ing essential config files to home directory..."
-    br;
-    rsync --exclude ".git/" \
-        --exclude ".DS_Store" \
-        --exclude "bootstrap.sh" \
-        --exclude "bootstrap.zsh" \
-        --exclude "brew-cask-apps.sh" \
-        --exclude "brew-install-cli.sh" \
-        --exclude "brew-install-media-cli.sh" \
-        --exclude "brew-cask-fonts.sh" \
-        --exclude ".osx" \
-        --exclude ".xmodmaprc*" \
-        --exclude "iterm2/" \
-        --exclude "Library/" \
-        --exclude "linux/" \
-        --exclude "Xcode/" \
-        --exclude "sublimetext/" \
-        --exclude "*.sample" --exclude ".gitignore" \
-        --exclude "README.md" --exclude "LICENSE-MIT.txt" \
-        --exclude "bin/" \
-        --exclude "init/" -avh --no-perms . ~;
-    sayDone;
+  # 1
+  echo "(1) Downloading prezto git repo..."
+  minihr;
+  set -o xtrace;
+  git clone --recursive https://github.com/drewlustro/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+  set +o xtrace;
+  minihr;
 
-    # make local npm packages dir to allow non-sudo global npm packages
-    mkdir "$HOME/.npm-packages" 2> /dev/null;
+  # 2
+  echo "(2) Symlinking home directory .z* files to prezto folder..."
+  minihr;
+  for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/z*; do
+    # TODO: prompt to overwrite if $rcfile exists
+    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.$(basename $rcfile)"
 
-    if ls --color > /dev/null 2>&1; then # GNU coreutils `ls`
-        echo "[Notice] Detected GNU ls, not copying ./bin";
-    else
-        echo "[Notice] Detected OS X, installing GNU utils into ~/bin";
-        mkdir "~/bin" > /dev/null 2>&1;
-        cp -pr ./bin ~/;
-        chmod a+x ~/bin/*;
-    fi;
+  done
+  (( $? > 0 )) && br && echo "[TIP] Fix this by deleting or moving existing ~/.z* files using:" && echo "$ rm -f ~/.z*" && br;
+  minihr;
 
-    hr;
-    echo "+ [DEPRECATED] Installing starter no-fork files if necessary..."
-    br;
-    sayDone;
+  # 3
+  echo "(3) zsh default shell..."
+  minihr;
+  read -p "Would you like to zsh ($(which zsh)) to be your default shell? (y/N) " -n 1;
+  br;
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    chsh -s $(which zsh)
+    (( $? == 0 )) && br && echo "$(which zsh) is now your default shell."
+  fi;
 
-    source ~/.bash_profile;
+  br; hr; br; br;
 }
 
-hr;
-echo "WELCOME TO DREW'S DOTFILES for Bash & ZSH, SON!"
-hr;
-echo "+ Version: $DOTFILES_VERSION"
-echo "+ Updated: $DOTFILES_UPDATED"
-echo "+ Support available at $DOTFILES_URL"
-hr;
-br;
-echo "+ Updating dotfiles from origin/master...";
+function primaryInstall() {
+  br;
+  heavyhr;
+  echo "    PRIMARY DOTFILES BATCH INSTALL"
+  hr;
+
+  echo "  rsync'ing essential config files to home directory..."
+  br;
+  rsync --exclude ".git/" \
+    --exclude ".DS_Store" \
+    --exclude "bootstrap.sh" \
+    --exclude "bootstrap.zsh" \
+    --exclude "brew-cask-apps.sh" \
+    --exclude "brew-install-cli.sh" \
+    --exclude "brew-install-media-cli.sh" \
+    --exclude "brew-cask-fonts.sh" \
+    --exclude ".osx" \
+    --exclude ".xmodmaprc*" \
+    --exclude "iterm2/" \
+    --exclude "Library/" \
+    --exclude "linux/" \
+    --exclude "Xcode/" \
+    --exclude "sublimetext/" \
+    --exclude "*.sample" --exclude ".gitignore" \
+    --exclude "README.md" --exclude "LICENSE-MIT.txt" \
+    --exclude "bin/" \
+    --exclude "init/" -avh --no-perms . ~;
+
+  minihr;
+
+  echo "  Creating miscellanous common directories..."
+  br;
+  set -o xtrace;
+  # make local npm packages dir to allow non-sudo global npm packages
+  mkdir "$HOME/.npm-packages" 2> /dev/null;
+
+  if ls --color > /dev/null 2>&1; then # GNU coreutils `ls`
+    echo "[Notice] Detected GNU ls, not copying ./bin";
+  else
+    echo "[Notice] Detected OS X, installing GNU utils into ~/bin";
+    mkdir "~/bin" > /dev/null 2>&1;
+    cp -pr ./bin ~/;
+    chmod a+x ~/bin/*;
+  fi;
+
+  set +o xtrace;
+  br;br;
+
+  sayDone;
+
+  source ~/.bash_profile;
+}
+
+# -------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------
+heavyhr;
+echo "  WELCOME TO DREW'S DOTFILES for Bash & ZSH, SON!"
+heavyhr;
+
+echo "  Version: $DOTFILES_VERSION"
+echo "  Updated: $DOTFILES_UPDATED"
+echo "  Available at $DOTFILES_URL"
+hr; br;
+echo "  Updating dotfiles from origin/master...";
 br;
 git pull origin master;
-sayDone;
+br; br;
 
 if [ "$1" = "--force" ] || [ "$1" = "-f" ]; then
-    doIt;
+  primaryInstall;
 else
-    hr;
-    echo "WARNING: This may overwrite existing Bash & ZSH dotfiles in your home directory.";
-    echo "Including: .zshrc,  .bashrc, .bash_profile, .bash_prompt & more.";
-    echo "Default aliases, exports, functions, and path additions will be added to $HOME/.shell";
-    echo "Customizable, empty versions of above will be added to $HOME if you choose.";
-    hr;
+  hr;
+  echo "  [!!!] WARNING [!!!]"
+  minihr;
+  echo "  This may overwrite existing bash / zsh / prezto dotfiles in your home directory.";
+  echo "  Including: .zshrc,  .bashrc, .bash_profile, .bash_prompt & more.";
+  echo "  Default aliases, exports, functions, and path additions will be added to $HOME/.shell";
+  echo "  Customizable, empty versions of above will be added to $HOME/.shell-custom";
+  br;
+  hr; br;
 
-    if [[ "$SHELL" == *zsh ]]; then
-        echo "Shell is: $SHELL";
-        echo "Please run this install script from bash.";
-    elif [[ "$SHELL" == *bash ]]; then
-        read -p "Are you sure you would like to proceed? (y/N) " -n 1;
-        br;
-        if [[ $REPLY =~ ^[Yy]$ ]]; then
-            doIt;
-        fi;
-    fi;
-fi;
+  if [[ "$SHELL" == *bash ]]; then
 
-if [[ "$SHELL" == *zsh ]]; then
-    echo "Shell is: $SHELL";
-    echo "Please run this install script from bash.";
-elif [[ "$SHELL" == *bash ]]; then
-    hr;
-    echo "Extra: Input system typeface replacement.";
-    echo "You can (non-desctructively) replace the OS X system font with Input, a typeface from Font Bureau.";
-    echo "It's license file is included in the git repository.";
-    echo "More Info: http://input.fontbureau.com/systemfont/"
-    hr;
-    read -p "Would you like to install Input? (y/N) " -n 1;
+    # (1) Primary Install
+    read -p "Are you sure you would like to proceed? (y/N) " -n 1;
     br;
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-        installInputFont;
-    else
-        echo "Skipping Input system font install.";
+      preztoInstall;
+      primaryInstall;
     fi;
+
+    br;
+
+    # (2) InputFont Install
+    read -p "Would you like to install Input SystemFont for OS X El Capitan? (y/N) " -n 1;
+    br;
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+      inputFontInstall;
+    else
+      echo "Skipping Input system font install.";
+    fi;
+  else
+    echo " [notice] Detected shell is: $SHELL";
+    echo " [notice] Please run this install script from bash.";
+  fi;
 fi;
 
-hr;
-br;
-br;
-br;
-br;
 
-echo "          Later!"
 
-br;
-br;
-br;
-br;
-hr;
+hr; br; br; br; br;
+echo " // PEACE //"
+br; br; br; br; hr;
 
-unset doIt;
+unset primaryInstall;
+unset preztoInstall;
+unset inputFontInstall;
+
 unset hr;
+unset minihr;
+unset heavyhr;
 unset br;
+
 unset sayDone;
-unset installInputFont;
+

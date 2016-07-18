@@ -34,7 +34,7 @@ sudo apt-get install -y build-essential
 #fc-cache -f -v
 
 # python
-sudo apt-get install python-pip python-dev
+sudo apt-get install -y python-pip python-dev
 sudo pip install --upgrade pip
 sudo pip install virtualenv
 sudo pip install pylint

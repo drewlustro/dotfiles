@@ -51,7 +51,7 @@ if [ "$PLATFORM" = "osx" ]; then
         export EDITOR=atom;
     elif [ -x "$(which subl)" ]; then
         export VISUAL=subl;
-        export EDITOR=subl;
+        export EDITOR=vim;
     fi;
 fi;
 
@@ -60,6 +60,15 @@ fi;
 # Linux Exports
 # ----------------------------------------
 if [ "$PLATFORM" = "linux" ]; then
+
+    export NPM_PACKAGES="${HOME}/.npm-packages"
+    export PATH="$NPM_PACKAGES/bin:$PATH"
+
+    # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
+    unset MANPATH # delete if you already modified MANPATH elsewhere in your config
+    export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+    export NODE_PATH=$NODE_PATH:$HOME/.npm-packages/lib/node_modules
+
     export N_PREFIX="$HOME/.local";
 fi;
 

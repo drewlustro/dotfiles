@@ -5,8 +5,8 @@
 # License: MIT
 
 DOTFILES_URL="https://github.com/drewlustro/dotfiles"
-DOTFILES_VERSION="2.0";
-DOTFILES_UPDATED="July 18, 2016 03:00 EST"
+DOTFILES_VERSION="2.0.1";
+DOTFILES_UPDATED="July 18, 2016 04:00 EST"
 # cd "$(dirname "${BASH_SOURCE}")";
 
 function br() {

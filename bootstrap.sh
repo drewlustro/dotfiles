@@ -176,6 +176,9 @@ else
   echo "  Including: .zshrc,  .bashrc, .bash_profile, .bash_prompt & more.";
   echo "  Default aliases, exports, functions, and path additions will be added to $HOME/.shell";
   echo "  Customizable, empty versions of above will be added to $HOME/.shell-custom";
+  minihr;
+  echo "  [note] if you want a clean install, first remove all existing zsh/prezto dotfiles:"
+  echo "  $ rm -rf ~/.z* ~/.zprezto*  # <<--- run before continuing"
   br;
   hr; br;
 

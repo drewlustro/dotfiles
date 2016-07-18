@@ -10,9 +10,9 @@
 # export EDITOR=atom
 # export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-export GIT_EDITOR=subl
-export VISUAL=subl
-export EDITOR=subl
+export GIT_EDITOR=vim
+export VISUAL=vim
+export EDITOR=vim
 
 export WORKON_HOME=/sites/envs
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/local/lib

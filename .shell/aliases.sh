@@ -197,6 +197,9 @@ fi;
 # ----------------------------------------
 if [ "$PLATFORM" = "linux" ]; then
     alias ainstall="sudo apt-get install -y ";
+    alias aupdate="sudo apt-get update -y ";
+    alias aupgrade="sudo apt-get install -y ";
+    alias aautoremove="sudo apt-get autoremove -y ";
     alias dirsize="du -h -d 1 | sort -hr";
 fi;
 

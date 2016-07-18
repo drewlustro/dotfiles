@@ -1,0 +1,11 @@
+To see the progress of dd once it's running, open another terminal and enter:
+
+sudo kill -USR1 $(pgrep ^dd)
+
+######################
+
+Show directories in pwd, sorted by size big to small.
+
+du -h -d 1 | sort -hr
+
+

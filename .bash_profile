@@ -56,6 +56,12 @@ for option in autocd globstar; do
 done;
 
 
+# Add tab completion for many Bash commands
+if which brew &> /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
+    source "$(brew --prefix)/share/bash-completion/bash_completion";
+elif [ -f /etc/bash_completion ]; then
+    source /etc/bash_completion;
+fi;
 
 # ----------------------------------------
 # OS X-specific
@@ -85,12 +91,12 @@ if [ "$PLATFORM" = "osx" ]; then
     complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
 fi;
 
+
 # ----------------------------------------
 # Linux
 # ----------------------------------------
 
 NPM_PACKAGES="${HOME}/.npm-packages"
-
 PATH="$NPM_PACKAGES/bin:$PATH"
 
 # Unset manpath so we can inherit from /etc/manpath via the `manpath` command

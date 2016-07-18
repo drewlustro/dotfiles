@@ -3,9 +3,11 @@
 * Platform (OS X, Linux, etc) agnostic
 * Includes non-destructive userland includes to your home directory
 
+
 ### ZSH Pre-Installation
 
 Do this part only if you're running ZSH or would like to use it as your default shell.
+
 
 ### ZSH Prerequesites: [ZSH](http://zsh.sourceforge.net/) + [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
@@ -26,7 +28,6 @@ Install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) via **`wget`**
 ```bash
 wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 ```
-
 
 
 # ✪ Easy Install of dotfiles for Bash & ZSH
@@ -125,11 +126,11 @@ DEFAULT_WORKON_HOME="/sites/envs";
 
 ### Sensible OS X defaults
 
-Executing `.osx` applies tons of hacker-friendly customization to OS X. Please take a look at this file if you fear for your personal preferences, but it is great to try out on new OS installs and old ;)
+Executing `.macos` applies tons of hacker-friendly customization to OS X. Please take a look at this file if you fear for your personal preferences, but it is great to try out on new OS installs and old ;)
 
 ```bash
 cd dotfiles
-./.osx # Does tons of hacker-friendly customization to OS X
+./.macos # Does tons of hacker-friendly customization to OS X
 ```
 
 ## Contact & Feedback
@@ -140,6 +141,7 @@ cd dotfiles
 
 Suggestions & improvements [welcome](https://github.com/drewlustro/dotfiles/issues)!
 
+
 ### Original Author Credit & Huge Thanks To:
 
 #### &nbsp;&nbsp;&nbsp;&nbsp;[Mathias](http://mathiasbynens.be/) &amp; Jason Hsieh (but not really) yep.
@@ -147,3 +149,20 @@ Suggestions & improvements [welcome](https://github.com/drewlustro/dotfiles/issu
 ### License
 
 MIT
+
+#### Thanks to…
+
+* [Mathias Bynens](https://mathiasbynens.be/)
+* [Ben Alman](http://benalman.com/) and his [dotfiles repository](https://github.com/cowboy/dotfiles)
+* [Chris Gerke](http://www.randomsquared.com/) and his [tutorial on creating an OS X SOE master image](http://chris-gerke.blogspot.com/2012/04/mac-osx-soe-master-image-day-7.html) + [_Insta_ repository](https://github.com/cgerke/Insta)
+* [Cătălin Mariș](https://github.com/alrra) and his [dotfiles repository](https://github.com/alrra/dotfiles)
+* [Gianni Chiappetta](http://gf3.ca/) for sharing his [amazing collection of dotfiles](https://github.com/gf3/dotfiles)
+* [Jan Moesen](http://jan.moesen.nu/) and his [ancient `.bash_profile`](https://gist.github.com/1156154) + [shiny _tilde_ repository](https://github.com/janmoesen/tilde)
+* [Lauri ‘Lri’ Ranta](http://lri.me/) for sharing [loads of hidden preferences](http://osxnotes.net/defaults.html)
+* [Matijs Brinkhuis](http://hotfusion.nl/) and his [dotfiles repository](https://github.com/matijs/dotfiles)
+* [Nicolas Gallagher](http://nicolasgallagher.com/) and his [dotfiles repository](https://github.com/necolas/dotfiles)
+* [Sindre Sorhus](http://sindresorhus.com/)
+* [Tom Ryder](http://blog.sanctum.geek.nz/) and his [dotfiles repository](https://github.com/tejr/dotfiles)
+* [Kevin Suttle](http://kevinsuttle.com/) and his [dotfiles repository](https://github.com/kevinSuttle/dotfiles) and [OSXDefaults project](https://github.com/kevinSuttle/OSXDefaults), which aims to provide better documentation for [`~/.macos`](https://mths.be/macos)
+* [Haralan Dobrev](http://hkdobrev.com/)
+* anyone who [contributed a patch](https://github.com/mathiasbynens/dotfiles/contributors) or [made a helpful suggestion](https://github.com/mathiasbynens/dotfiles/issues)

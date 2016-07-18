@@ -10,19 +10,19 @@ trim_trailing_whitespace = true
 
 [*.js]
 indent_style = space
-indent_size = 4
+indent_size = 2
 
 [*.html]
 indent_style = space
-indent_size = 4
+indent_size = 2
 
 [*.sass]
 indent_style = space
-indent_size = 4
+indent_size = 2
 
 [*.scss]
 indent_style = space
-indent_size = 4
+indent_size = 2
 
 [*.glsl]
 indent_style = space

@@ -16,9 +16,11 @@
 # export GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 # git config --global user.email "$GIT_AUTHOR_EMAIL"
 #
-# Use SublimeText 3 as default Git editor
-# git config --global core.editor "subl -n -w"
+# git config --global core.editor "vim"
 #
+# Prefer gpg2, if available
+# [ -x "$(which gpg2)" ] && git config --global gpg.program gpg2
+
 # Auto-set python work environment
 # DEFAULT_PYTHON_ENV="default";
 # DEFAULT_WORKON_HOME="/sites/envs";
@@ -45,6 +47,15 @@
 # export GIT_AUTHOR_EMAIL="drewlustro@gmail.com"
 # export GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 # git config --global user.email "$GIT_AUTHOR_EMAIL"
+#
+# git config --global core.editor "vim"
+#
+# GPG key setup
+# deep-nightmare (Xenial 16.04)
+## git config --global user.signingkey A03207652FC00655
+#
+# Prefer gpg2, if available
+# [ -x "$(which gpg2)" ] && git config --global gpg.program gpg2
 
 # # Auto-set python work environment
 # DEFAULT_PYTHON_ENV="default";

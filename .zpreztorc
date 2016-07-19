@@ -95,8 +95,10 @@ zstyle ':prezto:module:history-substring-search' globbing-flags ''
 # Default
 #zstyle ':prezto:module:prompt' theme 'sorin'
 
-# Drew chosen (peepcode)
-zstyle ':prezto:module:prompt' theme 'peepcode'
+# Drew selects (peepcode, paradox, skwp)
+# zstyle ':prezto:module:prompt' theme 'peepcode'
+# zstyle ':prezto:module:prompt' theme 'skwp'
+zstyle ':prezto:module:prompt' theme 'paradox'
 
 
 #

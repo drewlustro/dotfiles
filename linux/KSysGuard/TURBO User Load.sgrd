@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE KSysGuardWorkSheet>
+<WorkSheet locked="0" interval="0.02" title="TURBO User Load" columns="1" rows="1">
+ <host name="localhost" command="ksysguardd" shell="" port="-1"/>
+ <display column="0" class="FancyPlotter" version="1" vScroll="0" title="TURBO User Load" fontSize="13" svgBackground="" hLines="1" columnSpan="1" rowSpan="1" vDistance="30" labels="1" unit="" autoRange="1" manualRange="0" stacked="0" row="0" vLines="0" hScale="4" showUnit="0">
+  <beam sensorName="cpu/cpu0/user" sensorType="float" color="0xff0057ae" hostName="localhost"/>
+  <beam sensorName="cpu/cpu1/user" sensorType="float" color="0xffe20800" hostName="localhost"/>
+  <beam sensorName="cpu/cpu2/user" sensorType="float" color="0xfff3c300" hostName="localhost"/>
+  <beam sensorName="cpu/cpu3/user" sensorType="float" color="0xffaaffff" hostName="localhost"/>
+  <beam sensorName="cpu/cpu4/user" sensorType="float" color="0xff55ff7f" hostName="localhost"/>
+  <beam sensorName="cpu/cpu5/user" sensorType="float" color="0xff0028a9" hostName="localhost"/>
+  <beam sensorName="cpu/cpu6/user" sensorType="float" color="0xffffff00" hostName="localhost"/>
+  <beam sensorName="cpu/cpu7/user" sensorType="float" color="0xffff00ff" hostName="localhost"/>
+ </display>
+</WorkSheet>

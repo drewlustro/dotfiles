@@ -45,11 +45,7 @@ if [ "$PLATFORM" = "osx" ]; then
     # Always enable colored `grep` output
     export GREP_OPTIONS="--color=auto"
 
-    # prefer Atom.app as default editor, then Sublime Text, if either exist
-    if [ -x "$(which atom)" ]; then
-        export VISUAL=atom;
-        export EDITOR=atom;
-    elif [ -x "$(which subl)" ]; then
+    if [ -x "$(which subl)" ]; then
         export VISUAL=subl;
         export EDITOR=vim;
     fi;

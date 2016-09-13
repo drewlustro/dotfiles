@@ -51,13 +51,6 @@ export LESS_TERMCAP_md="$ORANGE"
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
 
-if [ "$PLATFORM" = "osx" ]; then # OS X `ls`
-  # Always enable colored `grep` output
-  export GREP_OPTIONS="--color=auto";
-  # Link Homebrew casks in `/Applications` rather than `~/Applications`
-  export HOMEBREW_CASK_OPTS="--appdir=/Applications";
-fi
-
 # Prefer 64-bit architecture when building
 export ARCHFLAGS='-arch x86_64'
 

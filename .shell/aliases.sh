@@ -201,6 +201,7 @@ if [ "$PLATFORM" = "linux" ]; then
     alias aupgrade="sudo apt-get install -y ";
     alias aautoremove="sudo apt-get autoremove -y ";
     alias dirsize="du -h -d 1 | sort -hr";
+    alias dmesg="dmesg -wH";
 fi;
 
 

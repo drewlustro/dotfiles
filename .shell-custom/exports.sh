@@ -41,19 +41,3 @@ if [[ "$SHELL" == *zsh ]]; then
     setopt HIST_BEEP                 # Beep when accessing non-existent history.
 fi;
 
-# Prefer US English and use UTF-8
-export LANG="en_US"
-export LC_ALL="en_US.UTF-8"
-
-# Highlight section titles in manual pages
-export LESS_TERMCAP_md="$ORANGE"
-
-# Don’t clear the screen after quitting a manual page
-export MANPAGER="less -X"
-
-# Prefer 64-bit architecture when building
-export ARCHFLAGS='-arch x86_64'
-
-# Node default environment
-export NODE_ENV=development
-

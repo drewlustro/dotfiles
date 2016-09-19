@@ -12,11 +12,8 @@ export HISTSIZE=32768
 export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoredups
 
-# Make some commands not show up in history
-export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
-
 # Prefer US English and use UTF-8
-export LANG="en_US"
+export LC_ALL="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
 # Highlight section titles in manual pages
@@ -27,9 +24,6 @@ export MANPAGER="less -X"
 
 # Prefer native architecture when building
 export ARCHFLAGS="-arch $(uname -m)";
-
-# Link Homebrew casks in `/Applications` rather than `~/Applications`
-export HOMEBREW_CASK_OPTS="--appdir=/Applications";
 
 # Node default environment
 export NODE_ENV=development

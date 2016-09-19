@@ -51,8 +51,10 @@
 # git config --global core.editor "vim"
 #
 # GPG key setup
-# deep-nightmare (Xenial 16.04)
-## git config --global user.signingkey A03207652FC00655
+## deep-nightmare (Xenial 16.04)
+# git config --global user.signingkey A03207652FC00655
+## sweet-nightmare (Xenial 16.04 / KDE Neon 5.7)
+# git config --global user.signingkey  5EB19E1AE0A65B63
 #
 # Prefer gpg2, if available
 # [ -x "$(which gpg2)" ] && git config --global gpg.program gpg2

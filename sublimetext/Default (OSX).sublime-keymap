@@ -1,0 +1,33 @@
+[
+{
+    "keys": ["ctrl+y"],
+    "command": "show_overlay",
+    "args": {
+        "overlay": "command_palette",
+        "text": "Snippet: "
+    }
+    },
+    { "keys": ["command+shift+t"], "command": "reopen_last_file" },
+    { "keys": ["ctrl+r"], "command": "expand_selection_to_paragraph" },
+
+    {"keys": ["alt+up"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": false}},
+    {"keys": ["alt+down"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": true}},
+    {"keys": ["shift+alt+up"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": false, "extend": true}},
+    {"keys": ["shift+alt+down"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": true, "extend": true}},
+
+    { "keys": ["command+insert"], "command": "reindent", "args": {"single_line": false}},
+    {"keys": ["command+d"], "command": "run_macro_file", "args": {"file": "Packages/User/selffect-copy.sublime-macro" }},
+    { "keys": ["command+v"], "command": "paste_and_indent" },
+    { "keys": ["command+shift+v"], "command": "paste" },
+
+    { "keys": ["f8"], "command": "next_bookmark" },
+    { "keys": ["shift+f8"], "command": "prev_bookmark" },
+    { "keys": ["ctrl+f8"], "command": "toggle_bookmark" },
+    { "keys": ["ctrl+super+alt+f8"], "command": "clear_bookmarks" },
+    { "keys": ["alt+f8"], "command": "select_all_bookmarks" },
+
+    { "keys": ["command+alt+j"], "command": "fix" },
+    { "keys": ["ctrl+shift+t"], "command": "open_terminal" },
+    { "keys": ["ctrl+shift+alt+t"], "command": "open_terminal_project_folder" }
+
+]

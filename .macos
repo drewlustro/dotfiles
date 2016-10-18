@@ -601,7 +601,7 @@ tell application "Terminal"
 	local allOpenedWindows
 	local initialOpenedWindows
 	local windowID
-	set themeName to "Solarized Dark xterm-256color"
+	set themeName to "Shaman"
 
 	(* Store the IDs of all the open terminal windows. *)
 	set initialOpenedWindows to id of every window
@@ -650,7 +650,7 @@ EOD
 defaults write com.apple.terminal SecureKeyboardEntry -bool true
 
 # Install the Solarized Dark theme for iTerm
-open "${HOME}/init/Solarized Dark.itermcolors"
+open "${HOME}/iterm2/Japanesque.itermcolors"
 
 # Don’t display the annoying prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
@@ -813,7 +813,9 @@ defaults write com.irradiatedsoftware.SizeUp ShowPrefsOnNextStart -bool false
 ###############################################################################
 
 # Install Sublime Text settings
-cp -r init/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null
+cp -r sublimetext/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null
+# Install Sublime Text keymap
+cp -r sublimetext/Default\ (OSX).sublime-keymap ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Default\ (OSX).sublime-keymap 2> /dev/null
 
 ###############################################################################
 # Transmission.app                                                            #

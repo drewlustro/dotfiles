@@ -5,8 +5,8 @@
 # License: MIT
 
 DOTFILES_URL="https://github.com/drewlustro/dotfiles"
-DOTFILES_VERSION="2.0.1";
-DOTFILES_UPDATED="July 18, 2016 04:00 EST"
+DOTFILES_VERSION="2.1.0";
+DOTFILES_UPDATED="2016-10-18T03:55:31.453Z"
 # cd "$(dirname "${BASH_SOURCE}")";
 
 function br() {
@@ -124,7 +124,7 @@ function primaryInstall() {
     --exclude "*.sample" --exclude ".gitignore" \
     --exclude "README.md" --exclude "LICENSE-MIT.txt" \
     --exclude "bin/" \
-    --exclude "init/" -avh --no-perms . ~;
+    -avh --no-perms . ~;
 
   minihr;
 

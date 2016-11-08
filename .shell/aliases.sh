@@ -33,6 +33,9 @@ alias gitpush-originmaster="git push origin master"
 alias gitadd-all="git add --all && git add -u"
 alias gitcommit-message="git commit -m"
 
+# tree
+alias treee="tree -hL 2 --filelimit 20 --dirsfirst"
+
 # ls Helpers
 
 # Detect which `ls` flavor is in use

@@ -289,15 +289,11 @@ function toolbelt-raspi-image-restore() {
 function toolbelt-dns-flush() {
     # El Capitan 10.11
     if [[ -x "$(which dscacheutil)" ]]; then
-        toolbelt-shell-debug-on;
         sudo dscacheutil -flushcache;
-        toolbelt-shell-debug-off;
         return 0;
     # Yosemite 10.10
     elif  [[ -x "$(which discoveryutil)" ]]; then
-        toolbelt-shell-debug-on;
         sudo discoveryutil mdnsflushcache;
-        toolbelt-shell-debug-off;
         return 0;
     fi;
 

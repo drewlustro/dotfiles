@@ -353,5 +353,15 @@ if [ "$PLATFORM" = "linux" ]; then
             rsync -ap ~/.config/Zeal ~/dev-local/dotfiles/linux/.config/
 
         }
+
+    elif [ "$LINUX_DESKTOP" = "kde" ]; then 
+
+      function open() {
+        if [ -z "$1" ]; then
+            nohup dolphin $(pwd) > /dev/null 2>&1 &
+        else
+            nohup dolphin $1 > /dev/null 2>&1 &
+        fi;
+      }
     fi;
 fi;

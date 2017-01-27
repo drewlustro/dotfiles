@@ -9,6 +9,11 @@ if [ "$PLATFORM" = "osx" ]; then
         [ -d $COREUTILS_BIN ] && export PATH="$COREUTILS_BIN:$PATH";
         [ -d $COREUTILS_MAN ] && export MANPATH="$COREUTILS_MAN:$MANPATH";
     fi;
+
+    # If Calibre is installed, provide CLI tools for converting books
+    if [ -d "/Applications/calibre.app/Contents/console.app/Contents/MacOS" ]; then
+      export PATH="$PATH:/Applications/calibre.app/Contents/console.app/Contents/MacOS";
+    fi;
 fi;
 
 # Load RVM scripts if RVM is installed

@@ -227,29 +227,44 @@ else
   hr; br;
 
   CURRENT_SHELL=$(echo $0);
+  if [[ "$CURRENT_SHELL" == *bootstrap\.sh ]]; then
+    CURRENT_SHELL="$SHELL"
+  fi;
 
+  QUESTION_PROMPT_STRING="Are you sure you would like to install/update/abort? (i/u/A) "
+  # (1) Primary Install
   if [[ "$CURRENT_SHELL" == *bash ]]; then
+    read -p "$QUESTION_PROMPT_STRING" -n 1;
+  elif [[ "$CURRENT_SHELL" == *zsh ]]; then
+    read "REPLY?$QUESTION_PROMPT_STRING"
+  else
+    echo "Unsupported shell '$CURRENT_SHELL' (requires bash or zsh)"
+  fi;
 
-    # (1) Primary Install
-    read -p "Are you sure you would like to install/update/abort? (i/u/A) " -n 1;
-    br;
-    if [[ $REPLY =~ ^[Ii]$ ]]; then
+  br;
+
+  if [[ $REPLY =~ ^[Ii]$ ]]; then
+    # Require bash for prezto + primary install
+    if [[ "$CURRENT_SHELL" == *bash ]]; then
       preztoInstall;
       primaryInstall;
       inputFontInstall;
-    elif [[ $REPLY =~ ^[Uu]$ ]]; then
-      updateShellLibraryOnly;
     else
-      echo "[!] ABORTED."
+      echo "Current shell must be bash to do initial install! (currently is $(basename $CURRENT_SHELL))"
     fi;
+  elif [[ $REPLY =~ ^[Uu]$ ]]; then
+    updateShellLibraryOnly;
+  else
+    echo "[!] ABORTED."
   fi;
+
 fi;
 
 
 
-hr; br; br; br; br;
+br; hr; br;
 echo " // PEACE //"
-br; br; br; br; hr;
+br; hr; br;
 
 unset primaryInstall;
 unset preztoInstall;

@@ -206,7 +206,7 @@ if [ "$PLATFORM" = "linux" ]; then
     alias dirsize="du -h -d 1 | sort -hr";
     alias dmesg="dmesg -wH";
 
-    alias rebootgracefully-kde="qdbus org.kde.ksmserver /KSMServer logout 0 1 0";
+    alias reboot-gracefully-kde="qdbus org.kde.ksmserver /KSMServer logout 0 1 0";
 fi;
 
 

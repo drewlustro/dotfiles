@@ -5,8 +5,8 @@
 # License: MIT
 
 DOTFILES_URL="https://github.com/drewlustro/dotfiles"
-DOTFILES_VERSION="2.1.0";
-DOTFILES_UPDATED="2016-10-18T03:55:31.453Z"
+DOTFILES_VERSION="2.2.0";
+DOTFILES_UPDATED="2017-01-27T16:33:30.861Z"
 # cd "$(dirname "${BASH_SOURCE}")";
 
 function br() {
@@ -41,23 +41,39 @@ function sayDone() {
 }
 
 function inputFontInstall() {
-  br;
-  heavyhr;
-  echo "    INPUT FONT INSTALL";
-  hr;
 
-  echo "  http://input.fontbureau.com/systemfont/"
-  minihr;
-  echo "  Rsync'ing essential config files to /Library/Fonts directory..."
-  br;
-  rsync -avh --no-perms Library/Fonts/*.ttf /Library/Fonts/;
-  br;
-  minihr;
-  echo "  Installed Input Font into /Library/Fonts "
-  echo "  Please LOGOUT and LOGIN to see changes."
-  echo "  Remove .tff files from /Libary/Fonts/SystemFont* to uninstall."
+  if [ "$PLATFORM" = "osx" ]; then
 
-  br; hr; br; br;
+    # (2) InputFont Install
+    read -p "Would you like to install Input SystemFont for OS X El Capitan? (y/N) " -n 1;
+    br;
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+      br;
+      br;
+      heavyhr;
+      echo "    INPUT FONT INSTALL";
+      hr;
+
+      echo "  http://input.fontbureau.com/systemfont/"
+      minihr;
+      echo "  Rsync'ing essential config files to /Library/Fonts directory..."
+      br;
+      rsync -avh --no-perms Library/Fonts/*.ttf /Library/Fonts/;
+      br;
+      minihr;
+      echo "  Installed Input Font into /Library/Fonts "
+      echo "  Please LOGOUT and LOGIN to see changes."
+      echo "  Remove .tff files from /Libary/Fonts/SystemFont* to uninstall."
+
+      br; hr; br; br;
+    else
+      echo "Skipping Input system font install.";
+    fi;
+  else
+    echo " [notice] Detected shell is: $SHELL";
+    echo " [notice] Please run this install script from bash.";
+  fi;
+
 }
 
 function preztoInstall() {
@@ -151,8 +167,36 @@ function primaryInstall() {
   source ~/.bash_profile;
 }
 
+function updateShellLibraryOnly() {
+  br;
+  heavyhr;
+  echo "    UPDATE SHELL DOTFILES (~/.shell)"
+  hr;
+
+  echo "  rsync'ing (dotfiles/.shell library) files to home (~/.shell)..."
+  br;
+  rsync -avh --no-perms .shell ~;
+
+  minihr;
+
+  echo "Updated. Use 'reload' to pull settings into this current TTY, or open new shell."
+  br;
+
+}
+
 # -------------------------------------------------------------------------------
 # -------------------------------------------------------------------------------
+
+PLATFORM="unknown";
+unamestr="$(uname)";
+if [ "$unamestr" = 'Darwin' ]; then
+    export PLATFORM='osx';
+elif [ "$unamestr" = 'Linux' ]; then
+    export PLATFORM='linux';
+elif [ "$unamestr" = 'FreeBSD' ]; then
+    export PLATFORM='freebsd';
+fi;
+
 heavyhr;
 echo "  WELCOME TO DREW'S DOTFILES for Bash & ZSH, SON!"
 heavyhr;
@@ -182,29 +226,22 @@ else
   br;
   hr; br;
 
-  if [[ "$SHELL" == *bash ]]; then
+  CURRENT_SHELL=$(echo $0);
+
+  if [[ "$CURRENT_SHELL" == *bash ]]; then
 
     # (1) Primary Install
-    read -p "Are you sure you would like to proceed? (y/N) " -n 1;
+    read -p "Are you sure you would like to install/update/abort? (i/u/A) " -n 1;
     br;
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
+    if [[ $REPLY =~ ^[Ii]$ ]]; then
       preztoInstall;
       primaryInstall;
-    fi;
-
-    br;
-
-    # (2) InputFont Install
-    read -p "Would you like to install Input SystemFont for OS X El Capitan? (y/N) " -n 1;
-    br;
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
       inputFontInstall;
+    elif [[ $REPLY =~ ^[Uu]$ ]]; then
+      updateShellLibraryOnly;
     else
-      echo "Skipping Input system font install.";
+      echo "[!] ABORTED."
     fi;
-  else
-    echo " [notice] Detected shell is: $SHELL";
-    echo " [notice] Please run this install script from bash.";
   fi;
 fi;
 
@@ -217,6 +254,7 @@ br; br; br; br; hr;
 unset primaryInstall;
 unset preztoInstall;
 unset inputFontInstall;
+unset updateShellLibraryOnly;
 
 unset hr;
 unset minihr;

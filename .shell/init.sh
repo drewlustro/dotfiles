@@ -30,7 +30,7 @@ if [ "$PLATFORM" = "linux" ]; then
         LINUX_DESKTOP="gnome";
     elif [[ "$XDG_CURRENT_DESKTOP" == *Unity ]]; then
         LINUX_DESKTOP="unity";
-    elif [[ "$XDG_CURRENT_DESKTOP" == *kde ]]; then
+    elif [[ "$XDG_CURRENT_DESKTOP" == *KDE ]]; then
         LINUX_DESKTOP="kde";
     else
         LINUX_DESKTOP="generic";

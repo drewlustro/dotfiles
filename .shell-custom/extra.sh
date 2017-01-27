@@ -55,6 +55,8 @@
 ## git config --global user.signingkey A03207652FC00655
 # sweet-nightmare (Xenial 16.04 / KDE Neon 5.7)
 ## git config --global user.signingkey 64DDB211EE258F8C
+# sage (macOS rMBP 2013)
+## git config --global user.signingkey 65A3421DB46F0303
 #
 # Prefer gpg2, if available
 # [ -x "$(which gpg2)" ] && git config --global gpg.program gpg2

@@ -199,12 +199,14 @@ fi;
 # Linux Shortcuts
 # ----------------------------------------
 if [ "$PLATFORM" = "linux" ]; then
-    alias ainstall="sudo apt-get install -y ";
-    alias aupdate="sudo apt-get update -y ";
-    alias aupgrade="sudo apt-get install -y ";
-    alias aautoremove="sudo apt-get autoremove -y ";
+    alias ainstall="sudo apt install -y ";
+    alias aupdate="sudo apt update -y ";
+    alias aupgrade="sudo apt upgrade -y";
+    alias aautoremove="sudo apt autoremove -y";
     alias dirsize="du -h -d 1 | sort -hr";
     alias dmesg="dmesg -wH";
+
+    alias rebootgracefully-kde="qdbus org.kde.ksmserver /KSMServer logout 0 1 0";
 fi;
 
 

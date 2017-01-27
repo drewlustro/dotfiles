@@ -2,19 +2,37 @@
 # Convert RAW images to 2560 dimension max JPEG
 if [ -x "$(which convert)" ]; then
   function convert-raw-to-jpg() {
-    local quality=${1:-80};
+    local quality=${1:-85};
     local max_dim=${2:-2650};
     local source_files=${3:-\*.CR2};
-    echo "Usage: convert-raw-to-jpg [quality=80] [max-dimension-px=2560] [source=\*.CR2]";
+    local maxdepth=${4:-1};
+    echo "Usage: convert-raw-to-jpg [quality=85] [max-dimension-px=2560] [source=\*.CR2] [maxdepth=1]";
     echo "Converting all ${source_files} to JPEG (${quality} quality, ${max_dim}px max) to output/...";
     mkdir -p output 2> /dev/null;
-    find . -type f -iname "${source_files}" -print0 | \
+    find . -maxdepth 1 -type f -iname "${source_files}" -print0 | \
       xargs -0 -n 1 -P 8 -I {} convert -verbose -units PixelsPerInch {} \
       -colorspace sRGB -resize ${max_dim}x${max_dim} -set filename:new '%t-%wx%h' \
       -density 72 -format JPG -quality ${quality} 'output/%[filename:new].jpg';
     echo 'Done.';
 
   }
+
+  function convert-jpg-to-jpg() {
+    local quality=${1:-85};
+    local max_dim=${2:-2650};
+    local source_files=${3:-\*.jpg};
+    local maxdepth=${4:-1};
+    echo "Usage: convert-jpg-to-jpg [quality=85] [max-dimension-px=2560] [source=\*.jpg] [maxdepth=1]";
+    echo "Converting all ${source_files} to JPEG (${quality} quality, ${max_dim}px max) to output/...";
+    mkdir -p output 2> /dev/null;
+    find . -maxdepth ${maxdepth} -type f -iname "${source_files}" -print0 | \
+      xargs -0 -n 1 -P 8 -I {} convert -verbose -units PixelsPerInch {} \
+      -colorspace sRGB -resize ${max_dim}x${max_dim} -set filename:new '%t' \
+      -density 72 -format JPG -quality ${quality} 'output/%[filename:new].jpg';
+    echo 'Done.';
+
+  }
+  
 fi;
 
 
@@ -217,7 +235,7 @@ function hr() {
 #
 if [ "$PLATFORM" = "osx" ]; then
 
-function toolbelt-raspi-image-dump() {
+  function toolbelt-raspi-image-dump() {
     local now=$(date +"%Y-%m-%d__%H-%M-%S");
     local host=${2:="raspi"};
     local diskNumber=${1:--1}
@@ -250,9 +268,9 @@ function toolbelt-raspi-image-dump() {
 
     echo "\nAborted.";
     return 1;
-}
+  }
 
-function toolbelt-raspi-image-restore() {
+  function toolbelt-raspi-image-restore() {
     local diskNumber=${1:--1}
     local bs="1M"
     local cmd="gzip -dc $2 | sudo dd of=/dev/rdisk$1 bs=$bs"
@@ -284,26 +302,22 @@ function toolbelt-raspi-image-restore() {
 
     echo "\nAborted.";
     return 1;
-}
+  }
 
-function toolbelt-dns-flush() {
-    # El Capitan 10.11
+  function toolbelt-dns-flush() {
+    # El Capitan 10.11+
     if [[ -x "$(which dscacheutil)" ]]; then
-        toolbelt-shell-debug-on;
         sudo dscacheutil -flushcache;
-        toolbelt-shell-debug-off;
         return 0;
     # Yosemite 10.10
     elif  [[ -x "$(which discoveryutil)" ]]; then
-        toolbelt-shell-debug-on;
         sudo discoveryutil mdnsflushcache;
-        toolbelt-shell-debug-off;
         return 0;
     fi;
 
     echo "Cannot determine proper tool to flush dns on this OS.";
     return 1;
-}
+  }
 
 fi;
 
@@ -312,50 +326,61 @@ fi;
 # ----------------------------------------
 if [ "$PLATFORM" = "linux" ]; then
 
-    if [ "$LINUX_DESKTOP" = "xfce" ]; then
-        # launches Xfce4 FileManager; behaves similar to OS X's "open" command
-        function open() {
-            if [ -z "$1" ]; then
-                exo-open --launch FileManager --working-directory $(pwd);
-            else
-                exo-open --launch FileManager --working-directory $1;
-            fi;
-        }
+  if [ "$LINUX_DESKTOP" = "xfce" ]; then
+    # launches Xfce4 FileManager; behaves similar to OS X's "open" command
+    function open() {
+      if [ -z "$1" ]; then
+        exo-open --launch FileManager --working-directory $(pwd);
+      else
+        exo-open --launch FileManager --working-directory $1;
+      fi;
+    }
 
-        function toolbelt-linux-dotfiles-dump() {
-            hr; echo "+ dconf"; hr;
-            dconf dump / > ~/dev-local/dotfiles/linux/deep-nightmare.dconf.dump
+    function toolbelt-linux-dotfiles-dump() {
+      hr; echo "+ dconf"; hr;
+      dconf dump / > ~/dev-local/dotfiles/linux/deep-nightmare.dconf.dump
 
-            hr; echo "+ ~/.conky"; hr;
-            rsync -ap ~/.conky ~/dev-local/dotfiles/linux/
+      hr; echo "+ ~/.conky"; hr;
+      rsync -ap ~/.conky ~/dev-local/dotfiles/linux/
 
-            hr; echo "+ ~/.config/compiz-1"; hr;
-            rsync -ap ~/.config/compiz-1 ~/dev-local/dotfiles/linux/.config/
+      hr; echo "+ ~/.config/compiz-1"; hr;
+      rsync -ap ~/.config/compiz-1 ~/dev-local/dotfiles/linux/.config/
 
-            hr; echo "+ ~/.config/menus"; hr;
-            rsync -ap ~/.config/menus ~/dev-local/dotfiles/linux/.config/
+      hr; echo "+ ~/.config/menus"; hr;
+      rsync -ap ~/.config/menus ~/dev-local/dotfiles/linux/.config/
 
-            hr; echo "+ ~/.config/pulse"; hr;
-            rsync -ap ~/.config/pulse ~/dev-local/dotfiles/linux/.config/
+      hr; echo "+ ~/.config/pulse"; hr;
+      rsync -ap ~/.config/pulse ~/dev-local/dotfiles/linux/.config/
 
-            hr; echo "+ ~/.config/Thunar"; hr;
-            rsync -ap ~/.config/Thunar ~/dev-local/dotfiles/linux/.config/
+      hr; echo "+ ~/.config/Thunar"; hr;
+      rsync -ap ~/.config/Thunar ~/dev-local/dotfiles/linux/.config/
 
-            hr; echo "+ ~/.config/transmission"; hr;
-            rsync -ap ~/.config/transmission ~/dev-local/dotfiles/linux/.config/
+      hr; echo "+ ~/.config/transmission"; hr;
+      rsync -ap ~/.config/transmission ~/dev-local/dotfiles/linux/.config/
 
-            hr; echo "+ ~/.config/terminator"; hr;
-            rsync -ap ~/.config/terminator ~/dev-local/dotfiles/linux/.config/
+      hr; echo "+ ~/.config/terminator"; hr;
+      rsync -ap ~/.config/terminator ~/dev-local/dotfiles/linux/.config/
 
-            hr; echo "+ ~/.config/vlc"; hr;
-            rsync -ap ~/.config/vlc ~/dev-local/dotfiles/linux/.config/
+      hr; echo "+ ~/.config/vlc"; hr;
+      rsync -ap ~/.config/vlc ~/dev-local/dotfiles/linux/.config/
 
-            hr; echo "+ ~/.config/xfce4"; hr;
-            rsync -ap ~/.config/xfce4 ~/dev-local/dotfiles/linux/.config/
+      hr; echo "+ ~/.config/xfce4"; hr;
+      rsync -ap ~/.config/xfce4 ~/dev-local/dotfiles/linux/.config/
 
-            hr; echo "+ ~/.config/Zeal"; hr;
-            rsync -ap ~/.config/Zeal ~/dev-local/dotfiles/linux/.config/
+      hr; echo "+ ~/.config/Zeal"; hr;
+      rsync -ap ~/.config/Zeal ~/dev-local/dotfiles/linux/.config/
 
-        }
-    fi;
+    }
+
+  elif [ "$LINUX_DESKTOP" = "kde" ]; then 
+
+    # launches Dolphin, KDE's file manager; behaves similar to OS X's "open" command
+    function open() {
+      if [ -z "$1" ]; then
+          nohup dolphin $(pwd) > /dev/null 2>&1 &
+      else
+          nohup dolphin $1 > /dev/null 2>&1 &
+      fi;
+    }
+  fi;
 fi;

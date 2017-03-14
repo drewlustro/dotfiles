@@ -97,7 +97,7 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 # Converts 24bit / 96kHz FLAC to 16bit / 44.1kHz FLAC using SoX
 # (install SoX with homebrew: brew install sox)
 if [ -x "$(which sox)" ]; then
-    alias flac2496-to-flac1644="mkdir 16-44; for i in *.flac; do sox '$i' -S -r 44100 -b 16 '16-44/$i'; done";
+    alias flac2496-to-flac1644='mkdir 16-44; for i in *.flac; do sox "$i" -S -r 44100 -b 16 "16-44/$i"; done';
 fi;
 
 # ----------------------------------------

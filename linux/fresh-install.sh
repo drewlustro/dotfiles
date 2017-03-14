@@ -39,8 +39,8 @@ sudo pip install --upgrade pip
 sudo pip install virtualenv
 sudo pip install pylint
 
-# node 4.x LTS
-curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+# node 6.x LTS
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get update
 sudo apt-get install -y nodejs
 sudo apt-get install -y npm
@@ -48,7 +48,7 @@ sudo apt-get install -y npm
 mkdir ~/.npm-packages ~/.npm 2>/dev/null;
 
 # npm packges
-npm install -g npm bower yo grunt-cli gulp babel webpack npm-check-updates n
+npm install -g bower yo grunt-cli gulp babel webpack npm-check-updates n vue-cli eslint
 
 # essentials
 sudo apt-get install -y \

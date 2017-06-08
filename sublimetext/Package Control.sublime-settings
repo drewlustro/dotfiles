@@ -1,0 +1,45 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AlignTab",
+		"ANSIescape",
+		"Arduino-like IDE",
+		"auto-save",
+		"AutoFileName",
+		"BracketHighlighter",
+		"DashDoc",
+		"DocBlockr",
+		"EditorConfig",
+		"Git",
+		"Glue",
+		"Gutter Themes for SL",
+		"HTMLBeautify",
+		"IcedCoffeeScript",
+		"JavaScriptNext - ES6 Syntax",
+		"JsPrettier",
+		"Markdown Preview",
+		"Material Theme",
+		"Materialize",
+		"nginx",
+		"OpenGL Shading Language (GLSL)",
+		"Package Control",
+		"PackageResourceViewer",
+		"Predawn",
+		"Pretty JSON",
+		"Sass",
+		"SassBeautify",
+		"SideBarEnhancements",
+		"SublimeLinter",
+		"SublimeLinter-contrib-eslint",
+		"SublimeLinter-jshint",
+		"Terminal",
+		"Theme - Flatland",
+		"Vue Syntax Highlight",
+		"Vuejs Complete Package",
+		"Vuejs Snippets"
+	]
+}

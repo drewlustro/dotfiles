@@ -28,6 +28,7 @@
 
     { "keys": ["command+alt+j"], "command": "fix" },
     { "keys": ["ctrl+shift+t"], "command": "open_terminal" },
-    { "keys": ["ctrl+shift+alt+t"], "command": "open_terminal_project_folder" }
+    { "keys": ["ctrl+shift+alt+t"], "command": "open_terminal_project_folder" },
+    { "keys": ["command+b"], "command": "js_prettier" }
 
 ]

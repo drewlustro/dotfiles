@@ -117,6 +117,15 @@ rm -rf fonts
 popd
 
 # y-ppa-manager
-sudo add-apt-repository ppa:webupd8team/y-ppa-manager
+sudo add-apt-repository ppa:webupd8team/y-ppa-manager -y
 sudo apt-get update
 sudo apt-get install -y y-ppa-manager
+
+# Sublime Text 3
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt-get update && sudo apt-get install sublime-text -y
+cp ../sublimetext/Package\ Control.sublime-settings ~/.config/sublime-text-3/Packages/User/
+cp ../sublimetext/Preferences.sublime-settings ~/.config/sublime-text-3/Packages/User/
+
+

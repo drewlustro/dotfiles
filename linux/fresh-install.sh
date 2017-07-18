@@ -103,6 +103,19 @@ sudo mkdir -p /sites/pool
 sudo mkdir -p /sites/maxrelax
 sudo chmod -R 0755 /sites
 
+# dev-local setup
+mkdir -p ~/dev-local
+
+# powerline fonts
+pushd $(pwd)
+cd ~/dev-local
+git clone https://github.com/powerline/fonts.git
+cd fonts
+./install.sh
+cd ..
+rm -rf fonts
+popd
+
 # y-ppa-manager
 sudo add-apt-repository ppa:webupd8team/y-ppa-manager
 sudo apt-get update

@@ -25,11 +25,20 @@ Install [ZSH](http://zsh.sourceforge.net/) via `apt` (Debian/Ubuntu)
 sudo apt-get install zsh -y
 ```
 
+Launch ZSH and install [prezto](https://github.com/sorin-ionescu/prezto)
+
+```bash
+zsh
+cd
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+```
+
 # ✪ EZ Dotfiles Install
 
 You can clone the repository wherever you want. (I like to keep it in `~/dev-local/dotfiles`. The bootstrapper script will pull in the latest version from the master branch before installing. Remember to run these commands from a `bash` shell!
 
 ```bash
+bash -l # make sure we're running bash
 git clone https://github.com/drewlustro/dotfiles.git && cd dotfiles && source bootstrap.sh
 ```
 

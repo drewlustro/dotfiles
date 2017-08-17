@@ -1,6 +1,6 @@
 # Drew's Platform & Shell Agnostic Dotfiles
 
-`Version 3.0.0`
+`Version 3.0.0 / August 17, 2017`
 
 * Works with both **bash** and **zsh**
 * Platform (OS X, Linux, etc) agnostic

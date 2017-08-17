@@ -83,7 +83,6 @@ function primaryInstall() {
   rsync --exclude ".git/" \
     --exclude ".DS_Store" \
     --exclude "bootstrap.sh" \
-    --exclude "bootstrap.zsh" \
     --exclude "brew-cask-apps.sh" \
     --exclude "brew-install-cli.sh" \
     --exclude "brew-install-media-cli.sh" \
@@ -91,7 +90,8 @@ function primaryInstall() {
     --exclude ".osx" \
     --exclude ".xmodmaprc*" \
     --exclude "iterm2/" \
-    --exclude "Library/" \
+    --exclude "etc/"
+    --exclude "terminal-themes/"
     --exclude "linux/" \
     --exclude "Xcode/" \
     --exclude "sublimetext/" \
@@ -106,7 +106,7 @@ function primaryInstall() {
   br;
   set -o xtrace;
   # make local npm packages dir to allow non-sudo global npm packages
-  mkdir "$HOME/.npm-packages" 2> /dev/null;
+  mkdir "$HOME/dev-local" 2> /dev/null;
 
   if ls --color > /dev/null 2>&1; then # GNU coreutils `ls`
     echo "[Notice] Detected GNU ls, not copying ./bin";

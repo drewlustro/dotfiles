@@ -196,6 +196,7 @@ if [ "$PLATFORM" = "osx" ]; then
 
     alias toolbelt-shell-debug-on="setopt verbose; set -xv"
     alias toolbelt-shell-debug-off="set +xv; unsetopt verbose;"
+    alias toolbelt-postres-find-process="sudo lsof -iTCP -sTCP:LISTEN -n -P | grep 5432";
 
 fi;
 

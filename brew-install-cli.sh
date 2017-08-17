@@ -56,6 +56,10 @@ brew install openssh
 brew install screen
 brew install homebrew/php/php56 --with-gmp
 
+# Exa replacement for ls
+# https://github.com/ogham/exa
+brew install exa
+
 # Dependency libs
 brew install cmake
 brew install zlib
@@ -78,6 +82,7 @@ brew install ack
 brew install autojump # j command to move to directories quickly
 brew install git
 brew install git-lfs
+brew install ufraw --with-exiv2 # RAW image support for imagemagick
 brew install imagemagick --with-webp
 brew install mackup
 brew install nmap

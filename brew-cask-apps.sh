@@ -17,34 +17,32 @@ brew tap caskroom/versions
 
 APPS=(
         alfred
-        appcleaner
         atom
         audacity
-        caffeine
-        cloud
+        cloudapp
         colorpicker-developer
         colorpicker-hex
         dash
         divvy
         dropbox
-        flux
-        github
+        github-desktop
         google-chrome
         google-chrome-canary
-        google-drive
         handbrake
-        handbrakecli
+        handbrakebatch
         imagealpha
         imageoptim
         iterm2
-        karabiner
+        karabiner-elements
         mactracker
-        opera-next
+        postico
         quicklook-json
+        quicklook-csv
         sequel-pro
         skype
         slack
         spotify
+        swinsian
         sublime-text
         the-unarchiver
         torbrowser
@@ -52,12 +50,13 @@ APPS=(
         virtualbox
         vlc
         xact
+        xld
 );
 
 echo "Installing apps.."
 for app in ${APPS[@]}; do
     echo "Installing '$app'..."
-    brew cask install $app
+    brew cask install --appdir="/Applications" $app
 done;
 
 brew cask alfred link

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # Drew's Dotfiles
 # Sensible defaults that work great for both Bash and ZSH!
 # https://github.com/drewlustro/dotfiles
@@ -31,41 +32,6 @@ function sayDone() {
   echo "See each shell file above to see which components will be (non-destructively) installed."
   echo "Hope you enjoy! –Drew"
   br; hr; br; br;
-}
-
-function inputFontInstall() {
-
-  if [ "$PLATFORM" = "osx" ]; then
-
-    # (2) InputFont Install
-    read -p "Would you like to install Input SystemFont for OS X El Capitan? (y/N) " -n 1;
-    br;
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-      br;
-      br;
-      heavyhr;
-      echo "  INPUT FONT INSTALL";
-      hr;
-
-      echo "http://input.fontbureau.com/systemfont/"
-      minihr;
-      echo "Rsync'ing essential config files to /Library/Fonts directory..."
-      br;
-      rsync -avh --no-perms Library/Fonts/*.ttf /Library/Fonts/;
-      br;
-      minihr;
-      echo "Installed Input Font into /Library/Fonts "
-      echo "Please LOGOUT and LOGIN to see changes."
-      echo "Remove .tff files from /Libary/Fonts/SystemFont* to uninstall."
-
-      br; hr; br; br;
-    else
-      echo "Skipping Input system font install.";
-    fi;
-  else
-    echo " [notice] Detected shell is: $SHELL";
-    echo " [notice] Please run this install script from bash.";
-  fi;
 }
 
 function preztoInstall() {
@@ -177,11 +143,11 @@ function updateShellLibraryOnly() {
 
 function showBanner() {
   DOTFILES_URL="https://github.com/drewlustro/dotfiles"
-  DOTFILES_VERSION="2.3.0";
-  DOTFILES_UPDATED="2017-01-27T16:33:30.861Z"
+  DOTFILES_VERSION="3.0.0";
+  DOTFILES_UPDATED="2017-08-17"
 
   heavyhr;
-  echo "WELCOME TO DREW'S DOTFILES for Bash & ZSH, SON!"
+  echo "WELCOME TO DREW'S DOTFILES for Bash & ZSH (zpresto), SON!"
   heavyhr;
 
   echo "Version: $DOTFILES_VERSION"
@@ -254,7 +220,6 @@ else
     if [[ "$CURRENT_SHELL" == *bash ]]; then
       preztoInstall;
       primaryInstall;
-      inputFontInstall;
     else
       echo "Current shell must be bash to do initial install! (currently is $(basename $CURRENT_SHELL))"
     fi;
@@ -277,7 +242,6 @@ br; hr; br;
 
 unset primaryInstall;
 unset preztoInstall;
-unset inputFontInstall;
 unset updateShellLibraryOnly;
 unset showBanner;
 

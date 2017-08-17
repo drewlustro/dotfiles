@@ -55,18 +55,25 @@ elif [ "$PLATFORM" = "osx" ]; then # OS X `ls`
     alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 fi;
 
-# List all files colorized in long format
-alias l="ls -lrthF ${colorflag}"
-alias ll="ls -lF ${colorflag}"
+if [ -x "$(which exa)" ]; then
+  alias l="exa -lr";
+  alias ll="exa -lF --group-directories-first";
+  alias la="exa -la --group-directories-first";
+  alias lss="exa -la --group-directories-first -s size";
+else
+  # List all files colorized in long format
+  alias l="ls -lrthF ${colorflag}";
+  alias ll="ls -lF ${colorflag}";
 
-# List all files colorized in long format, including dot files
-alias la="ls -laF ${colorflag}"
+  # List all files colorized in long format, including dot files
+  alias la="ls -laF ${colorflag}";
 
-# List only directories
-alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
+  # List only directories
+  alias lsd="ls -lF ${colorflag} | grep --color=never '^d'";
 
-# Always use color output for `ls`
-alias ls="command ls ${colorflag}"
+  # Always use color output for `ls`
+  alias ls="command ls ${colorflag}";
+fi;
 
 
 # ----------------------------------------

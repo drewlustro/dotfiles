@@ -8,25 +8,34 @@ if test ! $(which brew); then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-brew install caskroom/cask/brew-cask
 brew tap caskroom/fonts
 
 FONTS=(
-    font-m-plus
     font-clear-sans
-    font-roboto
+    font-coda
+    font-consolas-for-powerline
     font-droid-sans
     font-droid-sans-mono
     font-droid-serif
-    font-inconsolata
-    font-input
-    font-coda
     font-fontawesome
-    font-source-code-pro
-    font-source-sans-pro
-    font-source-serif-pro
+    font-inconsolata
+    font-inconsolata-for-powerline
+    font-input
+    font-input
+    font-m-plus
+    font-menlo-for-powerline
+    font-noto-mono
+    font-noto-sans
     font-noto-sans
     font-noto-serif
+    font-noto-serif
+    font-roboto
+    font-roboto-mono
+    font-roboto-mono-for-powerline
+    font-source-code-pro
+    font-source-code-pro-for-powerline
+    font-source-sans-pro
+    font-source-serif-pro
 )
 
 echo "Installing fonts..."

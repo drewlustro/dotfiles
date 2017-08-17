@@ -11,7 +11,7 @@ set mark-symlinked-directories on
 set mark-directories on
 
 # Indicate an error when trying to use an undefined environment variable
-set nounset on
+# set nounset on
 
 # Do not autocomplete hidden files unless the pattern explicitly begins with a dot
 set match-hidden-files off

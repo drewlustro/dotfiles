@@ -60,6 +60,10 @@ if [ -x "$(which exa)" ]; then
   alias ll="exa -lF --group-directories-first";
   alias la="exa -la --group-directories-first";
   alias lss="exa -la --group-directories-first -s size";
+
+  # Always use color output for `ls`
+  alias ls="command ls ${colorflag}"
+
 else
   # List all files colorized in long format
   alias l="ls -lrthF ${colorflag}";

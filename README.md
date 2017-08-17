@@ -6,6 +6,14 @@
 * Platform (OS X, Linux, etc) agnostic
 * Includes non-destructive userland includes to your home directory.
 * Employs *[prezto](https://github.com/sorin-ionescu/prezto)*, the fast zsh framework
+* Prefer `exa` to `ls`
+* Supports standalone update of `.shell` directory for non-destructive updates
+
+<br><br>
+
+![v3.0.0 Screenshot](http://i.imgur.com/rOitcmj.jpg)
+
+<br>
 
 
 ### ZSH Pre-Installation

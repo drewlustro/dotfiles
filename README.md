@@ -1,8 +1,6 @@
 # Drew's Platform & Shell Agnostic Dotfiles
 
-`Version 2.0.1`
-
-
+`Version 3.0.0`
 
 * Works with both **bash** and **zsh**
 * Platform (OS X, Linux, etc) agnostic
@@ -125,7 +123,7 @@ GNU **ls** and **dircolors**, compiled from [GNU coreutils-8.21](http://www.gnu.
 The `$PATH` export chain checks for executables in many common local installation paths first, preferring user-installed binaries.
 
 
---- 
+--- 1
 
 
 ### Sensible OS X defaults
@@ -168,7 +166,7 @@ MIT
 * [Matijs Brinkhuis](http://hotfusion.nl/) and his [dotfiles repository](https://github.com/matijs/dotfiles)
 * [Nicolas Gallagher](http://nicolasgallagher.com/) and his [dotfiles repository](https://github.com/necolas/dotfiles)
 * [Sindre Sorhus](http://sindresorhus.com/)
-* [Tom Ryder](http://blog.sanctum.geek.nz/) and his [dotfiles repository](https://github.com/tejr/dotfiles)
+* [Tom Ryder](https://sanctum.geek.nz/) and his [dotfiles repository](https://sanctum.geek.nz/cgit/dotfiles.git/about)
 * [Kevin Suttle](http://kevinsuttle.com/) and his [dotfiles repository](https://github.com/kevinSuttle/dotfiles) and [OSXDefaults project](https://github.com/kevinSuttle/OSXDefaults), which aims to provide better documentation for [`~/.macos`](https://mths.be/macos)
 * [Haralan Dobrev](http://hkdobrev.com/)
 * anyone who [contributed a patch](https://github.com/mathiasbynens/dotfiles/contributors) or [made a helpful suggestion](https://github.com/mathiasbynens/dotfiles/issues)

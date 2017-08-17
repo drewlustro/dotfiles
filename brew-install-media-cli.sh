@@ -17,18 +17,6 @@ brew upgrade
 echo "Installing heavy multimedia libs and CLI apps (x264, flac, sox, etc)."
 echo "This may take a while..."
 echo ""
-# Install GNU core utilities (those that come with OS X are outdated)
-brew install coreutils
-# Install some other useful utilities like `sponge`
-brew install moreutils
-# Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed
-brew install findutils
-# Install GNU `sed`, overwriting the built-in `sed`
-brew install gnu-sed --default-names
-# Install Bash 4
-# Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before running `chsh`.
-brew install bash
-brew install bash-completion
 
 # Dependency libs
 brew install cmake
@@ -50,9 +38,6 @@ brew install webkit2png
 brew install ufraw --with-exiv2 # RAW image support for imagemagick
 brew install imagemagick --with-webp
 brew install sox # audio transcoding swiss-army knife
-
-# Superfluous (PHP)
-brew install homebrew/php/php55 --with-gmp
 
 
 # Remove outdated versions from the cellar

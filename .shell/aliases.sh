@@ -55,18 +55,25 @@ elif [ "$PLATFORM" = "osx" ]; then # OS X `ls`
     alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 fi;
 
-# List all files colorized in long format
-alias l="ls -lrthF ${colorflag}"
-alias ll="ls -lF ${colorflag}"
+if [ -x "$(which exa)" ]; then
+  alias l="exa -lr";
+  alias ll="exa -lF --group-directories-first";
+  alias la="exa -la --group-directories-first";
+  alias lss="exa -la --group-directories-first -s size";
+else
+  # List all files colorized in long format
+  alias l="ls -lrthF ${colorflag}";
+  alias ll="ls -lF ${colorflag}";
 
-# List all files colorized in long format, including dot files
-alias la="ls -laF ${colorflag}"
+  # List all files colorized in long format, including dot files
+  alias la="ls -laF ${colorflag}";
 
-# List only directories
-alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
+  # List only directories
+  alias lsd="ls -lF ${colorflag} | grep --color=never '^d'";
 
-# Always use color output for `ls`
-alias ls="command ls ${colorflag}"
+  # Always use color output for `ls`
+  alias ls="command ls ${colorflag}";
+fi;
 
 
 # ----------------------------------------
@@ -179,6 +186,8 @@ if [ "$PLATFORM" = "osx" ]; then
     # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
     alias update-all="sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update --system; sudo gem update"
 
+    alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
+
     # Lock the screen (when going AFK)
     alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
@@ -190,8 +199,11 @@ if [ "$PLATFORM" = "osx" ]; then
         alias slack-dupe="open -n /Applications/Slack.app"
     fi;
 
+    alias canary-no-security="open -a Google\ Chrome\ Canary --args --disable-web-security --user-data-dir";
+
     alias toolbelt-shell-debug-on="setopt verbose; set -xv"
     alias toolbelt-shell-debug-off="set +xv; unsetopt verbose;"
+    alias toolbelt-postres-find-process="sudo lsof -iTCP -sTCP:LISTEN -n -P | grep 5432";
 
 fi;
 

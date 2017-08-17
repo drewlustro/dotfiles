@@ -39,6 +39,10 @@ if [ "$PLATFORM" = "osx" ]; then
     # Always enable colored `grep` output
     export GREP_OPTIONS="--color=auto"
 
+    export NPM_PACKAGES="/usr/local";
+    export PATH="$NPM_PACKAGES/bin:$PATH"
+    export NODE_PATH="$NODE_PATH:$NPM_PACKAGES/lib/node_modules:$(npm root -g)";
+
     if [ -x "$(which subl)" ]; then
         export VISUAL=subl;
         export EDITOR=vim;

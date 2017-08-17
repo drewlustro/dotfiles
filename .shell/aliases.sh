@@ -179,6 +179,8 @@ if [ "$PLATFORM" = "osx" ]; then
     # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
     alias update-all="sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update --system; sudo gem update"
 
+    alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
+
     # Lock the screen (when going AFK)
     alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
@@ -189,6 +191,8 @@ if [ "$PLATFORM" = "osx" ]; then
     if [ -s "/Applications/Slack.app" ]; then
         alias slack-dupe="open -n /Applications/Slack.app"
     fi;
+
+    alias canary-no-security="open -a Google\ Chrome\ Canary --args --disable-web-security --user-data-dir";
 
     alias toolbelt-shell-debug-on="setopt verbose; set -xv"
     alias toolbelt-shell-debug-off="set +xv; unsetopt verbose;"

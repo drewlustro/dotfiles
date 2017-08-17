@@ -131,7 +131,7 @@ GNU **ls** and **dircolors**, compiled from [GNU coreutils-8.21](http://www.gnu.
 The `$PATH` export chain checks for executables in many common local installation paths first, preferring user-installed binaries.
 
 
---- 1
+---
 
 
 ### Sensible OS X defaults

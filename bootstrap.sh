@@ -90,8 +90,8 @@ function primaryInstall() {
     --exclude ".osx" \
     --exclude ".xmodmaprc*" \
     --exclude "iterm2/" \
-    --exclude "etc/"
-    --exclude "terminal-themes/"
+    --exclude "etc/" \
+    --exclude "terminal-themes/" \
     --exclude "linux/" \
     --exclude "Xcode/" \
     --exclude "sublimetext/" \

@@ -93,6 +93,9 @@ brew install rename
 brew install ssh-copy-id
 brew install tree # tree display of directory structure
 
+# Capsule - pharmakon
+brew install graphviz pkg-config rabbitmq postgresql
+sudo easy_install pip
 
 # Remove outdated versions from the cellar
 brew cleanup

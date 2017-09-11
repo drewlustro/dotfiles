@@ -239,7 +239,7 @@ if [ "$PLATFORM" = "osx" ]; then
     local now=$(date +"%Y-%m-%d__%H-%M-%S");
     local host=${2:="raspi"};
     local diskNumber=${1:--1}
-    local bs="1M"
+    local bs="1m"
     local cmd="sudo dd if=/dev/rdisk$1 bs=$bs | gzip > ~/Desktop/$host-$now.pi.gz"
     local usage="Usage: $0 [sdCardDiskN] [hostname='raspi']"
     if [ $# -eq 0 ]; then

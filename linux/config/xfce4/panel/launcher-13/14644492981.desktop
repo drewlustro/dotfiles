@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Remote Desktop Viewer
+Comment=Access remote desktops
+Keywords=VNC;RDP;SSH;
+Exec=vinagre %U
+Icon=preferences-desktop-remote-desktop
+Terminal=false
+MimeType=application/x-remote-connection;x-scheme-handler/vnc;
+Type=Application
+StartupNotify=true
+Categories=GNOME;GTK;Network;RemoteAccess;
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=vinagre
+X-GNOME-Bugzilla-Component=general
+X-GNOME-Bugzilla-Version=3.18.2
+X-Ubuntu-Gettext-Domain=vinagre
+X-XFCE-Source=file:///usr/share/applications/vinagre.desktop

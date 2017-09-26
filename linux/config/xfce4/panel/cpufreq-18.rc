@@ -1,0 +1,10 @@
+timeout=1
+show_cpu=6
+show_icon=false
+show_label_freq=true
+show_label_governor=true
+show_warning=false
+keep_compact=true
+one_line=false
+fontname=Input Mono 8
+

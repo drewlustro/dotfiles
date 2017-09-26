@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="pointers" version="1.0">
+  <property name="Razer_Razer_Mamba" type="empty">
+    <property name="RightHanded" type="bool" value="true"/>
+    <property name="Threshold" type="int" value="5"/>
+    <property name="Acceleration" type="double" value="0.400000"/>
+  </property>
+  <property name="Logitech_MX_Master" type="empty">
+    <property name="RightHanded" type="bool" value="true"/>
+    <property name="Threshold" type="int" value="4"/>
+    <property name="Acceleration" type="double" value="1.300000"/>
+  </property>
+</channel>

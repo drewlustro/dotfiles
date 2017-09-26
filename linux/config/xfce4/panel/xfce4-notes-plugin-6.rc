@@ -1,0 +1,23 @@
+[Notes]
+PosX=704
+PosY=413
+Width=537
+Height=425
+TabsOrder=Notes;
+LastTab=0
+Above=false
+Sticky=true
+Transparency=7
+Visible=false
+
+[Notes 2]
+PosX=497
+PosY=57
+Width=598
+Height=604
+TabsOrder=$ commands;Notes;
+LastTab=1
+Above=false
+Sticky=true
+Transparency=7
+Visible=false

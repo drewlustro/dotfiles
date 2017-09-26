@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Conky
+Comment=
+Exec=./starter.rb
+Icon=xfce4-cpugraph-plugin
+Path=/home/drew/.conky/
+Terminal=false
+StartupNotify=true

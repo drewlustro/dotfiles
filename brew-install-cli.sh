@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Uses Homebrew to install common CLI apps for hackers
 
 # Check for Homebrew,
@@ -47,7 +47,9 @@ brew install homebrew/dupes/grep
 brew install homebrew/dupes/screen
 
 # Install GnuPG to enable PGP-signing commits.
-brew install gnupg
+brew install gnupg pinentry-mac
+mkdir -p "$HOME/.gnupg" 2>/dev/null
+cat "$HOME/.gnupg/gpg-agent.conf" | grep -iq pinentry-program || echo "pinentry-program /usr/local/bin/pinentry-mac" >> "$HOME/.gnupg/gpg-agent.conf"
 
 # Install more recent versions of some macOS tools.
 brew install vim --with-override-system-vi
@@ -87,6 +89,7 @@ brew install imagemagick --with-webp
 brew install mackup
 brew install nmap
 brew install node # includes 'npm'
+brew install nvm
 brew install pv
 brew install rename
 brew install rename

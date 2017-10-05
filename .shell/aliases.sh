@@ -56,13 +56,14 @@ elif [ "$PLATFORM" = "osx" ]; then # OS X `ls`
 fi;
 
 if [ -x "$(which exa)" ]; then
+  alias ls="exa --group-directories-first";
   alias l="exa -lr";
   alias ll="exa -lF --group-directories-first";
   alias la="exa -la --group-directories-first";
   alias lss="exa -la --group-directories-first -s size";
 
   # Always use color output for `ls`
-  alias ls="command ls ${colorflag}"
+  alias ls-stock="command ls ${colorflag}"
 
 else
   # List all files colorized in long format

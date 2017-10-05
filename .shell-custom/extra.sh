@@ -50,9 +50,13 @@
 #
 # git config --global core.editor "vim"
 #
+#################################################3
 # GPG key setup
-# deep-nightmare (Xenial 16.04)
-## git config --global user.signingkey A03207652FC00655
+#
+# penthouse (Ubuntu 17.10)
+# git config --global user.signingkey C4223BA627FE58C7
+# git config --global commit.gpgsign true
+#
 # sweet-nightmare (Xenial 16.04 / KDE Neon 5.7)
 ## git config --global user.signingkey 64DDB211EE258F8C
 # sage (macOS rMBP 2013)
@@ -61,6 +65,8 @@
 # Prefer gpg2, if available
 # [ -x "$(which gpg2)" ] && git config --global gpg.program gpg2
 
+###########################################################3
+#
 # # Auto-set python work environment
 # DEFAULT_PYTHON_ENV="default";
 # DEFAULT_WORKON_HOME="/sites/envs";

@@ -40,12 +40,12 @@ sudo pip install virtualenv
 sudo pip install pylint
 
 # node 6.x LTS
-curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 sudo apt-get update
 sudo apt-get install -y nodejs
 sudo apt-get install -y npm
 
-mkdir ~/.npm-packages ~/.npm 2>/dev/null;
+m1kdir ~/.npm-packages ~/.npm 2>/dev/null;
 
 # npm packges
 npm install -g bower yo grunt-cli gulp babel webpack npm-check-updates n vue-cli eslint
@@ -59,19 +59,9 @@ curl \
 ffmpeg \
 flac \
 g++ \
-libasound2 \
-libasound2-plugins \
-libboost-dev \
-libboost-python-dev \
-libcairo2 \
-libcairo2-dev \
 libjpeg-dev \
 libjpeg8 \
 libtool \
-openssh-client \
-openssh-server \
-openssh-sftp-server \
-openssl \
 ppa-purge \
 pylint \
 samba \

@@ -43,6 +43,16 @@ export PYTHONIOENCODING='UTF-8';
 export GPG_TTY=$(tty);
 
 # ----------------------------------------
+# NVM (node version manager)
+# ----------------------------------------
+
+if $(type nvm &>/dev/null); then
+  mkdir -p "$HOME/.nvm" 2>/dev/null;
+  export NVM_DIR="$HOME/.nvm";
+  source "/usr/local/opt/nvm/nvm.sh";
+fi
+
+# ----------------------------------------
 # Mac OS X
 # ----------------------------------------
 if [ "$PLATFORM" = "osx" ]; then

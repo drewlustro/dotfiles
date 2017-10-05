@@ -32,7 +32,7 @@ if [ -x "$(which convert)" ]; then
     echo 'Done.';
 
   }
-  
+
 fi;
 
 
@@ -242,10 +242,12 @@ if [ "$PLATFORM" = "osx" ]; then
     local bs="1m"
     local cmd="sudo dd if=/dev/rdisk$1 bs=$bs | gzip > ~/Desktop/$host-$now.pi.gz"
     local usage="Usage: $0 [sdCardDiskN] [hostname='raspi']"
+    local example="Example:  $0 3 superillegales"
     if [ $# -eq 0 ]; then
         echo $usage;
+        echo $example;
         return 1;
-    elif $(diskutil list disk$diskNumber | grep -iq Apple); then
+    elif $(diskutil list disk$diskNumber | grep -iq 'Apple\|APFS'); then
         echo "Warning: Apple filesystem detected on disk $1. This is probably your boot disk or external HDD, dummy. Format to FAT32.";
         return 1;
     fi;
@@ -278,7 +280,7 @@ if [ "$PLATFORM" = "osx" ]; then
     if [[ $# -lt 2 ]]; then
         echo $usage;
         return 1;
-    elif $(diskutil list disk$diskNumber | grep -iq Apple); then
+    elif $(diskutil list disk$diskNumber | grep -iq 'Apple\|APFS'); then
         echo "Warning: Apple filesystem detected on disk $1. This is probably your boot disk or external HDD, dummy. Format to FAT32.";
         return 1;
     fi;
@@ -372,7 +374,7 @@ if [ "$PLATFORM" = "linux" ]; then
 
     }
 
-  elif [ "$LINUX_DESKTOP" = "kde" ]; then 
+  elif [ "$LINUX_DESKTOP" = "kde" ]; then
 
     # launches Dolphin, KDE's file manager; behaves similar to OS X's "open" command
     function open() {

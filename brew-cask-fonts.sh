@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Uses Homebrew's Cask feature to quickly install open source fonts on a new machine
 
 # Check for Homebrew,

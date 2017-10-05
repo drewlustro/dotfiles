@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Uses Homebrew's Cask feature to quickly install apps on a new machine
 
 # Check for Homebrew,

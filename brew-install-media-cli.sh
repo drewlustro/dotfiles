@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Uses Homebrew to install common CLI apps for hackers
 
 # Check for Homebrew,

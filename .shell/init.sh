@@ -1,6 +1,10 @@
 # init.sh
 # Includes functions employed by shell-agnostic .shell/*.sh scripts
 
+echo "========================="
+echo "  Detect System"
+echo "========================="
+
 PLATFORM="unknown";
 unamestr="$(uname)";
 if [ "$unamestr" = 'Darwin' ]; then
@@ -10,6 +14,7 @@ elif [ "$unamestr" = 'Linux' ]; then
 elif [ "$unamestr" = 'FreeBSD' ]; then
     PLATFORM='freebsd';
 fi;
+
 
 
 ORIGINAL_SHELL=$SHELL;
@@ -22,7 +27,7 @@ elif [[ "$SHELL_CHECK" == *sh ]]; then
     ORIGINAL_SHELL="sh";
 fi;
 
-LINUX_DESKTOP="none";
+LINUX_DESKTOP="n/a";
 if [ "$PLATFORM" = "linux" ]; then
     if [[ "$XDG_CURRENT_DESKTOP" == *XFCE ]]; then
         LINUX_DESKTOP="xfce";
@@ -36,6 +41,11 @@ if [ "$PLATFORM" = "linux" ]; then
         LINUX_DESKTOP="generic";
     fi;
 fi;
+
+echo   "PLATFORM:       $PLATFORM ($unamestr)";
+echo   "SHELL:          $SHELL";
+echo   "ORIGINAL_SHELL: $ORIGINAL_SHELL";
+printf "LINUX_DESKTOP:  $LINUX_DESKTOP \n\n";
 
 unset unamestr;
 unset SHELL_CHECK;

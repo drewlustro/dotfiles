@@ -221,9 +221,17 @@ if [ "$PLATFORM" = "linux" ]; then
     alias aupgrade="sudo apt upgrade -y";
     alias aautoremove="sudo apt autoremove -y";
     alias dirsize="du -h -d 1 | sort -hr";
+    alias xmodmap-macos="xmodmap $HOME/.Xmodmaprc";
     alias dmesg="dmesg -wH";
 
-    alias reboot-gracefully-kde="qdbus org.kde.ksmserver /KSMServer logout 0 1 0";
+    # load macOS style modifier key order (Super, Alt, Command, Spacebar ...)
+    [ -e "$HOME/.Xmodmaprc" ] && xmodmap "$HOME/.Xmodmaprc";
+
+    if [ "$LINUX_DESKTOP" = "kde" ]; then
+      alias reboot-gracefully-kde="qdbus org.kde.ksmserver /KSMServer logout 0 1 0";
+    fi;
+
+
 fi;
 
 

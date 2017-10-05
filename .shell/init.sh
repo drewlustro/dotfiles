@@ -31,7 +31,7 @@ LINUX_DESKTOP="n/a";
 if [ "$PLATFORM" = "linux" ]; then
     if [[ "$XDG_CURRENT_DESKTOP" == *XFCE ]]; then
         LINUX_DESKTOP="xfce";
-    elif [[ "$XDG_CURRENT_DESKTOP" == *Gnome ]]; then
+    elif [[ "$XDG_CURRENT_DESKTOP" == *GNOME ]]; then
         LINUX_DESKTOP="gnome";
     elif [[ "$XDG_CURRENT_DESKTOP" == *Unity ]]; then
         LINUX_DESKTOP="unity";

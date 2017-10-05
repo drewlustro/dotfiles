@@ -42,15 +42,7 @@ export PYTHONIOENCODING='UTF-8';
 # https://stackoverflow.com/a/42265848/96656
 export GPG_TTY=$(tty);
 
-# ----------------------------------------
-# NVM (node version manager)
-# ----------------------------------------
 
-if $(type nvm &>/dev/null); then
-  mkdir -p "$HOME/.nvm" 2>/dev/null;
-  export NVM_DIR="$HOME/.nvm";
-  source "/usr/local/opt/nvm/nvm.sh";
-fi
 
 # ----------------------------------------
 # Mac OS X
@@ -63,9 +55,20 @@ if [ "$PLATFORM" = "osx" ]; then
     # Always enable colored `grep` output
     export GREP_OPTIONS="--color=auto"
 
+    # NODE
     export NPM_PACKAGES="/usr/local";
     export PATH="$NPM_PACKAGES/bin:$PATH"
     export NODE_PATH="$NODE_PATH:$NPM_PACKAGES/lib/node_modules:$(npm root -g)";
+
+    # ----------------------------------------
+    # NVM (node version manager)
+    # ----------------------------------------
+
+    if $(type nvm &>/dev/null); then
+      mkdir -p "$HOME/.nvm" 2>/dev/null;
+      export NVM_DIR="$HOME/.nvm";
+      source "/usr/local/opt/nvm/nvm.sh";
+    fi
 
     if [ -x "$(which subl)" ]; then
         export VISUAL=subl;
@@ -79,15 +82,24 @@ fi;
 # ----------------------------------------
 if [ "$PLATFORM" = "linux" ]; then
 
+    # NODE SETUP
     export NPM_PACKAGES="${HOME}/.npm-packages"
     export PATH="$NPM_PACKAGES/bin:$PATH"
 
     # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
-    unset MANPATH # delete if you already modified MANPATH elsewhere in your config
+    unset MANPATH
     export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
     export NODE_PATH=$NODE_PATH:$HOME/.npm-packages/lib/node_modules
 
-    export N_PREFIX="$HOME/.local";
+    # NVM SETUP
+    mkdir -p "$HOME/.nvm" 2>/dev/null;
+    export NVM_DIR="$HOME/.nvm";
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh";
+
+    [ "$ORIGINAL_SHELL" == "bash" ] && \
+      [ -s "$NVM_DIR/bash_completion" ] && \
+      \. "$NVM_DIR/bash_completion" && echo ok;
+
 fi;
 
 

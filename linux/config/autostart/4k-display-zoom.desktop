@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Name=4K Display Zoom
+Comment=Gnome + xrandr
+Exec=/bin/bash -c "gsettings set org.gnome.desktop.interface scaling-factor 2 && xrandr --scale 1.125x1.125 --output $(xrandr | grep -w connected  | awk -F'[ \+]' '{print $1}')"
+StartupNotify=true
+Terminal=false
+Hidden=false
+X-GNOME-Autostart-enabled=true

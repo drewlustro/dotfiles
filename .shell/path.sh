@@ -24,3 +24,5 @@ fi;
 
 # setup PATH to check $HOME/bin first, (then /usr/local/bin, /usr/bin ... etc)
 [ -d "$HOME/bin" ] && export PATH="$HOME/bin:$PATH";
+
+[ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH";

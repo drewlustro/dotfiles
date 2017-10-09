@@ -228,10 +228,8 @@ if [ "$PLATFORM" = "linux" ]; then
     [ -e "$HOME/.Xmodmaprc" ] && xmodmap "$HOME/.Xmodmaprc";
 
     if [ "$LINUX_DESKTOP" = "kde" ]; then
-      alias reboot-gracefully-kde="qdbus org.kde.ksmserver /KSMServer logout 0 1 0";
+        alias reboot-gracefully-kde="qdbus org.kde.ksmserver /KSMServer logout 0 1 0";
     fi;
-
-
 fi;
 
 

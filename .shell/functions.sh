@@ -328,7 +328,18 @@ fi;
 # ----------------------------------------
 if [ "$PLATFORM" = "linux" ]; then
 
-  if [ "$LINUX_DESKTOP" = "xfce" ]; then
+  if [ "$LINUX_DESKTOP" = "gnome" ]; then
+    # launches Nautilus;
+    # similar to OS X's "open" command
+    function open() {
+      if [ -z "$1" ]; then
+        nautilus $(pwd) &;
+      else
+        nautilus $1 &;
+      fi;
+    }
+
+  elif [ "$LINUX_DESKTOP" = "xfce" ]; then
     # launches Xfce4 FileManager; behaves similar to OS X's "open" command
     function open() {
       if [ -z "$1" ]; then

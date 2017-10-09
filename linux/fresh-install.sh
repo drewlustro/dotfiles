@@ -62,6 +62,10 @@ g++ \
 libjpeg-dev \
 libjpeg8 \
 libtool \
+openssh-client \
+openssh-server \
+openssh-sftp-server \
+openssl \
 ppa-purge \
 pylint \
 samba \

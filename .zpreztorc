@@ -26,7 +26,7 @@ zstyle ':prezto:*:*' color 'yes'
 # The order matters.
 zstyle ':prezto:load' pmodule \
   'archive' \
-  'utility' \
+  'autosuggestions' \
   'completion' \
   'directory' \
   'editor' \
@@ -43,6 +43,11 @@ zstyle ':prezto:load' pmodule \
   'prompt' \
   'rsync'
 
+#
+# Autosuggestions
+#
+
+zstyle ':prezto:module:autosuggestions' color 'yes'
 
 #
 # Editor
@@ -106,7 +111,7 @@ zstyle ':prezto:module:prompt' theme 'paradox'
 #
 
 # Set the SSH identities to load into the agent.
-# zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_rsa2' 'id_github'
+zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_rsa2' 'id_github'
 
 #
 # Syntax Highlighting

@@ -98,7 +98,7 @@ if [ "$PLATFORM" = "linux" ]; then
 
     [ "$ORIGINAL_SHELL" == "bash" ] && \
       [ -s "$NVM_DIR/bash_completion" ] && \
-      \. "$NVM_DIR/bash_completion" && echo ok;
+      \. "$NVM_DIR/bash_completion"
 
 fi;
 

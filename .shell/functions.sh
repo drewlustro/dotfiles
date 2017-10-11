@@ -332,10 +332,10 @@ if [ "$PLATFORM" = "linux" ]; then
     # launches Nautilus;
     # similar to OS X's "open" command
     function open() {
-      if [ -z "$1" ]; then
-        nautilus $(pwd) &;
+      if [[ -z "$1" ]]; then
+        nautilus $(pwd) &
       else
-        nautilus $1 &;
+        nautilus $1 &
       fi;
     }
 

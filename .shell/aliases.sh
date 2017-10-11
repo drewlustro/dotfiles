@@ -221,7 +221,7 @@ if [ "$PLATFORM" = "linux" ]; then
     alias aupgrade="sudo apt upgrade -y";
     alias aautoremove="sudo apt autoremove -y";
     alias dirsize="du -h -d 1 | sort -hr";
-    alias xmodmap-macos="xmodmap $HOME/.Xmodmaprc";
+    alias xmm="xmodmap $HOME/.Xmodmaprc";
     alias dmesg="dmesg -wH";
 
     # load macOS style modifier key order (Super, Alt, Command, Spacebar ...)

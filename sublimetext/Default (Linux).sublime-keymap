@@ -1,4 +1,7 @@
 [
+    { "keys": ["ctrl+alt+s"], "command": "save_all" },
+    { "keys": ["ctrl+`"], "command": "noop"},
+    { "keys": ["ctrl+shift+`"], "command": "show_panel", "args": {"panel": "console", "toggle": true} },
     { "keys": ["ctrl+y"], "command": "show_overlay", "args": { "overlay": "ctrl_palette", "text": "Snippet: "} },
     {"keys": ["ctrl+r"], "command": "expand_selection_to_paragraph" },
     {"keys": ["alt+up"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": false}},
@@ -17,6 +20,7 @@
     { "keys": ["alt+f8"], "command": "select_all_bookmarks" },
 
     { "keys": ["ctrl+t"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
+    { "keys": ["ctrl+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
     { "keys": ["ctrl+shift+alt+t"], "command": "transpose" },
     { "keys": ["ctrl+g"], "command": "find_next" },
     { "keys": ["super+g"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
@@ -46,6 +50,13 @@
     { "keys": ["super+alt+enter"], "command": "replace_all", "args": {"close_panel": true},
          "context": [{"key": "panel", "operand": "replace"}, {"key": "panel_has_focus"}]
     },
+
+    // F-Keys
+    { "keys": ["f5"], "command": "sort_lines", "args": {"case_sensitive": false} },
+
+    // SublimeLinter
+    { "keys": ["ctrl+super+e"], "command": "sublimelinter_goto_error", "args": {"direction": "next"} },
+    { "keys": ["ctrl+super+alt+e"], "command": "sublimelinter_toggle_linter", "args": {"which": "all"} },
 
     // Number of panes 1-8
     {

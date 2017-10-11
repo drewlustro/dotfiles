@@ -81,23 +81,26 @@ function primaryInstall() {
   echo "rsync'ing essential config files to home directory..."
   br;
   rsync --exclude ".git/" \
+    --exclude "*.sample" \
     --exclude ".DS_Store" \
+    --exclude ".gitignore" \
+    --exclude ".macos" \
+    --exclude ".xmodmaprc*" \
+    --exclude "bin/" \
     --exclude "bootstrap.sh" \
     --exclude "brew-cask-apps.sh" \
+    --exclude "brew-cask-fonts.sh" \
     --exclude "brew-install-cli.sh" \
     --exclude "brew-install-media-cli.sh" \
-    --exclude "brew-cask-fonts.sh" \
-    --exclude ".osx" \
-    --exclude ".xmodmaprc*" \
-    --exclude "iterm2/" \
     --exclude "etc/" \
-    --exclude "terminal-themes/" \
+    --exclude "fresh-machine/" \
+    --exclude "install.sh" \
+    --exclude "iterm2/" \
     --exclude "linux/" \
-    --exclude "Xcode/" \
-    --exclude "sublimetext/" \
-    --exclude "*.sample" --exclude ".gitignore" \
     --exclude "README.md" --exclude "LICENSE-MIT.txt" \
-    --exclude "bin/" \
+    --exclude "sublimetext/" \
+    --exclude "terminal-themes/" \
+    --exclude "update.sh" \
     -avh --no-perms . ~;
 
   minihr;
@@ -143,8 +146,8 @@ function updateShellLibraryOnly() {
 
 function showBanner() {
   DOTFILES_URL="https://github.com/drewlustro/dotfiles"
-  DOTFILES_VERSION="3.0.0";
-  DOTFILES_UPDATED="2017-08-17"
+  DOTFILES_VERSION="3.1.0";
+  DOTFILES_UPDATED="2017-10-11"
 
   heavyhr;
   echo "WELCOME TO DREW'S DOTFILES for Bash & ZSH (zpresto), SON!"
@@ -181,6 +184,8 @@ showBanner;
 
 if [ "$1" = "--force" ] || [ "$1" = "-f" ]; then
   primaryInstall;
+elif [ "$1" = "--update" ] || [ "$1" = "-u" ]; then
+  updateShellLibraryOnly;
 else
   hr;
   echo "[!!!] WARNING [!!!]"
@@ -196,7 +201,7 @@ else
   hr; br;
 
   CURRENT_SHELL=$(echo $0);
-  if [[ "$CURRENT_SHELL" == *bootstrap\.sh ]]; then
+  if [[ "$CURRENT_SHELL" == *install\.sh ]]; then
     CURRENT_SHELL="$SHELL"
   fi;
 

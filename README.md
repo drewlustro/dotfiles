@@ -1,6 +1,6 @@
 # Drew's Platform & Shell Agnostic Dotfiles
 
-`Version 3.0.0 / August 17, 2017`
+`Version 3.1.0 / October 11, 2017`
 
 * Works with both **bash** and **zsh**
 * Platform (OS X, Linux, etc) agnostic
@@ -11,7 +11,7 @@
 
 <br><br>
 
-![v3.0.0 Screenshot](http://i.imgur.com/rOitcmj.jpg)
+![v3.1.0 Screenshot](http://i.imgur.com/rOitcmj.jpg)
 
 <br>
 
@@ -45,7 +45,7 @@ You can clone the repository wherever you want. (I like to keep it in `~/dev-loc
 
 ```bash
 bash -l # make sure we're running bash
-git clone https://github.com/drewlustro/dotfiles.git && cd dotfiles && source bootstrap.sh
+git clone https://github.com/drewlustro/dotfiles.git && cd dotfiles && ./install.sh
 ```
 
 ##
@@ -53,18 +53,18 @@ git clone https://github.com/drewlustro/dotfiles.git && cd dotfiles && source bo
 
 1. Download **.zip** & extract or `git clone` this repository.
 2. Open a terminal window and `cd` into the `dotfiles` directory.
-3. Run `source bootstrap.sh` to install.
+3. Run `./install.sh` to install.
 
 ```bash
-~/dotfiles $ source bootstrap.sh
+~/dotfiles $ ./install.sh
 ```
 
 ### Bonus: Homebrew convenience install scripts
 
 ```bash
-./brew-install-cli.sh # installs TONS of useful binaries, libs, and CLI tools via brew
-./brew-cask-fonts.sh  # installs a handful of useful public-domain typefaces, including many coding fonts
-./brew-cask-apps.sh   # installs many useful OS X applications via brew-cask
+./fresh-machine/brew-install-cli.sh # installs TONS of useful binaries, libs, and CLI tools via brew
+./fresh-machine/brew-cask-fonts.sh  # installs a handful of useful public-domain typefaces, including many coding fonts
+./fresh-machine/brew-cask-apps.sh   # installs many useful OS X applications via brew-cask
 ```
 
 
@@ -146,7 +146,7 @@ cd dotfiles
 
 
 ## Contact & Feedback
-| [![twitter/msodrew](http://io.drewlustro.com/img/malibu-400.jpg)](http://twitter.com/msodrew "@msodrew on Twitter") |
+| [![twitter/msodrew](https://i.imgur.com/lTqjI9E.jpg)](http://twitter.com/msodrew "@msodrew on Twitter") |
 |---|
 | [Drew Lustro](http://drewlustro.com) |
 

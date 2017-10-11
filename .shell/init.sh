@@ -1,10 +1,6 @@
 # init.sh
 # Includes functions employed by shell-agnostic .shell/*.sh scripts
 
-echo "========================="
-echo "  Detect System"
-echo "========================="
-
 PLATFORM="unknown";
 unamestr="$(uname)";
 if [ "$unamestr" = 'Darwin' ]; then
@@ -42,10 +38,13 @@ if [ "$PLATFORM" = "linux" ]; then
     fi;
 fi;
 
-echo   "PLATFORM:       $PLATFORM ($unamestr)";
-echo   "SHELL:          $SHELL";
-echo   "ORIGINAL_SHELL: $ORIGINAL_SHELL";
-printf "LINUX_DESKTOP:  $LINUX_DESKTOP \n\n";
+
+function showsysteminfo () {
+  echo   "PLATFORM:       $PLATFORM ($(uname))";
+  echo   "SHELL:          $SHELL";
+  echo   "ORIGINAL_SHELL: $ORIGINAL_SHELL";
+  printf "LINUX_DESKTOP:  $LINUX_DESKTOP \n\n";
+}
 
 unset unamestr;
 unset SHELL_CHECK;

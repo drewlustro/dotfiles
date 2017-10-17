@@ -83,13 +83,13 @@ fi;
 if [ "$PLATFORM" = "linux" ]; then
 
     # NODE SETUP
-    export NPM_PACKAGES="${HOME}/.npm-packages"
-    export PATH="$NPM_PACKAGES/bin:$PATH"
+    export NPM_PACKAGES="${HOME}/.npm-packages";
+    export PATH="$NPM_PACKAGES/bin:$PATH";
 
     # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
     unset MANPATH
-    export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
-    export NODE_PATH=$NODE_PATH:$HOME/.npm-packages/lib/node_modules
+    export MANPATH="$NPM_PACKAGES/share/man:$(manpath)";
+    export NODE_PATH="$(npm root -g):$NODE_PATH:$HOME/.npm-packages/lib/node_modules";
 
     # NVM SETUP
     mkdir -p "$HOME/.nvm" 2>/dev/null;

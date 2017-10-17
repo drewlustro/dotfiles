@@ -224,6 +224,9 @@ if [ "$PLATFORM" = "linux" ]; then
     alias xmm="xmodmap $HOME/.Xmodmaprc";
     alias dmesg="dmesg -wH";
 
+    alias canary-no-security="chromium-browser --disable-web-security --user-data-dir";
+    alias chromium-no-security="chromium-browser --disable-web-security --user-data-dir";
+
     # load macOS style modifier key order (Super, Alt, Command, Spacebar ...)
     [ -e "$HOME/.Xmodmaprc" ] && xmodmap "$HOME/.Xmodmaprc";
 

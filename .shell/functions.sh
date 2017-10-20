@@ -1,4 +1,17 @@
 
+if [ -x "$(which ffmpeg)" ]; then
+  function video-to-gif() {
+    local srcFile=${1};
+    local fps=${2:-10};
+    local maxwidth=${3:-670};
+    echo "Usage: convert-video-to-gif [source.mp4] [fps=10] [maxwidth=670]";
+    if [ -f "${srcFile}" ]; then
+      local srcFileWithoutExtension="${srcFile%.*}";
+      ffmpeg -y -i ${srcFile} -filter_complex "fps=${fps},scale=${maxwidth}:-1:flags=lanczos,split [o1] [o2];[o1] palettegen [p]; [o2] fifo [o3];[o3] [p] paletteuse" ${srcFileWithoutExtension}.gif
+    fi;
+  }
+fi;
+
 # Convert RAW images to 2560 dimension max JPEG
 if [ -x "$(which convert)" ]; then
   function convert-raw-to-jpg() {

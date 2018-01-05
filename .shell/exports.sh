@@ -40,13 +40,14 @@ export PYTHONIOENCODING='UTF-8';
 
 # Python2 path w/ homebrew support
 export PYTHON2PATH="$(brew --prefix)/lib/python2.7/site-packages:/Library/Python/2.7/site-packages:$HOME/Library/Python/2.7/lib/python/site-packages:$PYTHONPATH";
+export PYTHONPATH=$PYTHON2PATH;
 
 # Python 3 or 2 for PYTHONPATH
 if [ -x "$(which python3)" ]; then
 
   # PYTHONPATH -> homebrew Python 3 location
-  export PYTHONPATH="/usr/local/lib/python3.6/site-packages:$PYTHONPATH";
-  export PYTHON3PATH=$PYTHONPATH;
+  # export PYTHONPATH="/usr/local/lib/python3.6/site-packages:$PYTHONPATH";
+  # export PYTHON3PATH=$PYTHONPATH;
 
   # alias python2="$(which python)"; # set python2 -> system python
   # alias python="$(which python3)"; # set python -> python3

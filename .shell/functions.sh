@@ -1,16 +1,29 @@
-
 if [ -x "$(which ffmpeg)" ]; then
   function video-to-gif() {
     local srcFile=${1};
-    local fps=${2:-20};
+    local fps=${2:-50};
     local maxwidth=${3:-670};
-    echo "Usage: convert-video-to-gif [source.mp4] [fps=20] [maxwidth=670]";
+    echo "Usage: video-to-gif [source.mp4] [fps=50] [maxwidth=670]";
     if [ -f "${srcFile}" ]; then
       local srcFileWithoutExtension="${srcFile%.*}";
       ffmpeg -y -i ${srcFile} -filter_complex "fps=${fps},scale=${maxwidth}:-1:flags=lanczos,split [o1] [o2];[o1] palettegen [p]; [o2] fifo [o3];[o3] [p] paletteuse" ${srcFileWithoutExtension}.gif
     fi;
   }
+
+  alias video-to-gif=video-to-gif;
 fi;
+
+# Upload using transfer.sh – https://github.com/dutchcoders/transfer.sh/
+# (apparently the default instance has been shut down)
+#
+# function transfer() {
+#   local tmpfile=$( mktemp -t transferXXX )
+#   curl --progress-bar --upload-file $1 https://transfer.sh/$(basename $1) >> $tmpfile;
+#   cat $tmpfile;
+#   rm -f $tmpfile;
+# }
+
+# alias transfer=transfer;
 
 # Convert RAW images to 2560 dimension max JPEG
 if [ -x "$(which convert)" ]; then

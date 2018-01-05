@@ -95,6 +95,8 @@ brew install rename
 brew install rename
 brew install ssh-copy-id
 brew install tree # tree display of directory structure
+brew install tldr # practical manpages; ex: `$ tldr tar`
+
 
 # Capsule - pharmakon
 brew install graphviz pkg-config rabbitmq postgresql

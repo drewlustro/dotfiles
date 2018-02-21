@@ -74,19 +74,21 @@ if [ "$PLATFORM" = "osx" ]; then
     # Always enable colored `grep` output
     export GREP_OPTIONS="--color=auto"
 
-    # NODE
-    export NPM_PACKAGES="/usr/local";
-    export PATH="$NPM_PACKAGES/bin:$PATH"
-    export NODE_PATH="$NODE_PATH:$NPM_PACKAGES/lib/node_modules:$(npm root -g)";
-
     # ----------------------------------------
-    # NVM (node version manager)
+    # NODE x NVM (node version manager)
     # ----------------------------------------
 
     if $(type nvm &>/dev/null); then
+      # `nvm` managed node
       mkdir -p "$HOME/.nvm" 2>/dev/null;
       export NVM_DIR="$HOME/.nvm";
       source "/usr/local/opt/nvm/nvm.sh";
+      export NODE_PATH="$(npm root -g):$NODE_PATH:$NPM_PACKAGES/lib/node_modules";
+    else
+      # global default `node` + `npm`
+      export NPM_PACKAGES="/usr/local";
+      export PATH="$NPM_PACKAGES/bin:$PATH"
+      export NODE_PATH="$(npm root -g):$NODE_PATH:$NPM_PACKAGES/lib/node_modules";
     fi
 
     if [ -x "$(which subl)" ]; then

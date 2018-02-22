@@ -1,6 +1,6 @@
 " Use the Solarized Dark theme
 set background=dark
-colorscheme solarized
+colorscheme materialbox
 let g:solarized_termtrans=1
 
 " Make Vim more useful
@@ -46,8 +46,8 @@ set number
 syntax on
 " Highlight current line
 set cursorline
-" Make tabs as wide as four spaces
-set tabstop=4
+" Make tabs as wide as two spaces
+set tabstop=2
 " Show “invisible” characters
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
 set list

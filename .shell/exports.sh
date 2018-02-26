@@ -44,7 +44,9 @@ export PYTHONPATH=$PYTHON2PATH;
 
 # Python 3 or 2 for PYTHONPATH
 if [ -x "$(which python3)" ]; then
-
+  
+  : # no-op
+  
   # PYTHONPATH -> homebrew Python 3 location
   # export PYTHONPATH="/usr/local/lib/python3.6/site-packages:$PYTHONPATH";
   # export PYTHON3PATH=$PYTHONPATH;

@@ -109,7 +109,7 @@ echo ""
 echo "Done installing common CLI apps and libs."
 
 echo "Installing super-common npm tools..."
-npm install -g grunt-cli gulp bower yo webpack
+npm install -g grunt-cli gulp yo webpack
 echo ""
 echo "Done."
 

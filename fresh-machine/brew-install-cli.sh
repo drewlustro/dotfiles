@@ -52,11 +52,9 @@ mkdir -p "$HOME/.gnupg" 2>/dev/null
 cat "$HOME/.gnupg/gpg-agent.conf" | grep -iq pinentry-program || echo "pinentry-program /usr/local/bin/pinentry-mac" >> "$HOME/.gnupg/gpg-agent.conf"
 
 # Install more recent versions of some macOS tools.
-brew install vim --with-override-system-vi
 brew install grep
 brew install openssh
 brew install screen
-brew install homebrew/php/php56 --with-gmp
 
 # Exa replacement for ls
 # https://github.com/ogham/exa

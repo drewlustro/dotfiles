@@ -78,6 +78,7 @@ fi;
 if [ -x "$(which bat)" ]; then
   export BAT_THEME="TwoDark"
   alias cat='bat'
+  alias ccat='cat'
 fi;
 
 # ----------------------------------------

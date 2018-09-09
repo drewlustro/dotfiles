@@ -40,6 +40,6 @@ if [ -d "$INCLUDES_CUSTOM" ]; then
 fi;
 unset INCLUDES_CUSTOM;
 
-
+unsetopt auto_name_dirs
 unsetopt correct
 unsetopt correct_all

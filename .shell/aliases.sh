@@ -81,6 +81,13 @@ if [ -x "$(which bat)" ]; then
   alias ccat='cat'
 fi;
 
+if [ -x "$(which fzf)" ]; then
+  alias preview="fzf --preview 'bat --color \"always\" {}'"
+  # add support for ctrl+o to open selected file in VS Code
+  export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
+fi;
+
+
 # ----------------------------------------
 # Utilities
 # ----------------------------------------

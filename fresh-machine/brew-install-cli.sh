@@ -79,6 +79,7 @@ brew install autojump # j command to move to directories quickly
 brew install bat # better `cat`
 brew install diff-so-fancy # better than diff
 brew install fd # better than `find`
+brew install fzf # fuzzy ctrl+r
 brew install git
 brew install git-lfs
 brew install imagemagick --with-webp
@@ -101,13 +102,17 @@ sudo easy_install pip
 # Remove outdated versions from the cellar
 brew cleanup
 
-echo ""
-echo "Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `\$PATH`."
-echo ""
-echo "Done installing common CLI apps and libs."
-
 echo "Installing super-common npm tools..."
 npm install -g grunt-cli gulp yo webpack
 echo ""
+
+echo ""
+echo 'GNUCoreUtils: add $(brew --prefix coreutils)/libexec/gnubin to $PATH'
+echo ""
+echo 'fzf: add ctrl+r shell integration via $(brew --prefix)/opt/fzf/install'
+echo ""
+echo "Completed installation of common CLI apps and libs."
+echo ""
+
 echo "Done."
 

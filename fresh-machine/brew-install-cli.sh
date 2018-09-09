@@ -84,6 +84,7 @@ brew install git
 brew install git-lfs
 brew install imagemagick --with-webp
 brew install mackup
+brew install ncdu # better `du`
 brew install nmap
 brew install node # includes 'npm'
 brew install nvm

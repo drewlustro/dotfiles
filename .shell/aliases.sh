@@ -82,11 +82,16 @@ if [ -x "$(which bat)" ]; then
 fi;
 
 if [ -x "$(which fzf)" ]; then
-  alias preview="fzf --preview 'bat --color \"always\" {}'"
+  alias preview="fzf --preview 'bat --color \"always\" {}'";
   # add support for ctrl+o to open selected file in VS Code
-  export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
+  export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'";
+  # Setting fd as the default source for fzf
+  [ -x "$(which fd)" ] && export FZF_DEFAULT_COMMAND='fd --type f';
 fi;
 
+if [ -x "$(which ncdu)" ]; then
+  alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+fi;
 
 # ----------------------------------------
 # Utilities

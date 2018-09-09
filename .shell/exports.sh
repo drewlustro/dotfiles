@@ -41,9 +41,9 @@ export PYTHONIOENCODING='UTF-8';
 
 # Python 3 or 2 for PYTHONPATH
 if [ -x "$(which python3)" ]; then
-  
+
   : # no-op
-  
+
   # PYTHONPATH -> homebrew Python 3 location
   # export PYTHONPATH="/usr/local/lib/python3.6/site-packages:$PYTHONPATH";
   # export PYTHON3PATH=$PYTHONPATH;
@@ -53,20 +53,18 @@ if [ -x "$(which python3)" ]; then
   # alias pip2="$(which pip)"; # set pip2 -> system pip
   # alias pip="$(which pip3)"; # set pip -> pip3
 else
-  
+
   # Python2 path w/ homebrew support
   if test $(which brew); then
     export PYTHON2PATH="$(brew --prefix)/lib/python2.7/site-packages:/Library/Python/2.7/site-packages:$HOME/Library/Python/2.7/lib/python/site-packages:$PYTHONPATH";
     export PYTHONPATH=$PYTHON2PATH;
   fi;
-  
+
 fi;
 
 # Avoid issues with `gpg` as installed via Homebrew.
 # https://stackoverflow.com/a/42265848/96656
 export GPG_TTY=$(tty);
-
-
 
 # ----------------------------------------
 # Mac OS X
@@ -84,11 +82,16 @@ if [ "$PLATFORM" = "osx" ]; then
     # ----------------------------------------
 
     if $(type nvm &>/dev/null); then
-      # `nvm` managed node
+      # `nvm` managed node (manual install of nvm)
       mkdir -p "$HOME/.nvm" 2>/dev/null;
       export NVM_DIR="$HOME/.nvm";
-      source "/usr/local/opt/nvm/nvm.sh";
+      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm (manual install) [AL compat?]
       export NODE_PATH="$(npm root -g):$NODE_PATH:$NPM_PACKAGES/lib/node_modules";
+
+      # add bash completion
+      if [[ "$SHELL_CHECK" == *bash ]]; then
+        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+      fi;
     else
       # global default `node` + `npm`
       export NPM_PACKAGES="/usr/local";

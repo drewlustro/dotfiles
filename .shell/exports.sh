@@ -38,13 +38,12 @@ export NODE_REPL_MODE='sloppy';
 # Make Python use UTF-8 encoding for output to stdin, stdout, and stderr.
 export PYTHONIOENCODING='UTF-8';
 
-# Python2 path w/ homebrew support
-export PYTHON2PATH="$(brew --prefix)/lib/python2.7/site-packages:/Library/Python/2.7/site-packages:$HOME/Library/Python/2.7/lib/python/site-packages:$PYTHONPATH";
-export PYTHONPATH=$PYTHON2PATH;
 
 # Python 3 or 2 for PYTHONPATH
 if [ -x "$(which python3)" ]; then
-
+  
+  : # no-op
+  
   # PYTHONPATH -> homebrew Python 3 location
   # export PYTHONPATH="/usr/local/lib/python3.6/site-packages:$PYTHONPATH";
   # export PYTHON3PATH=$PYTHONPATH;
@@ -54,7 +53,13 @@ if [ -x "$(which python3)" ]; then
   # alias pip2="$(which pip)"; # set pip2 -> system pip
   # alias pip="$(which pip3)"; # set pip -> pip3
 else
-  export PYTHONPATH=$PYTHON2PATH;
+  
+  # Python2 path w/ homebrew support
+  if test $(which brew); then
+    export PYTHON2PATH="$(brew --prefix)/lib/python2.7/site-packages:/Library/Python/2.7/site-packages:$HOME/Library/Python/2.7/lib/python/site-packages:$PYTHONPATH";
+    export PYTHONPATH=$PYTHON2PATH;
+  fi;
+  
 fi;
 
 # Avoid issues with `gpg` as installed via Homebrew.

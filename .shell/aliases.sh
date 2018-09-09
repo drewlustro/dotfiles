@@ -24,14 +24,8 @@ alias reload="exec $SHELL -l" # Reload the shell (i.e. invoke as a login shell)
 [ -f "$(which supervisorctl)" ] && alias supervisor="sudo supervisorctl";
 
 # Git
-alias g="git"
 alias gs="git status"
-alias gp="git pull"
 alias gf="git fetch"
-alias gb="git branch -a"
-alias gitpush-originmaster="git push origin master"
-alias gitadd-all="git add --all && git add -u"
-alias gitcommit-message="git commit -m"
 
 # tree
 alias treee="tree -hL 2 --filelimit 20 --dirsfirst"
@@ -55,6 +49,7 @@ elif [ "$PLATFORM" = "osx" ]; then # OS X `ls`
     alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 fi;
 
+# exa = `ls` replacement written in rust
 if [ -x "$(which exa)" ]; then
   alias ls="exa --group-directories-first";
   alias l="exa -lr";
@@ -80,6 +75,10 @@ else
   alias ls="command ls ${colorflag}";
 fi;
 
+if [ -x "$(which bat)" ]; then
+  export BAT_THEME="TwoDark"
+  alias cat='bat'
+fi;
 
 # ----------------------------------------
 # Utilities
@@ -187,11 +186,6 @@ if [ "$PLATFORM" = "osx" ]; then
     # Kill all the tabs in Chrome to free up memory
     # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
     alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
-
-    # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-    alias update-all="sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update --system; sudo gem update"
-
-    alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
 
     # Lock the screen (when going AFK)
     alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"

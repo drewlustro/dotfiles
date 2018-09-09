@@ -11,9 +11,6 @@ fi
 # Make sure we’re using the latest Homebrew
 brew update
 
-# Upgrade any already-installed formulae
-brew upgrade
-
 echo "Installing heavy multimedia libs and CLI apps (x264, flac, sox, etc)."
 echo "This may take a while..."
 echo ""

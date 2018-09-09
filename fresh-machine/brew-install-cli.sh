@@ -11,9 +11,6 @@ fi
 # Make sure we’re using the latest Homebrew
 brew update
 
-# Upgrade any already-installed formulae
-brew upgrade
-
 echo "Installing common CLI apps and libs..."
 echo ""
 # Install GNU core utilities (those that come with macOS are outdated).
@@ -53,7 +50,6 @@ cat "$HOME/.gnupg/gpg-agent.conf" | grep -iq pinentry-program || echo "pinentry-
 
 # Install more recent versions of some macOS tools.
 brew install grep
-brew install openssh
 brew install screen
 
 # Exa replacement for ls
@@ -80,9 +76,11 @@ brew install ucspi-tcp # `tcpserver` etc.
 # Install other useful binaries
 brew install ack
 brew install autojump # j command to move to directories quickly
+brew install bat # better `cat`
+brew install diff-so-fancy # better than diff
+brew install fd # better than `find`
 brew install git
 brew install git-lfs
-brew install ufraw --with-exiv2 # RAW image support for imagemagick
 brew install imagemagick --with-webp
 brew install mackup
 brew install nmap
@@ -90,10 +88,10 @@ brew install node # includes 'npm'
 brew install nvm
 brew install pv
 brew install rename
-brew install rename
 brew install ssh-copy-id
-brew install tree # tree display of directory structure
 brew install tldr # practical manpages; ex: `$ tldr tar`
+brew install tree # tree display of directory structure
+brew install ufraw --with-exiv2 # RAW image support for imagemagick
 
 
 # Capsule - pharmakon

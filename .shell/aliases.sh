@@ -122,7 +122,6 @@ fi;
 # OS X Shortcuts
 # ----------------------------------------
 if [ "$PLATFORM" = "osx" ]; then
-    alias s="subl ."
     alias o="open"
     alias oo="open ."
 

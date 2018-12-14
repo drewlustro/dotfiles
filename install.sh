@@ -27,6 +27,7 @@ function sayDone() {
   minihr;
   echo "$ ./brew-cask-fonts.sh  # installs a handful of useful public-domain typefaces, including many coding fonts"
   echo "$ ./brew-install-cli.sh # installs TONS of useful binaries, libs, and CLI tools via brew"
+  echo "$ ./brew-install-media-cli.sh # installs heavy media CLI tools (ffmpeg, sox, etc.) via brew"
   echo "$ ./brew-cask-apps.sh   # installs many useful OS X applications via brew-cask"
   minihr;
   echo "See each shell file above to see which components will be (non-destructively) installed."
@@ -75,8 +76,12 @@ function preztoInstall() {
 function primaryInstall() {
   br;
   heavyhr;
-  echo "  PRIMARY DOTFILES BATCH INSTALL"
-  hr;
+  echo "  PRIMARY DOTFILES BATCH INSTALL"; hr;
+
+  BACKUP_DIR=".dotfiles-backup-$(date +%Y-%m-%d-%H%M%S)";
+  echo "backing up top-level home directory dotfiles to: \"~/$BACKUP_DIR\" "; hr;
+  mkdir "$HOME/$BACKUP_DIR" 2> /dev/null;
+  cp .* ~/$BACKUP_DIR/ 2> /dev/null;
 
   echo "rsync'ing essential config files to home directory..."
   br;
@@ -146,8 +151,8 @@ function updateShellLibraryOnly() {
 
 function showBanner() {
   DOTFILES_URL="https://github.com/drewlustro/dotfiles"
-  DOTFILES_VERSION="3.1.0";
-  DOTFILES_UPDATED="2017-10-11"
+  DOTFILES_VERSION="3.2.0";
+  DOTFILES_UPDATED="2018-12-13"
 
   heavyhr;
   echo "WELCOME TO DREW'S DOTFILES for Bash & ZSH (zpresto), SON!"
@@ -188,10 +193,9 @@ elif [ "$1" = "--update" ] || [ "$1" = "-u" ]; then
   updateShellLibraryOnly;
 else
   hr;
-  echo "[!!!] WARNING [!!!]"
+  echo "[!] PLEASE READ [!]"
   minihr;
-  echo "This may overwrite existing bash / zsh / prezto dotfiles in your home directory.";
-  echo "Including: .zshrc,  .bashrc, .bash_profile, .bash_prompt & more.";
+  echo "Existing dotfiles will be backed up to your home directory in ~/.dotfiles-backup-\$TIMESTAMP";
   echo "Default aliases, exports, functions, and path additions will be added to $HOME/.shell";
   echo "Customizable, empty versions of above will be added to $HOME/.shell-custom";
   minihr;

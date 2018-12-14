@@ -1,7 +1,8 @@
 # Drew's Platform & Shell Agnostic Dotfiles
 
-`Version 3.1.0 / October 11, 2017`
+`Version 3.2.0 / December 13, 2018`
 
+* Backs up top-level dotfiles before installing
 * Works with both **bash** and **zsh**
 * Platform (OS X, Linux, etc) agnostic
 * Includes non-destructive userland includes to your home directory.
@@ -63,6 +64,7 @@ git clone https://github.com/drewlustro/dotfiles.git && cd dotfiles && ./install
 
 ```bash
 ./fresh-machine/brew-install-cli.sh # installs TONS of useful binaries, libs, and CLI tools via brew
+./fresh-machine/brew-install-media-cli.sh # installs heavy media CLI tools (ffmpeg, sox, etc.) via brew
 ./fresh-machine/brew-cask-fonts.sh  # installs a handful of useful public-domain typefaces, including many coding fonts
 ./fresh-machine/brew-cask-apps.sh   # installs many useful OS X applications via brew-cask
 ```
@@ -101,11 +103,11 @@ For instance, my `~/.shell-custom/extra.sh` file looks like this:
 ```bash
 # Git credentials
 # Not in the repository, to prevent people from accidentally committing under my name
-export GIT_AUTHOR_NAME="Drew Lustro"
+export GIT_AUTHOR_NAME="John Doe"
 export GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
 git config --global user.name "$GIT_AUTHOR_NAME"
 
-export GIT_AUTHOR_EMAIL="drewlustro@gmail.com"
+export GIT_AUTHOR_EMAIL="name@gmail.com"
 export GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 git config --global user.email "$GIT_AUTHOR_EMAIL"
 

@@ -79,15 +79,16 @@ function primaryInstall() {
   echo "  PRIMARY DOTFILES BATCH INSTALL"; hr;
 
   BACKUP_DIR=".dotfiles-backup-$(date +%Y-%m-%d-%H%M%S)";
-  echo "backing up top-level home directory dotfiles to: \"~/$BACKUP_DIR\" "; hr;
+  echo "BACKING UP: top-level home directory dotfiles to: \"~/$BACKUP_DIR\" "; hr;
   mkdir "$HOME/$BACKUP_DIR" 2> /dev/null;
   cp .* ~/$BACKUP_DIR/ 2> /dev/null;
 
-  echo "rsync'ing essential config files to home directory..."
+  echo "INSTALL: essential config files to home directory..."
   br;
   rsync --exclude ".git/" \
     --exclude "*.sample" \
     --exclude ".DS_Store" \
+    --exclude "App Support" \
     --exclude ".gitignore" \
     --exclude ".macos" \
     --exclude ".xmodmaprc*" \

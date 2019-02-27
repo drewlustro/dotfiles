@@ -16,6 +16,7 @@
 # alias alist="cd ~/dev-local/alist";
 # alias angellist="cd ~/dev-local/AngelList";
 # alias core="cd ~/dev-local/AngelList";
+# alias talent="cd ~/dev-local/AngelList/frontend/talent";
 # alias halo="cd ~/dev-local/halo";
 # alias mndpc="cd ~/dev-local/mn-architects";
 # alias dotfiles="cd ~/dev-local/dotfiles";

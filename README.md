@@ -148,13 +148,18 @@ cd dotfiles
 
 
 ## Contact & Feedback
-| [![twitter/msodrew](https://i.imgur.com/lTqjI9E.jpg)](http://twitter.com/msodrew "@msodrew on Twitter") |
-|---|
-| [Drew Lustro](http://drewlustro.com) |
 
+<a href="http://twitter.com/msodrew" target="_blank"><img src="https://i.imgur.com/lTqjI9E.jpg" width="300" /></a>
+
+&nbsp;
 
 Suggestions & improvements [welcome](https://github.com/drewlustro/dotfiles/issues)!
 
+&nbsp;
+
+---
+
+&nbsp;
 
 ### Original Author Credit & Huge Thanks To:
 

@@ -149,7 +149,7 @@ cd dotfiles
 
 ## Contact & Feedback
 
-<a href="http://twitter.com/msodrew" target="_blank"><img src="https://i.imgur.com/lTqjI9E.jpg" width="300" /></a>
+<a href="http://twitter.com/msodrew" target="_blank"><img src="https://i.imgur.com/lTqjI9E.jpg" width="200" /></a>
 
 &nbsp;
 

@@ -1,4 +1,7 @@
 {
+
+
+
   "breadcrumbs.enabled": true,
   "editor.cursorBlinking": "solid",
   "editor.fontFamily": "'InputMono-Light', Monaco, 'Courier New', monospace",
@@ -9,7 +12,7 @@
   "editor.matchBrackets": true,
   "editor.minimap.enabled": false,
   "editor.multiCursorModifier": "ctrlCmd",
-  "editor.renderWhitespace": "none",
+  "editor.renderWhitespace": "all",
   "editor.rulers": [80, 112],
   "editor.showFoldingControls": "always",
   "editor.snippetSuggestions": "top",
@@ -28,7 +31,11 @@
   "files.encoding": "utf8",
   "files.hotExit": "off",
   "files.associations": {
-    ".env.*": "dotenv"
+    ".env.*": "dotenv",
+    ".zpreztorc": "shellscript",
+    "prompt_smiley_setup": "shellscript",
+    ".inputrc": "shellscript",
+    "prompt_maxrelax_setup": "shellscript"
   },
   "gitlens.codeLens.scopes": [
     "document",
@@ -66,7 +73,7 @@
   "sync.quietSync": false,
   "sync.removeExtensions": true,
   "sync.syncExtensions": true,
-  "window.zoomLevel": -1,
+  "window.zoomLevel": 0,
   "workbench.colorTheme": "Panda Syntax",
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editor.labelFormat": "short",

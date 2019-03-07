@@ -70,6 +70,8 @@ function preztoInstall() {
     (( $? == 0 )) && br && echo "$(which zsh) is now your default shell."
   fi;
 
+  rsync -avh --no-perms --progress ./zpresto/ ~/.zprezto/
+
   br; hr; br; br;
 }
 
@@ -93,6 +95,9 @@ function primaryInstall() {
     --exclude ".macos" \
     --exclude ".xmodmaprc*" \
     --exclude "bin/" \
+    --exclude "LICENSE-MIT" \
+    --exclude "vscode" \
+    --exclude "zprezto"
     --exclude "bootstrap.sh" \
     --exclude "brew-cask-apps.sh" \
     --exclude "brew-cask-fonts.sh" \
@@ -107,7 +112,14 @@ function primaryInstall() {
     --exclude "sublimetext/" \
     --exclude "terminal-themes/" \
     --exclude "update.sh" \
-    -avh --no-perms . ~;
+    -avh --no-perms --progress . ~;
+
+  # VS Code settings
+  if [ -d "$HOME/Library/Application\ Support/Code/User" ]; then
+    minihr;
+    echo "Installing VSCode settings to $HOME/Library/Application\ Support/Code/User ...";
+    rsync -avh --no-perms --progress ./vscode/ ~/Library/Application\ Support/Code/User/;
+  fi;
 
   minihr;
 
@@ -152,11 +164,11 @@ function updateShellLibraryOnly() {
 
 function showBanner() {
   DOTFILES_URL="https://github.com/drewlustro/dotfiles"
-  DOTFILES_VERSION="3.2.0";
-  DOTFILES_UPDATED="2018-12-13"
+  DOTFILES_VERSION="3.3.0";
+  DOTFILES_UPDATED="2019-03-07"
 
   heavyhr;
-  echo "WELCOME TO DREW'S DOTFILES for Bash & ZSH (zpresto), SON!"
+  echo "WELCOME TO DREW'S DOTFILES for Bash & ZSH (zprezto)!"
   heavyhr;
 
   echo "Version: $DOTFILES_VERSION"

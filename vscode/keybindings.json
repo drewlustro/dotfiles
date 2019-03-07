@@ -65,10 +65,6 @@
     "when": "terminalFocus"
   },
   {
-    "key": "alt+cmd+right",
-    "command": "workbench.action.terminal.focusNext"
-  },
-  {
     "key": "shift+cmd+j",
     "command": "-workbench.action.search.toggleQueryDetails",
     "when": "searchViewletVisible"
@@ -128,7 +124,7 @@
     "command": "workbench.action.moveEditorToNextGroup"
   },
   {
-    "key": "ctrl+cmd+right",
+    "key": "ctrl+shift+cmd+right",
     "command": "-workbench.action.moveEditorToNextGroup"
   },
   {
@@ -136,7 +132,7 @@
     "command": "workbench.action.moveEditorToPreviousGroup"
   },
   {
-    "key": "ctrl+cmd+left",
+    "key": "ctrl+shift+cmd+left",
     "command": "-workbench.action.moveEditorToPreviousGroup"
   },
   {
@@ -186,7 +182,7 @@
     "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
   },
   {
-    "key": "ctrl+shift+j",
+    "key": "alt+cmd+j",
     "command": "workbench.actions.view.problems"
   },
   {
@@ -197,5 +193,35 @@
     "key": "ctrl+shift+0",
     "command": "workbench.action.tasks.runTask",
     "args": "TSLint entire project"
-  }
+  },
+  {
+    "key": "shift+cmd+,",
+    "command": "-editor.action.inPlaceReplace.up",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+cmd+,",
+    "command": "workbench.action.openGlobalKeybindings"
+  },
+  {
+    "key": "cmd+k cmd+s",
+    "command": "-workbench.action.openGlobalKeybindings"
+  },
+  {
+    "key": "ctrl+shift+cmd+,",
+    "command": "workbench.action.openGlobalKeybindingsFile"
+  },
+  {
+    "key": "alt+cmd+,",
+    "command": "workbench.action.openSettingsJson"
+  },
+  {
+    "key": "alt+cmd+left",
+    "command": "-workbench.action.previousEditor"
+  },
+  {
+    "key": "alt+cmd+right",
+    "command": "-workbench.action.nextEditor"
+  },
+  { "key": "cmd+shift+left",        "command": "workbench.action.focusLeftGroup", "when":  "terminalFocus" },
 ]

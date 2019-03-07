@@ -5,16 +5,16 @@
 		"path": "/Users/drew/dev-local/dotfiles"
 	},
 	{
-		"name": "Local shell",
+		"name": "Shell Local (symlinked)",
 		"path": "/Users/drew/.shell"
 	},
 	{
-		"name": "Local custom",
+		"name": "Custom Local",
 		"path": "/Users/drew/.shell-custom"
 	},
 	{
 		"name": "Local ~",
 		"path": "/Users/drew/.home-directory-dotfiles"
 	}
-] 
+]
 }

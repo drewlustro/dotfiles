@@ -1,0 +1,20 @@
+{
+  "folders": [
+	{
+		"name": "Repository",
+		"path": "/Users/drew/dev-local/dotfiles"
+	},
+	{
+		"name": "Local shell",
+		"path": "/Users/drew/.shell"
+	},
+	{
+		"name": "Local custom",
+		"path": "/Users/drew/.shell-custom"
+	},
+	{
+		"name": "Local ~",
+		"path": "/Users/drew/.home-directory-dotfiles"
+	}
+] 
+}

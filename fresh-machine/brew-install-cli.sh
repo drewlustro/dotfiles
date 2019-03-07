@@ -95,9 +95,6 @@ brew install tldr # practical manpages; ex: `$ tldr tar`
 brew install tree # tree display of directory structure
 brew install ufraw --with-exiv2 # RAW image support for imagemagick
 
-
-# Capsule - pharmakon
-brew install graphviz pkg-config rabbitmq postgresql
 sudo easy_install pip
 
 # Remove outdated versions from the cellar

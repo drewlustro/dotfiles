@@ -82,16 +82,18 @@ if [ "$PLATFORM" = "osx" ]; then
     # ----------------------------------------
 
     if $(type nvm &>/dev/null); then
-      # `nvm` managed node (manual install of nvm)
-      mkdir -p "$HOME/.nvm" 2>/dev/null;
-      export NVM_DIR="$HOME/.nvm";
-      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm (manual install) [AL compat?]
-      export NODE_PATH="$(npm root -g):$NODE_PATH:$NPM_PACKAGES/lib/node_modules";
+      # IMPORTANT NOTE: brew-managed nvm + zprezto automatically
+      # handles below loading if 'node' plugin is used.
 
-      # add bash completion
-      if [[ "$SHELL_CHECK" == *bash ]]; then
-        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-      fi;
+      # `nvm` managed node
+      # mkdir -p "$HOME/.nvm" 2>/dev/null;
+      # export NVM_DIR="$HOME/.nvm";
+      # source "/usr/local/opt/nvm/nvm.sh";
+      # export NODE_PATH="$(npm root -g):$NODE_PATH:$NPM_PACKAGES/lib/node_modules";
+
+      ### To fix nvm prefix warning:
+      # npm config delete prefix
+      # npm config set prefix $NVM_DIR/versions/node/v10.10.0
     else
       # global default `node` + `npm`
       export NPM_PACKAGES="/usr/local";
@@ -99,10 +101,34 @@ if [ "$PLATFORM" = "osx" ]; then
       export NODE_PATH="$(npm root -g):$NODE_PATH:$NPM_PACKAGES/lib/node_modules";
     fi
 
-    if [ -x "$(which subl)" ]; then
-        export VISUAL=subl;
+    # VSCode as default editor
+    if [ -x "$(which code)" ]; then
+        export VISUAL="code";
         export EDITOR=vim;
     fi;
+
+    # ----------------------------------------
+    # NODE x NVM (node version manager)
+    # ----------------------------------------
+
+    # if $(type nvm &>/dev/null); then
+    #   # `nvm` managed node (manual install of nvm)
+    #   mkdir -p "$HOME/.nvm" 2>/dev/null;
+    #   export NVM_DIR="$HOME/.nvm";
+    #   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm (manual install) [AL compat?]
+    #   export NODE_PATH="$(npm root -g):$NODE_PATH:$NPM_PACKAGES/lib/node_modules";
+
+    #   # add bash completion
+    #   if [[ "$SHELL_CHECK" == *bash ]]; then
+    #     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+    #   fi;
+    # else
+    #   # global default `node` + `npm`
+    #   export NPM_PACKAGES="/usr/local";
+    #   export PATH="$NPM_PACKAGES/bin:$PATH"
+    #   export NODE_PATH="$(npm root -g):$NODE_PATH:$NPM_PACKAGES/lib/node_modules";
+    # fi
+
 fi;
 
 

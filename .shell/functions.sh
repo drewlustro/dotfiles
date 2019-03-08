@@ -1,9 +1,9 @@
 if [ -x "$(which ffmpeg)" ]; then
   function video-to-gif() {
     local srcFile=${1};
-    local fps=${2:-50};
-    local maxwidth=${3:-670};
-    echo "Usage: video-to-gif [source.mp4] [fps=50] [maxwidth=670]";
+    local fps=${2:-15};
+    local maxwidth=${3:--1};
+    echo "Usage: video-to-gif [source.mp4] [fps=15] [maxwidth=preserve]";
     if [ -f "${srcFile}" ]; then
       local srcFileWithoutExtension="${srcFile%.*}";
       ffmpeg -y -i ${srcFile} -filter_complex "fps=${fps},scale=${maxwidth}:-1:flags=lanczos,split [o1] [o2];[o1] palettegen [p]; [o2] fifo [o3];[o3] [p] paletteuse" ${srcFileWithoutExtension}.gif

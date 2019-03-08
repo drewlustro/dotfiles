@@ -19,9 +19,11 @@ echo ""
 brew install cmake
 brew install zlib
 brew install libpng
+brew install libtiff
 brew install libtool
 brew install libogg
 brew install libvorbis
+brew install webp
 brew install freetype
 brew install libyaml
 brew install jpeg
@@ -30,17 +32,19 @@ brew install jpeg
 brew install x264
 brew install x265
 brew install flac
-brew install ffmpeg --with-freetype --with-theora --with-tools --with-libvorbis --with-x265
+brew install lame
+brew install ffmpeg
+# homebrew 2.0 removed ffmpeg's options
+# if you'd like to install with options, use: https://github.com/justinmayer/homebrew-tap
+# brew install justinmayer/tap/ffmpeg --with-theora --with-tools --with-libvorbis --with-x265
 brew install webkit2png
-brew install ufraw --with-exiv2 # RAW image support for imagemagick
-brew install imagemagick --with-webp
+brew install ufraw # RAW image support for imagemagick
+brew install imagemagick
 brew install sox # audio transcoding swiss-army knife
-
+brew install youtube-dl
 
 # Remove outdated versions from the cellar
 brew cleanup
 
 echo ""
-echo "Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `\$PATH`."
-echo ""
-echo "Done installing common CLI apps and libs."
+echo "Done installing heavy CLI apps and libs."

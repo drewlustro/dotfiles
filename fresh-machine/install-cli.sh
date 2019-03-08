@@ -22,7 +22,7 @@ brew install moreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
-brew install gnu-sed --with-default-names
+brew install gnu-sed
 # Install Bash 4.
 # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before
 # running `chsh`.
@@ -35,13 +35,11 @@ if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
   chsh -s /usr/local/bin/bash;
 fi;
 
-# Install wget with IRI support
-brew install wget --enable-iri
+# Install wget
+brew install wget
 
 # Install more recent versions of some OSX tools
-brew install vim --override-system-vi
-brew install homebrew/dupes/grep
-brew install homebrew/dupes/screen
+brew install vim
 
 # Install GnuPG to enable PGP-signing commits.
 brew install gnupg pinentry-mac
@@ -52,17 +50,28 @@ cat "$HOME/.gnupg/gpg-agent.conf" | grep -iq pinentry-program || echo "pinentry-
 brew install grep
 brew install screen
 
+# Z shell
+brew install zsh
+
+# Git - in case you got this repo via .zip download
+brew install git
+
 # Exa replacement for ls
 # https://github.com/ogham/exa
 brew install exa
 
 # Dependency libs
+brew install autoconf
+brew install automake
 brew install cmake
-brew install zlib
+brew install jpeg
+brew install libffi
 brew install libpng
 brew install libtool
 brew install libyaml
-brew install jpeg
+brew install openssl
+brew install readline
+brew install zlib
 
 # Install some CTF tools; see https://github.com/ctfs/write-ups.
 brew install cifer
@@ -80,28 +89,31 @@ brew install bat # better `cat`
 brew install diff-so-fancy # better than diff
 brew install fd # better than `find`
 brew install fzf # fuzzy ctrl+r
-brew install git
 brew install git-lfs
-brew install imagemagick --with-webp
 brew install mackup
 brew install ncdu # better `du`
 brew install nmap
 brew install node # includes 'npm'
 brew install nvm
+brew install pkg-config
 brew install pv
 brew install rename
 brew install ssh-copy-id
 brew install tldr # practical manpages; ex: `$ tldr tar`
+brew install tmux
 brew install tree # tree display of directory structure
-brew install ufraw --with-exiv2 # RAW image support for imagemagick
+brew install awscli
 
-sudo easy_install pip
+# yarn recommends install view brew
+brew install yarn
+
+# sudo easy_install pip
 
 # Remove outdated versions from the cellar
 brew cleanup
 
 echo "Installing super-common npm tools..."
-npm install -g grunt-cli gulp yo webpack
+npm install -g grunt-cli gulp yo webpack ncu
 echo ""
 
 echo ""

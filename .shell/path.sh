@@ -14,6 +14,9 @@ if [ "$PLATFORM" = "osx" ]; then
     if [ -d "/Applications/calibre.app/Contents/console.app/Contents/MacOS" ]; then
       export PATH="$PATH:/Applications/calibre.app/Contents/console.app/Contents/MacOS";
     fi;
+
+    # support homebrew-installed python3
+    [ -d "/usr/local/opt/python/libexec/bin" ] && export PATH="/usr/local/opt/python/libexec/bin:$PATH";
 fi;
 
 # Load RVM scripts if RVM is installed

@@ -45,11 +45,5 @@ unsetopt correct
 unsetopt correct_all
 unsetopt auto_name_dirs # fixes RVM_PROJECT_PATH~ artifact in zprezto prompt
 
-# item2 shell integration
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-
-# FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

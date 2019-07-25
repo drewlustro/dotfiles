@@ -9,6 +9,7 @@
 [ -d "$HOME/.cargo" ] && source $HOME/.cargo/env;
 [ -d "$HOME/.dir_colors" ] && eval `dircolors ~/.dir_colors/dircolors`;
 
+# fancy diff
 if [ -x "$(which diff-so-fancy)" ]; then
   git config --global core.pager "diff-so-fancy | less --tabs=1,5 -RFX"
   git config --global color.ui true
@@ -25,3 +26,9 @@ if [ -x "$(which diff-so-fancy)" ]; then
   git config --global color.diff.new        "green bold"
   git config --global color.diff.whitespace "red reverse"
 fi;
+
+# item2 shell integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

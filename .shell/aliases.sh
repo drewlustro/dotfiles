@@ -24,8 +24,11 @@ alias reload="exec $SHELL -l" # Reload the shell (i.e. invoke as a login shell)
 [ -f "$(which supervisorctl)" ] && alias supervisor="sudo supervisorctl";
 
 # Git
-alias gs="git status"
-alias gf="git fetch"
+alias gs="git status";
+alias gf="git fetch";
+alias gmaster="git checkout master";
+alias gmaster-pull="git pull origin master";
+alias gmaster-rebase="git pull origin master --rebase";
 
 # tree
 alias treee="tree -hL 2 --filelimit 20 --dirsfirst"
@@ -125,37 +128,22 @@ if [ "$PLATFORM" = "osx" ]; then
     alias o="open"
     alias oo="open ."
 
-    # Canonical hex dump; some systems have this symlinked
-    command -v hd > /dev/null || alias hd="hexdump -C"
-
     # OS X has no `md5sum`, so use `md5` as a fallback
     command -v md5sum > /dev/null || alias md5sum="md5"
 
     # OS X has no `sha1sum`, so use `shasum` as a fallback
     command -v sha1sum > /dev/null || alias sha1sum="shasum"
 
-    # JavaScriptCore REPL
-    jscbin="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc";
-    [ -e "${jscbin}" ] && alias jsc="${jscbin}";
-    unset jscbin;
-
-    # Trim new lines and copy to clipboard
-    alias c="tr -d '\n' | pbcopy"
-
     # Recursively delete `.DS_Store` files
     alias cleanup-dsstore="find . -type f -name '*.DS_Store' -ls -delete"
 
     # Empty the Trash on all mounted volumes and the main HDD
     # Also, clear Apple’s System Logs to improve shell startup speed
-    alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+    alias empty-trash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
     # Hide/show all desktop icons (useful when presenting)
     alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
     alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
-
-    # Merge PDF files
-    # Usage: `mergepdf -o output.pdf input{1,2,3}.pdf`
-    alias mergepdf="/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py"
 
     # Disable Spotlight
     alias spotoff="sudo mdutil -a -i off"
@@ -174,32 +162,12 @@ if [ "$PLATFORM" = "osx" ]; then
     # find . -name .gitattributes | map dirname
     alias map="xargs -n1"
 
-    # One of @janmoesen’s ProTip™s
-    for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-        alias "$method"="lwp-request -m '${method}'"
-    done
-
-    # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
-    alias stfu="osascript -e 'set volume output muted true'"
-    alias pumpitup="osascript -e 'set volume 7'"
-    alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
-
-    # node-webkit alias - https://github.com/rogerwang/node-webkit
-    if [ -s "/Applications/node-webkit.app/Contents/MacOS/node-webkit" ]; then
-        alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit";
-    fi;
-
     # Kill all the tabs in Chrome to free up memory
     # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
     alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 
     # Lock the screen (when going AFK)
     alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-
-    # Allow instantiating duplicate Slack.app instances (for multiple teams)
-    if [ -s "/Applications/Slack.app" ]; then
-        alias slack-dupe="open -n /Applications/Slack.app"
-    fi;
 
     # Flush Directory Service cache
     alias flushcache="dscacheutil -flushcache && killall -HUP mDNSResponder"

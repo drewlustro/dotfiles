@@ -1,0 +1,24 @@
+###[ Current settings for pagekite.py v0.5.9.3. ]#########
+#
+## NOTE: This file may be rewritten/reordered by pagekite.py.
+#
+
+##[ Default kite and account details ]##
+kitename   = timekit-drewlustro.pagekite.me
+kitesecret = 3aa693c82zxezcb4k6f8aca23xef9ffz
+
+##[ Front-end settings: use pagekite.net defaults ]##
+defaults
+
+##[ Back-ends and local services ]##
+service_on  = http:@kitename                   : localhost:5000    : @kitesecret
+
+
+
+
+
+##[ Miscellaneous settings ]##
+savefile = /Users/drew/.pagekite.rc
+
+###[ End of pagekite.py configuration ]#########
+END

@@ -11,19 +11,19 @@
 
 # alias dropbox="cd ~/Dropbox";
 # alias torrents="cd ~/Torrents";
+
+# Local development
+# alias mndpc="cd ~/dev-local/mn-architects";
+# alias dotfiles="cd ~/dev-local/dotfiles";
 # alias dev="cd ~/dev-local";
 
+# AngelList
 # alias alist="cd ~/dev-local/alist";
 # alias angellist="cd ~/dev-local/AngelList";
 # alias core="cd ~/dev-local/AngelList";
 # alias talent="cd ~/dev-local/AngelList/frontend/talent";
 # alias halo="cd ~/dev-local/halo";
-# alias mndpc="cd ~/dev-local/mn-architects";
-# alias dotfiles="cd ~/dev-local/dotfiles";
-
-# alias png2gif-fast="convert -dispose Previous -delay 9 *.png -loop 0 -channel A -threshold 5% -alpha on  ~/Desktop/animation.gif";
-
-# alias slack="open -n /Applications/Slack.app"
+# alias graphql-export='bin/rake graphql:export';
 
 # alias beet-rm="beet rm -a -d"
 # alias beet-ls="beet ls -a | grep -i"

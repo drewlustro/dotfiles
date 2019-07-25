@@ -1,20 +1,46 @@
 {
   "folders": [
-	{
-		"name": "Repository",
-		"path": "/Users/drew/dev-local/dotfiles"
-	},
-	{
-		"name": "Shell Local (symlinked)",
-		"path": "/Users/drew/.shell"
-	},
-	{
-		"name": "Custom Local",
-		"path": "/Users/drew/.shell-custom"
-	},
-	{
-		"name": "Local ~",
-		"path": "/Users/drew/.home-directory-dotfiles"
-	}
-]
+    {
+      "name": "Repository",
+      "path": "/Users/drew/dev-local/dotfiles"
+    },
+    {
+      "name": "Shell Local (symlinked)",
+      "path": "/Users/drew/.shell"
+    },
+    {
+      "name": "Custom Local",
+      "path": "/Users/drew/.shell-custom"
+    },
+    {
+      "name": "Local ~",
+      "path": "/Users/drew/.home-directory-dotfiles"
+    }
+  ],
+  "settings": {
+    "workbench.colorCustomizations": {
+      "[Panda Syntax]": {
+        "titleBar.activeBackground": "#2c2c54",
+        "titleBar.inactiveBackground": "#1e1e3d",
+        "titleBar.activeForeground": "#edfbff",
+        "editor.background": "#202020"
+      },
+      "[Electron]": {
+        "titleBar.activeBackground": "#2c2c54",
+        "titleBar.inactiveBackground": "#1e1e3d",
+        "titleBar.activeForeground": "#edfbff",
+      }
+    },
+    "files.exclude": {
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "docs/**": true,
+      ".docz/**": true,
+      ".rpt2_cache/**": true,
+      ".dist/**": true
+    }
+  }
 }

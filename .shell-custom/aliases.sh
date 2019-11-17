@@ -13,17 +13,17 @@
 # alias torrents="cd ~/Torrents";
 
 # Local development
-# alias mndpc="cd ~/dev-local/mn-architects";
-# alias dotfiles="cd ~/dev-local/dotfiles";
-# alias dev="cd ~/dev-local";
+# alias mndpc="cd /Volumes/dev-local/mn-architects";
+# alias dotfiles="cd /Volumes/dev-local/dotfiles";
+# alias dev="cd /Volumes/dev-local";
 
 # AngelList
-# alias alist="cd ~/dev-local/alist";
-# alias angellist="cd ~/dev-local/AngelList";
-# alias core="cd ~/dev-local/AngelList";
-# alias talent="cd ~/dev-local/AngelList/frontend/talent";
-# alias halo="cd ~/dev-local/halo";
-# alias graphql-export='bin/rake graphql:export';
+# alias alist="cd /Volumes/dev-local/alist";
+# alias angellist="cd /Volumes/dev-local/AngelList";
+# alias core="cd /Volumes/dev-local/AngelList";
+# alias talent="cd /Volumes/dev-local/AngelList/frontend/talent";
+# alias halo="cd /Volumes/dev-local/halo";
+# alias graphql-export='yarn run graphql:export';
 
 # alias beet-rm="beet rm -a -d"
 # alias beet-ls="beet ls -a | grep -i"

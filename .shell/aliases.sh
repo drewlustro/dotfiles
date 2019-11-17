@@ -30,6 +30,11 @@ alias gmaster="git checkout master";
 alias gmaster-pull="git pull origin master";
 alias gmaster-rebase="git pull origin master --rebase";
 
+# yarn/node-based project build
+alias dev="yarn run dev";
+alias build="yarn run build";
+alias watch="yarn watch";
+
 # tree
 alias treee="tree -hL 2 --filelimit 20 --dirsfirst"
 

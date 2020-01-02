@@ -50,7 +50,7 @@ if [ -x "$(which convert)" ]; then
     mkdir -p output 2> /dev/null;
     find . -maxdepth 1 -type f -iname "${source_files}" -print0 | \
       xargs -0 -n 1 -P 8 -I {} convert -verbose -units PixelsPerInch {} \
-      -colorspace sRGB -resize ${max_dim}x${max_dim} -set filename:new '%t-%wx%h' \
+      -colorspace sRGB -resize ${max_dim}x${max_dim} -set filename:new '%t' \
       -density 72 -format JPG -quality ${quality} 'output/%[filename:new].jpg';
     echo 'Done.';
   }
@@ -65,7 +65,7 @@ if [ -x "$(which convert)" ]; then
     mkdir -p output 2> /dev/null;
     find . -maxdepth ${maxdepth} -type f -iname "${source_files}" -print0 | \
       xargs -0 -n 1 -P 8 -I {} convert -verbose -units PixelsPerInch {} \
-      -colorspace sRGB -resize ${max_dim}x${max_dim} -set filename:new '%t' \
+      -colorspace sRGB -resize ${max_dim}x${max_dim}\> -set filename:new '%t' \
       -density 72 -format JPG -quality ${quality} 'output/%[filename:new].jpg';
     echo 'Done.';
 

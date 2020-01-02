@@ -36,7 +36,7 @@ if [ -x "$(which convert)" ]; then
     mkdir -p output 2> /dev/null;
     find . -maxdepth 1 -type f -iname "${source_files}" -print0 | \
       xargs -0 -n 1 -P 8 -I {} convert -verbose -units PixelsPerInch {} \
-      -colorspace sRGB -set filename:new '%t-%wx%h' \
+      -colorspace sRGB -set filename:new '%t' \
       -density 72 -format JPG -quality 85 'output/%[filename:new].jpg';
     echo 'Done.';
   }

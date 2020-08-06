@@ -8,7 +8,7 @@ if test ! $(which brew); then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-brew tap caskroom/fonts
+brew tap homebrew/cask-fonts
 
 FONTS=(
     font-clear-sans

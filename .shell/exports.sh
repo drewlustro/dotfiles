@@ -93,8 +93,9 @@ if [ "$PLATFORM" = "osx" ]; then
 
       ### To fix nvm prefix warning:
       # npm config delete prefix
-      # npm config set prefix $NVM_DIR/versions/node/v10.10.0
+      # npm config set prefix $NVM_DIR/versions/node/v10.18.1
       :
+      ####
     else
       # global default `node` + `npm`
       export NPM_PACKAGES="/usr/local";

@@ -56,6 +56,8 @@
       ".dist/**": true
     },
     "peacock.color": "#eb5424",
+    "peacock.affectStatusBar": false,
+    "peacock.affectActivityBar": false,
     "terminal.integrated.cwd": "/Users/drew/dev-local/dotfiles"
   }
 }

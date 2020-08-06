@@ -9,6 +9,7 @@
 #
 # Custom directory shortcuts:
 
+# alias downloads="cd ~/Downloads";
 # alias dropbox="cd ~/Dropbox";
 # alias torrents="cd ~/Torrents";
 

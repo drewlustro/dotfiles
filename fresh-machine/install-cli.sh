@@ -105,16 +105,12 @@ brew install tree # tree display of directory structure
 brew install awscli
 
 # yarn recommends install view brew
-brew install yarn
+# brew install yarn
 
 # sudo easy_install pip
 
 # Remove outdated versions from the cellar
 brew cleanup
-
-echo "Installing super-common npm tools..."
-npm install -g grunt-cli gulp yo webpack ncu
-echo ""
 
 echo ""
 echo 'GNUCoreUtils: add $(brew --prefix coreutils)/libexec/gnubin to $PATH'
@@ -125,4 +121,3 @@ echo "Completed installation of common CLI apps and libs."
 echo ""
 
 echo "Done."
-

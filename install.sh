@@ -116,11 +116,11 @@ function primaryInstall() {
     -avh --no-perms --progress . ~;
 
   # VS Code settings
-  if [ -d "$HOME/Library/Application\ Support/Code/User" ]; then
-    minihr;
-    echo "Installing VSCode settings to $HOME/Library/Application\ Support/Code/User ...";
-    rsync -avh --no-perms --progress ./vscode/ ~/Library/Application\ Support/Code/User/;
-  fi;
+  # if [ -d "$HOME/Library/Application\ Support/Code/User" ]; then
+  #   minihr;
+  #   echo "Installing VSCode settings to $HOME/Library/Application\ Support/Code/User ...";
+  #   rsync -avh --no-perms --progress ./vscode/ ~/Library/Application\ Support/Code/User/;
+  # fi;
 
   minihr;
 

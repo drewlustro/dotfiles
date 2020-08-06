@@ -70,7 +70,7 @@ function preztoInstall() {
     (( $? == 0 )) && br && echo "$(which zsh) is now your default shell."
   fi;
 
-  rsync -avh --no-perms --progress ./zpresto/ ~/.zprezto/
+  rsync -avh --no-perms --progress ./zprezto/ ~/.zprezto/
 
   br; hr; br; br;
 }
@@ -97,7 +97,7 @@ function primaryInstall() {
     --exclude "bin/" \
     --exclude "LICENSE-MIT" \
     --exclude "vscode" \
-    --exclude "zprezto"
+    --exclude "zprezto" \
     --exclude "bootstrap.sh" \
     --exclude "brew-cask-apps.sh" \
     --exclude "brew-cask-fonts.sh" \
@@ -108,7 +108,8 @@ function primaryInstall() {
     --exclude "install.sh" \
     --exclude "iterm2/" \
     --exclude "linux/" \
-    --exclude "README.md" --exclude "LICENSE-MIT.txt" \
+    --exclude "README.md" \
+    --exclude "LICENSE-MIT.txt" \
     --exclude "sublimetext/" \
     --exclude "terminal-themes/" \
     --exclude "update.sh" \
@@ -217,10 +218,7 @@ else
   br;
   hr; br;
 
-  CURRENT_SHELL=$(echo $0);
-  if [[ "$CURRENT_SHELL" == *install\.sh ]]; then
-    CURRENT_SHELL="$SHELL"
-  fi;
+  CURRENT_SHELL="$SHELL"
 
   echo "CURRENT SHELL is '$CURRENT_SHELL'"
 

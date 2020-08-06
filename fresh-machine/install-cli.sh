@@ -91,7 +91,7 @@ brew install fd # better than `find`
 brew install fzf # fuzzy ctrl+r
 brew install git-lfs
 brew install mackup
-brew install ncdu # better `du`
+# brew install ncdu # better `du`
 brew install nmap
 brew install node # includes 'npm'
 brew install nvm

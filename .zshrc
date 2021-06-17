@@ -9,7 +9,7 @@ export SHELL=$(which zsh);
 
 DISABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
-unsetopt auto_name_dirs # fixes RVM_PROJECT_PATH~ artifact in zprezto prompt
+# unsetopt auto_name_dirs # fixes RVM_PROJECT_PATH~ artifact in zprezto prompt
 
 # ----------------------------------------
 # STOCK DOTFILES (https://github.com/drewlustro/dotfiles)
@@ -43,7 +43,14 @@ unset INCLUDES_CUSTOM;
 
 unsetopt correct
 unsetopt correct_all
-unsetopt auto_name_dirs # fixes RVM_PROJECT_PATH~ artifact in zprezto prompt
+# unsetopt auto_name_dirs # fixes RVM_PROJECT_PATH~ artifact in zprezto prompt
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# pyenv
+if which pyenv &> /dev/null; then
+  eval "$(pyenv init -)"
+fi
+
+# rbenv
+if which rbenv &> /dev/null; then
+  eval "$(rbenv init -)";
+fi

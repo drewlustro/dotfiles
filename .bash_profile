@@ -93,6 +93,16 @@ if [ "$PLATFORM" = "osx" ]; then
     complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
 fi;
 
+# pyenv
+if which pyenv &> /dev/null; then
+  eval "$(pyenv init -)"
+fi
+
+# rbenv
+if which rbenv &> /dev/null; then
+  eval "$(rbenv init -)";
+fi
+
 # ----------------------------------------
 # Everything else below here...
 # ----------------------------------------

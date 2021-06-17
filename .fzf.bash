@@ -10,5 +10,8 @@ fi
 
 # Key bindings
 # ------------
+# macaOs path
 source "/usr/local/opt/fzf/shell/key-bindings.bash"
 
+# TODO-Drew: debian linux path
+# source /usr/share/doc/fzf/examples/key-bindings.bash

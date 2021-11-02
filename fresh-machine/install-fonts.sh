@@ -10,35 +10,31 @@ fi
 
 brew tap homebrew/cask-fonts
 
+brew install font-clear-sans \
+
 FONTS=(
-    font-clear-sans
-    font-coda
-    font-consolas-for-powerline
-    font-fira-code
-    font-fira-mono
-    font-fira-mono-for-powerline
-    font-fontawesome
-    font-hack-nerd-font
-    font-inconsolata
-    font-inconsolata-for-powerline
-    font-inconsolata-nerd-font
-    font-input
-    font-iosevka
-    font-m-plus
-    font-menlo-for-powerline
-    font-meslo-for-powerline
-    font-meslo-nerd-font
-    font-noto-mono
-    font-noto-sans
-    font-noto-serif
-    font-roboto
-    font-roboto-mono
-    font-roboto-mono-for-powerline
-    font-source-code-pro
-    font-source-code-pro-for-powerline
-    font-source-sans-pro
-    font-source-serif-pro
-    font-sourcecodepro-nerd-font
+  font-coda
+  font-consolas-for-powerline
+  font-fira-code
+  font-fira-mono
+  font-fira-mono-for-powerline
+  font-fontawesome
+  font-hack-nerd-font
+  font-inconsolata
+  font-inconsolata-for-powerline
+  font-iosevka
+  font-menlo-for-powerline
+  font-meslo-for-powerline
+  font-noto-mono
+  font-noto-sans
+  font-noto-serif
+  font-roboto
+  font-roboto-mono
+  font-roboto-mono-for-powerline
+  font-source-code-pro
+  font-source-code-pro-for-powerline
+  font-source-sans-pro
+  font-source-serif-pro
 )
 
 echo "Installing fonts...";

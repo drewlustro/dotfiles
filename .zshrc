@@ -7,6 +7,9 @@ fi
 # Path to your oh-my-zsh configuration.
 export SHELL=$(which zsh);
 
+# Homebrew - add to path
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 DISABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 # unsetopt auto_name_dirs # fixes RVM_PROJECT_PATH~ artifact in zprezto prompt
@@ -39,11 +42,22 @@ if [ -d "$INCLUDES_CUSTOM" ]; then
     unset file;
     unset INCLUDES;
 fi;
-unset INCLUDES_CUSTOM;
 
+unset INCLUDES_CUSTOM;
 unsetopt correct
 unsetopt correct_all
 # unsetopt auto_name_dirs # fixes RVM_PROJECT_PATH~ artifact in zprezto prompt
+
+# prezto themes
+alias prompt-remote-ssh='prompt sorin'
+alias prompt-alternative='prompt nicoulaj'
+
+# remote SSH session detection
+if [ ! -z "$SSH_TTY" ]; then
+  echo "Remote login detected.";
+  prompt-remote-ssh;
+fi
+
 
 # pyenv
 if which pyenv &> /dev/null; then

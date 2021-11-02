@@ -2,6 +2,9 @@
 export PATH="$HOME/bin:$PATH";
 export SHELL=$(which bash);
 
+# Homebrew - add to path
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # ----------------------------------------
 # STOCK DOTFILES (https://github.com/drewlustro/dotfiles)
 # (do not change these. they're managed by git)
@@ -55,7 +58,6 @@ for option in autocd globstar; do
     shopt -s "$option" 2> /dev/null;
 done;
 
-
 # Add tab completion for many Bash commands
 if which brew &> /dev/null && [ -f "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]; then
    source "$(brew --prefix)/etc/profile.d/bash_completion.sh";
@@ -106,3 +108,4 @@ fi
 # ----------------------------------------
 # Everything else below here...
 # ----------------------------------------
+

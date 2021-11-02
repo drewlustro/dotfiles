@@ -1,17 +1,13 @@
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
-  export PATH="$PATH:/usr/local/opt/fzf/bin"
+if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
+  export PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
 fi
 
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.bash" 2> /dev/null
+[[ $- == *i* ]] && source "/opt/homebrew/opt/fzf/shell/completion.bash" 2> /dev/null
 
 # Key bindings
 # ------------
-# macaOs path
-source "/usr/local/opt/fzf/shell/key-bindings.bash"
-
-# TODO-Drew: debian linux path
-# source /usr/share/doc/fzf/examples/key-bindings.bash
+source "/opt/homebrew/opt/fzf/shell/key-bindings.bash"

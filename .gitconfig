@@ -6,6 +6,9 @@
   # View the current working tree status using the short format
   s = status -s
 
+  # View branches sorted by most recent
+  b = branch --sort=-committerdate
+
   # Show the diff between the latest commit and the current state
   d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 
@@ -36,6 +39,9 @@
   # Clone a repository including all submodules
   c = clone --recursive
 
+  # checkbox
+  co = checkout
+
   # Commit all changes
   ca = !git add -A && git commit -av
 
@@ -59,24 +65,9 @@
   # Interactive rebase with the given number of latest commits
   reb = "!r() { git rebase -i HEAD~$1; }; r"
 
-  # Remove the old tag with this name and tag the latest commit with it.
-  retag = "!r() { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1; }; r"
-
-  # Find branches containing commit
-  fb = "!f() { git branch -a --contains $1; }; f"
-
-  # Find tags containing commit
-  ft = "!f() { git describe --always --contains $1; }; f"
-
-  # Find commits by source code
-  fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
-
-  # Find commits by commit message
-  fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
-
   # Remove branches that have already been merged with master
   # a.k.a. ‘delete merged’
-  dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+  cleanbranches = "!git branch --merged master | grep -v 'master$' | xargs git branch -d"
 
   # List contributors with number of commits
   contributors = shortlog --summary --numbered
@@ -120,14 +111,14 @@
   # Prevent showing files whose names contain non-ASCII symbols as unversioned.
   # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
   precomposeunicode = false
-  pager = diff-so-fancy | less --tabs=1,5 -RFX
-  editor = vim
+	pager = diff-so-fancy | less --tabs=1,5 -RFX
+	editor = vim
 
 [color]
 
   # Use colors in Git commands that are capable of colored output when
   # outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
-  ui = true
+	ui = true
 
 [color "branch"]
 
@@ -137,12 +128,12 @@
 
 [color "diff"]
 
-  meta = 11
-  frag = magenta bold
-  old = red bold
-  new = green bold
-  commit = yellow bold
-  whitespace = red reverse
+	meta = yellow
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	commit = yellow bold
+	whitespace = red reverse
 
 [color "status"]
 
@@ -153,7 +144,7 @@
 [commit]
 
   # https://help.github.com/articles/signing-commits-using-gpg/
-  gpgsign = true
+	gpgsign = true
 
 [diff]
 
@@ -176,13 +167,15 @@
   log = true
 
 [push]
-
   # Use the Git 1.x.x default to avoid errors on machines with old Git
   # installations. To use `simple` instead, add this to your `~/.extra` file:
   # `git config --global push.default simple`. See http://git.io/mMah-w.
-  default = matching
+  default = current
   # Make `git push` push relevant annotated tags when pushing branches out.
   followTags = true
+
+[pull]
+  default = current
 
 # URL shorthands
 
@@ -219,3 +212,5 @@
   oldHighlight = red bold 52
   newNormal = green bold
   newHighlight = green bold 22
+
+

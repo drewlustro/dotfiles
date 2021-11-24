@@ -213,76 +213,76 @@ function hr() {
 #
 if [ "$PLATFORM" = "osx" ]; then
 
-  function toolbelt-raspi-image-dump() {
-    local now=$(date +"%Y-%m-%d__%H-%M-%S");
-    local host=${2:="raspi"};
-    local diskNumber=${1:--1}
-    local bs="1m"
-    local cmd="sudo dd if=/dev/rdisk$1 bs=$bs | gzip > ~/Desktop/$host-$now.pi.gz"
-    local usage="Usage: $0 [sdCardDiskN] [hostname='raspi']"
-    local example="Example:  $0 3 superillegales"
-    if [ $# -eq 0 ]; then
-        echo $usage;
-        echo $example;
-        return 1;
-    elif $(diskutil list disk$diskNumber | grep -iq 'Apple\|APFS'); then
-        echo "Warning: Apple filesystem detected on disk $1. This is probably your boot disk or external HDD, dummy. Format to FAT32.";
-        return 1;
-    fi;
+  # function toolbelt-raspi-image-dump() {
+  #   local now=$(date +"%Y-%m-%d__%H-%M-%S");
+  #   local host=${2:="raspi"};
+  #   local diskNumber=${1:--1}
+  #   local bs="1m"
+  #   local cmd="sudo dd if=/dev/rdisk$1 bs=$bs | gzip > ~/Desktop/$host-$now.pi.gz"
+  #   local usage="Usage: $0 [sdCardDiskN] [hostname='raspi']"
+  #   local example="Example:  $0 3 superillegales"
+  #   if [ $# -eq 0 ]; then
+  #       echo $usage;
+  #       echo $example;
+  #       return 1;
+  #   elif $(diskutil list disk$diskNumber | grep -iq 'Apple\|APFS'); then
+  #       echo "Warning: Apple filesystem detected on disk $1. This is probably your boot disk or external HDD, dummy. Format to FAT32.";
+  #       return 1;
+  #   fi;
 
-    echo "Will run  '$cmd'";
-    echo -n "Are you sure? (y/N): "
-    local answer;
-    answer=$(bash -c "read -n 1 c; echo \$c");
-    if echo "$answer" | grep -iq "^y"; then
-        echo "\n\nDumping card $diskNumber..."
-        eval $cmd;
-        if [[ $? -eq 0 ]]; then
-            echo "Success.";
-            return 0;
-        else
-            echo "[error] Dump failed."
-            return 1;
-        fi
-    fi
+  #   echo "Will run  '$cmd'";
+  #   echo -n "Are you sure? (y/N): "
+  #   local answer;
+  #   answer=$(bash -c "read -n 1 c; echo \$c");
+  #   if echo "$answer" | grep -iq "^y"; then
+  #       echo "\n\nDumping card $diskNumber..."
+  #       eval $cmd;
+  #       if [[ $? -eq 0 ]]; then
+  #           echo "Success.";
+  #           return 0;
+  #       else
+  #           echo "[error] Dump failed."
+  #           return 1;
+  #       fi
+  #   fi
 
-    echo "\nAborted.";
-    return 1;
-  }
+  #   echo "\nAborted.";
+  #   return 1;
+  # }
 
-  function toolbelt-raspi-image-restore() {
-    local diskNumber=${1:--1}
-    local bs="1M"
-    local cmd="gzip -dc $2 | sudo dd of=/dev/rdisk$1 bs=$bs"
-    local usage="Usage: $0 [targetDiskN] [compressedImageFile]"
-    if [[ $# -lt 2 ]]; then
-        echo $usage;
-        return 1;
-    elif $(diskutil list disk$diskNumber | grep -iq 'Apple\|APFS'); then
-        echo "Warning: Apple filesystem detected on disk $1. This is probably your boot disk or external HDD, dummy. Format to FAT32.";
-        return 1;
-    fi;
+  # function toolbelt-raspi-image-restore() {
+  #   local diskNumber=${1:--1}
+  #   local bs="1M"
+  #   local cmd="gzip -dc $2 | sudo dd of=/dev/rdisk$1 bs=$bs"
+  #   local usage="Usage: $0 [targetDiskN] [compressedImageFile]"
+  #   if [[ $# -lt 2 ]]; then
+  #       echo $usage;
+  #       return 1;
+  #   elif $(diskutil list disk$diskNumber | grep -iq 'Apple\|APFS'); then
+  #       echo "Warning: Apple filesystem detected on disk $1. This is probably your boot disk or external HDD, dummy. Format to FAT32.";
+  #       return 1;
+  #   fi;
 
-    echo "Will run  '$cmd'";
-    echo -n "Are you sure? (y/N): "
-    local answer;
-    answer=$(bash -c "read -n 1 c; echo \$c");
-    if echo "$answer" | grep -iq "^y"; then
-        echo "\n\nRestoring card $(basename $2) to disk $diskNumber..."
-        sudo diskutil unmountDisk /dev/disk$diskNumber;
-        eval $cmd;
-        if [[ $? -eq 0 ]]; then
-            echo "Success.";
-            return 0;
-        else
-            echo "[error] Restore failed."
-            return 1;
-        fi
-    fi
+  #   echo "Will run  '$cmd'";
+  #   echo -n "Are you sure? (y/N): "
+  #   local answer;
+  #   answer=$(bash -c "read -n 1 c; echo \$c");
+  #   if echo "$answer" | grep -iq "^y"; then
+  #       echo "\n\nRestoring card $(basename $2) to disk $diskNumber..."
+  #       sudo diskutil unmountDisk /dev/disk$diskNumber;
+  #       eval $cmd;
+  #       if [[ $? -eq 0 ]]; then
+  #           echo "Success.";
+  #           return 0;
+  #       else
+  #           echo "[error] Restore failed."
+  #           return 1;
+  #       fi
+  #   fi
 
-    echo "\nAborted.";
-    return 1;
-  }
+  #   echo "\nAborted.";
+  #   return 1;
+  # }
 
   function toolbelt-dns-flush() {
     # El Capitan 10.11+

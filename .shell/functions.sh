@@ -161,66 +161,6 @@ function server() {
   python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port";
 }
 
-# Start a PHP server from a directory, optionally specifying the port
-# (Requires PHP 5.4.0+.)
-function phpserver() {
-  local port="${1:-4000}";
-  local ip=$(ipconfig getifaddr en1);
-  sleep 1 && open "http://${ip}:${port}/" &
-  php -S "${ip}:${port}";
-}
-
-# Compare original and gzipped file size
-function gz() {
-  local origsize=$(wc -c < "$1");
-  local gzipsize=$(gzip -c "$1" | wc -c);
-  local ratio=$(echo "$gzipsize * 100 / $origsize" | bc -l);
-  printf "orig: %d bytes\n" "$origsize";
-  printf "gzip: %d bytes (%2.2f%%)\n" "$gzipsize" "$ratio";
-}
-
-# Syntax-highlight JSON strings or files
-# Usage: `json '{"foo":42}'` or `echo '{"foo":42}' | json`
-function json() {
-  if [ -t 0 ]; then # argument
-    python -mjson.tool <<< "$*" | pygmentize -l javascript;
-  else # pipe
-    python -mjson.tool | pygmentize -l javascript;
-  fi;
-}
-
-# Run `dig` and display the most useful info
-function digga() {
-  dig +nocmd "$1" any +multiline +noall +answer;
-}
-
-# UTF-8-encode a string of Unicode symbols
-function escape() {
-  printf "\\\x%s" $(printf "$@" | xxd -p -c1 -u);
-  # print a newline unless we’re piping the output to another program
-  if [ -t 1 ]; then
-    echo ""; # newline
-  fi;
-}
-
-# Decode \x{ABCD}-style Unicode escape sequences
-function unidecode() {
-  perl -e "binmode(STDOUT, ':utf8'); print \"$@\"";
-  # print a newline unless we’re piping the output to another program
-  if [ -t 1 ]; then
-    echo ""; # newline
-  fi;
-}
-
-# Get a character’s Unicode code point
-function codepoint() {
-  perl -e "use utf8; print sprintf('U+%04X', ord(\"$@\"))";
-  # print a newline unless we’re piping the output to another program
-  if [ -t 1 ]; then
-    echo ""; # newline
-  fi;
-}
-
 # Show all the names (CNs and SANs) listed in the SSL certificate
 # for a given domain
 function getcertnames() {
@@ -260,7 +200,7 @@ function getcertnames() {
 # `less` with options to preserve color and line numbers, unless the output is
 # small enough for one screen.
 function tree-pretty() {
-    tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
+    tree -aC -I '.git|node_modules' --dirsfirst "$@" | less -FRNX;
 }
 
 function hr() {

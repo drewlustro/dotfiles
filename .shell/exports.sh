@@ -46,93 +46,41 @@ export GPG_TTY=$(tty);
 # Mac OS X
 # ----------------------------------------
 if [ "$PLATFORM" = "osx" ]; then
-    # Link Homebrew casks in `/Applications` rather than `~/Applications`
-    export HOMEBREW_CASK_OPTS="--appdir=/Applications";
-    export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/local/lib;
+  # Link Homebrew casks in `/Applications` rather than `~/Applications`
+  export HOMEBREW_CASK_OPTS="--appdir=/Applications";
+  export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/local/lib;
 
-    # Always enable colored `grep` output
-    export GREP_OPTIONS="--color=auto"
+  # Always enable colored `grep` output
+  export GREP_OPTIONS="--color=auto"
 
-    # ----------------------------------------
-    # NODE x NVM (node version manager)
-    # ----------------------------------------
-
-    if $(type nvm &>/dev/null); then
-      # IMPORTANT NOTE: brew-managed nvm + zprezto automatically
-      # handles below loading if 'node' plugin is used.
-
-      # `nvm` managed node
-      # mkdir -p "$HOME/.nvm" 2>/dev/null;
-      # export NVM_DIR="$HOME/.nvm";
-      # source "/usr/local/opt/nvm/nvm.sh";
-      # export NODE_PATH="$(npm root -g):$NODE_PATH:$NPM_PACKAGES/lib/node_modules";
-
-      ### To fix nvm prefix warning:
-      # npm config delete prefix
-      # npm config set prefix $NVM_DIR/versions/node/v10.18.1
-      :
-      ####
-    else
-      # global default `node` + `npm`
-      export NPM_PACKAGES="/usr/local";
-      export PATH="$NPM_PACKAGES/bin:$PATH"
-      export NODE_PATH="$(npm root -g):$NODE_PATH:$NPM_PACKAGES/lib/node_modules";
-    fi
-
-    # VSCode as default editor
-    if [ -x "$(which code)" ]; then
-        export VISUAL="code";
-        export EDITOR=vim;
-    fi;
-
-    # ----------------------------------------
-    # NODE x NVM (node version manager)
-    # ----------------------------------------
-
-    # if $(type nvm &>/dev/null); then
-    #   # `nvm` managed node (manual install of nvm)
-    #   mkdir -p "$HOME/.nvm" 2>/dev/null;
-    #   export NVM_DIR="$HOME/.nvm";
-    #   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm (manual install) [AL compat?]
-    #   export NODE_PATH="$(npm root -g):$NODE_PATH:$NPM_PACKAGES/lib/node_modules";
-
-    #   # add bash completion
-    #   if [[ "$SHELL_CHECK" == *bash ]]; then
-    #     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-    #   fi;
-    # else
-    #   # global default `node` + `npm`
-    #   export NPM_PACKAGES="/usr/local";
-    #   export PATH="$NPM_PACKAGES/bin:$PATH"
-    #   export NODE_PATH="$(npm root -g):$NODE_PATH:$NPM_PACKAGES/lib/node_modules";
-    # fi
-
+  # VSCode as default editor
+  if [ -x "$(which code)" ]; then
+      export VISUAL="code";
+      export EDITOR=vim;
+  fi;
 fi;
-
 
 # ----------------------------------------
 # Linux Exports
 # ----------------------------------------
 if [ "$PLATFORM" = "linux" ]; then
+  # NODE SETUP
+  export NPM_PACKAGES="${HOME}/.npm-packages";
+  export PATH="$NPM_PACKAGES/bin:$PATH";
 
-    # NODE SETUP
-    export NPM_PACKAGES="${HOME}/.npm-packages";
-    export PATH="$NPM_PACKAGES/bin:$PATH";
+  # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
+  unset MANPATH
+  export MANPATH="$NPM_PACKAGES/share/man:$(manpath)";
+  export NODE_PATH="$(npm root -g):$NODE_PATH:$HOME/.npm-packages/lib/node_modules";
 
-    # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
-    unset MANPATH
-    export MANPATH="$NPM_PACKAGES/share/man:$(manpath)";
-    export NODE_PATH="$(npm root -g):$NODE_PATH:$HOME/.npm-packages/lib/node_modules";
+  # NVM SETUP
+  mkdir -p "$HOME/.nvm" 2>/dev/null;
+  export NVM_DIR="$HOME/.nvm";
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh";
 
-    # NVM SETUP
-    mkdir -p "$HOME/.nvm" 2>/dev/null;
-    export NVM_DIR="$HOME/.nvm";
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh";
-
-    [ "$ORIGINAL_SHELL" == "bash" ] && \
-      [ -s "$NVM_DIR/bash_completion" ] && \
-      \. "$NVM_DIR/bash_completion"
-
+  [ "$ORIGINAL_SHELL" == "bash" ] && \
+    [ -s "$NVM_DIR/bash_completion" ] && \
+    \. "$NVM_DIR/bash_completion"
 fi;
 
 

@@ -19,22 +19,6 @@ alias desktop="cd ~/Desktop"
 alias k="clear"
 alias reload="exec $SHELL -l" # Reload the shell (i.e. invoke as a login shell)
 
-# Server Management
-[ -f "/etc/init.d/nginx" ] && alias nginx="sudo /etc/init.d/nginx";
-[ -f "$(which supervisorctl)" ] && alias supervisor="sudo supervisorctl";
-
-# Git
-alias gs="git status";
-alias gf="git fetch";
-alias gmaster="git checkout master";
-alias gmaster-pull="git pull origin master";
-alias gmaster-rebase="git pull origin master --rebase";
-
-# yarn/node-based project build
-alias dev="yarn run dev";
-alias build="yarn run build";
-alias watch="yarn watch";
-
 # tree
 alias treee="tree -hL 2 --filelimit 20 --dirsfirst"
 
@@ -123,92 +107,81 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 # Converts 24bit / 96kHz FLAC to 16bit / 44.1kHz FLAC using SoX
 # (install SoX with homebrew: brew install sox)
 if [ -x "$(which sox)" ]; then
-    alias flac2496-to-flac1644='mkdir 16-44; for i in *.flac; do sox "$i" -S -r 44100 -b 16 "16-44/$i"; done';
+  alias flac2496-to-flac1644='mkdir 16-44; for i in *.flac; do sox "$i" -S -r 44100 -b 16 "16-44/$i"; done';
 fi;
 
 # ----------------------------------------
 # OS X Shortcuts
 # ----------------------------------------
 if [ "$PLATFORM" = "osx" ]; then
-    alias o="open"
-    alias oo="open ."
+  alias o="open"
+  alias oo="open ."
 
-    # OS X has no `md5sum`, so use `md5` as a fallback
-    command -v md5sum > /dev/null || alias md5sum="md5"
+  # OS X has no `md5sum`, so use `md5` as a fallback
+  command -v md5sum > /dev/null || alias md5sum="md5"
 
-    # OS X has no `sha1sum`, so use `shasum` as a fallback
-    command -v sha1sum > /dev/null || alias sha1sum="shasum"
+  # OS X has no `sha1sum`, so use `shasum` as a fallback
+  command -v sha1sum > /dev/null || alias sha1sum="shasum"
 
-    # Recursively delete `.DS_Store` files
-    alias cleanup-dsstore="find . -type f -name '*.DS_Store' -ls -delete"
+  # Recursively delete `.DS_Store` files
+  alias cleanup-dsstore="find . -type f -name '*.DS_Store' -ls -delete"
 
-    # Empty the Trash on all mounted volumes and the main HDD
-    # Also, clear Apple’s System Logs to improve shell startup speed
-    alias empty-trash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+  # Empty the Trash on all mounted volumes and the main HDD
+  # Also, clear Apple’s System Logs to improve shell startup speed
+  alias empty-trash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
-    # Hide/show all desktop icons (useful when presenting)
-    alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
-    alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+  # Hide/show all desktop icons (useful when presenting)
+  alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+  alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
-    # Disable Spotlight
-    alias spotoff="sudo mdutil -a -i off"
-    # Enable Spotlight
-    alias spoton="sudo mdutil -a -i on"
+  # Disable Spotlight
+  alias spotoff="sudo mdutil -a -i off"
+  # Enable Spotlight
+  alias spoton="sudo mdutil -a -i on"
 
-    # PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
-    alias plistbuddy="/usr/libexec/PlistBuddy"
+  # PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
+  alias plistbuddy="/usr/libexec/PlistBuddy"
 
-    # Ring the terminal bell, and put a badge on Terminal.app’s Dock icon
-    # (useful when executing time-consuming commands)
-    alias badge="tput bel"
+  # Ring the terminal bell, and put a badge on Terminal.app’s Dock icon
+  # (useful when executing time-consuming commands)
+  alias badge="tput bel"
 
-    # Intuitive map function
-    # For example, to list all directories that contain a certain file:
-    # find . -name .gitattributes | map dirname
-    alias map="xargs -n1"
+  # Intuitive map function
+  # For example, to list all directories that contain a certain file:
+  # find . -name .gitattributes | map dirname
+  alias map="xargs -n1"
 
-    # Kill all the tabs in Chrome to free up memory
-    # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
-    alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
+  # Lock the screen (when going AFK)
+  alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
-    # Lock the screen (when going AFK)
-    alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+  # Flush Directory Service cache
+  alias flushcache="dscacheutil -flushcache"
 
-    # Flush Directory Service cache
-    alias flushcache="dscacheutil -flushcache"
+  # Clean up LaunchServices to remove duplicates in the “Open With” menu
+  alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 
-    # Clean up LaunchServices to remove duplicates in the “Open With” menu
-    alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
-
-    alias canary-no-security="open -a Google\ Chrome\ Canary --args --disable-web-security --user-data-dir";
-
-    alias toolbelt-shell-debug-on="setopt verbose; set -xv"
-    alias toolbelt-shell-debug-off="set +xv; unsetopt verbose;"
-    alias toolbelt-postres-find-process="sudo lsof -iTCP -sTCP:LISTEN -n -P | grep 5432";
-
+  alias toolbelt-shell-debug-on="setopt verbose; set -xv"
+  alias toolbelt-shell-debug-off="set +xv; unsetopt verbose;"
 fi;
 
 # ----------------------------------------
 # Linux Shortcuts
 # ----------------------------------------
 if [ "$PLATFORM" = "linux" ]; then
-    alias ainstall="sudo apt install -y ";
-    alias aupdate="sudo apt update -y ";
-    alias aupgrade="sudo apt upgrade -y";
-    alias aautoremove="sudo apt autoremove -y";
-    alias dirsize="du -h -d 1 | sort -hr";
-    alias xmm="xmodmap $HOME/.Xmodmaprc";
-    alias dmesg="dmesg -wH";
+  alias ainstall="sudo apt install -y ";
+  alias aupdate="sudo apt update -y ";
+  alias aupgrade="sudo apt upgrade -y";
+  alias aautoremove="sudo apt autoremove -y";
+  alias dirsize="du -h -d 1 | sort -hr";
+  alias xmm="xmodmap $HOME/.Xmodmaprc";
+  alias dmesg="dmesg -wH";
 
-    alias canary-no-security="chromium-browser --disable-web-security --user-data-dir";
-    alias chromium-no-security="chromium-browser --disable-web-security --user-data-dir";
+  # load macOS style modifier key order (Super, Alt, Command, Spacebar ...)
+  [ -e "$HOME/.Xmodmaprc" ] && xmodmap "$HOME/.Xmodmaprc";
 
-    # load macOS style modifier key order (Super, Alt, Command, Spacebar ...)
-    [ -e "$HOME/.Xmodmaprc" ] && xmodmap "$HOME/.Xmodmaprc";
-
-    if [ "$LINUX_DESKTOP" = "kde" ]; then
-        alias reboot-gracefully-kde="qdbus org.kde.ksmserver /KSMServer logout 0 1 0";
-    fi;
+  if [ "$LINUX_DESKTOP" = "kde" ]; then
+    alias reboot-gracefully-kde="qdbus org.kde.ksmserver /KSMServer logout 0 1 0";
+  fi;
 fi;
 
 

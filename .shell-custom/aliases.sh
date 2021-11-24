@@ -19,12 +19,10 @@
 # alias dev="cd /Volumes/dev-local";
 
 # AngelList
-# alias alist="cd /Volumes/dev-local/alist";
 # alias angellist="cd /Volumes/dev-local/AngelList";
 # alias core="cd /Volumes/dev-local/AngelList";
 # alias talent="cd /Volumes/dev-local/AngelList/frontend/talent";
 # alias halo="cd /Volumes/dev-local/halo";
-# alias graphql-export='yarn run graphql:export';
 
 # alias beet-rm="beet rm -a -d"
 # alias beet-ls="beet ls -a | grep -i"

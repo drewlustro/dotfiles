@@ -20,10 +20,3 @@ fi;
 [ -d "$HOME/bin" ] && export PATH="$HOME/bin:$PATH";
 
 [ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH";
-
-# TODO(deprecate): rvm. Switch to rbenv.
-# Load RVM scripts if RVM is installed
-# if [ -s "$HOME/.rvm/scripts/rvm" ]; then
-#     source "$HOME/.rvm/scripts/rvm";  # This loads RVM into a shell session.
-#     [ -d "$HOME/.rvm/bin" ] && export PATH="$PATH:$HOME/.rvm/bin"; # Add RVM to PATH for scripting
-# fi;

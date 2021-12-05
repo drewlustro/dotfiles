@@ -13,16 +13,23 @@
 # alias dropbox="cd ~/Dropbox";
 # alias torrents="cd ~/Torrents";
 
-# Local development
-# alias mndpc="cd /Volumes/dev-local/mn-architects";
-# alias dotfiles="cd /Volumes/dev-local/dotfiles";
+# # Local development
 # alias dev="cd /Volumes/dev-local";
+# alias dotfiles="cd /Volumes/dev-local/dotfiles";
+# alias mn="cd /Volumes/dev-local/mn-architects";
+# alias mndpc="cd /Volumes/dev-local/mn-architects";
+# alias personal="cd /Volumes/dev-local/personal-site";
+# alias ride="cd /Volumes/dev-local/lets-ride";
+# alias wedding="cd /Volumes/dev-local/wedding";
 
-# AngelList
+# # Digital Ocean VPS
+# alias maxrelax="ssh maxrelax.co";
+
+# # AngelList
 # alias angellist="cd /Volumes/dev-local/AngelList";
 # alias core="cd /Volumes/dev-local/AngelList";
-# alias talent="cd /Volumes/dev-local/AngelList/frontend/talent";
 # alias halo="cd /Volumes/dev-local/halo";
+# alias talent="cd /Volumes/dev-local/AngelList/frontend/talent";
 
 # alias beet-rm="beet rm -a -d"
 # alias beet-ls="beet ls -a | grep -i"

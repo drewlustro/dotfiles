@@ -105,7 +105,12 @@ if which rbenv &> /dev/null; then
   eval "$(rbenv init -)";
 fi
 
+# zoxide - bash
+eval "$(zoxide init bash)"
+
 # ----------------------------------------
 # Everything else below here...
 # ----------------------------------------
 
+# prevent homebrew from auto-upgrading dependencies
+export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=true

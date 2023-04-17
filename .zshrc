@@ -58,7 +58,6 @@ if [ ! -z "$SSH_TTY" ]; then
   prompt-remote-ssh;
 fi
 
-
 # pyenv
 if which pyenv &> /dev/null; then
   eval "$(pyenv init -)"
@@ -68,3 +67,10 @@ fi
 if which rbenv &> /dev/null; then
   eval "$(rbenv init -)";
 fi
+
+
+# zoxide - zsh
+eval "$(zoxide init zsh)"
+
+# prevent homebrew from auto-upgrading dependencies
+export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=true

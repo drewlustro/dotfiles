@@ -23,18 +23,17 @@
 
   com = checkout master
 
-  pom = pull origin master
+  pomm = pull origin master
+  pommr = pull origin master --rebase
 
-  pomr = pull origin master --rebase
+  pom = pull origin main
+  pomr = pull origin main --rebase
 
   fo = fetch origin
 
   rsoft = reset --soft HEAD~
 
   rhard = reset --hard
-
-  # Pull in remote changes for the current repository and all its submodules
-  p = !"git pull; git submodule foreach git pull origin master"
 
   # Clone a repository including all submodules
   c = clone --recursive

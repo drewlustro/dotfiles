@@ -67,6 +67,11 @@ if [ -x "$(which bat)" ]; then
   alias ccat='cat'
 fi;
 
+# pnpm
+if [ -x "$(which pnpm)" ]; then
+  alias pn='pnpm';
+fi;
+
 if [ -x "$(which fzf)" ]; then
   alias preview="fzf --preview 'bat --color \"always\" {}'";
   # add support for ctrl+o to open selected file in VS Code
@@ -164,6 +169,7 @@ if [ "$PLATFORM" = "osx" ]; then
   alias toolbelt-shell-debug-off="set +xv; unsetopt verbose;"
 fi;
 
+# ----------------------------------------
 # ----------------------------------------
 # Linux Shortcuts
 # ----------------------------------------

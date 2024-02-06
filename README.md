@@ -110,12 +110,6 @@ git config --global user.name "$GIT_AUTHOR_NAME"
 export GIT_AUTHOR_EMAIL="name@gmail.com"
 export GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 git config --global user.email "$GIT_AUTHOR_EMAIL"
-
-# Python virtualenvwraper default environment
-DEFAULT_PYTHON_ENV="default";
-DEFAULT_WORKON_HOME="/sites/envs";
-[ -d "$DEFAULT_WORKON_HOME" ] && export WORKON_HOME="/sites/envs";
-[ -x "$(which workon)" ] && [ -d "$DEFAULT_WORKON_HOME/$DEFAULT_PYTHON_ENV" ] && workon $DEFAULT_PYTHON_ENV;
 ```
 
 --- 

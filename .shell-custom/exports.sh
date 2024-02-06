@@ -14,9 +14,6 @@ export GIT_EDITOR=vim
 export VISUAL=vim
 export EDITOR=vim
 
-export WORKON_HOME=/sites/envs
-# export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/local/lib
-
 # Larger bash history (allow 32³ entries; default is 500)
 export HISTSIZE=32768
 export SAVEHIST=32768

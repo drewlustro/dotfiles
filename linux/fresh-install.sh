@@ -33,18 +33,6 @@ sudo apt-get install -y build-essential
 # kill cache
 #fc-cache -f -v
 
-# python
-sudo apt-get install -y python-pip python-dev
-sudo pip install --upgrade pip
-sudo pip install virtualenv
-sudo pip install pylint
-
-# node 6.x LTS
-curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
-sudo apt-get update
-sudo apt-get install -y nodejs
-sudo apt-get install -y npm
-
 m1kdir ~/.npm-packages ~/.npm 2>/dev/null;
 
 # npm packges

@@ -21,8 +21,6 @@
   # branches sorted by recent ASC
   ba = branch --sort=committerdate
 
-  com = checkout master
-
   pomm = pull origin master
   pommr = pull origin master --rebase
 
@@ -64,9 +62,17 @@
   # Interactive rebase with the given number of latest commits
   reb = "!r() { git rebase -i HEAD~$1; }; r"
 
-  # Remove branches that have already been merged with master
-  # a.k.a. ‘delete merged’
-  cleanbranches = "!git branch --merged master | grep -v 'master$' | xargs git branch -d"
+  # List merged branches (excluding the current branch)
+  merged-branches = "!git branch --merged | grep -v '^\\* '"
+
+  # Clean merged branches with safeguards for current branch and key branches
+  clean-branches = "!git branch --merged | grep -v '^\\* ' | grep -v $(git rev-parse --abbrev-ref HEAD) | grep -vE \"(main|master|develop|release)\" | xargs -n 1 git branch -d"
+
+  # Preview branches to be cleaned
+  clean-branches-preview = "!git branch --merged | grep -v '^\\* ' | grep -v $(git rev-parse --abbrev-ref HEAD) | grep -vE \"(main|master|develop|release)\""
+
+  # Prune stale remote-tracking branches
+  prune-remote = "!git remote prune origin"
 
   # List contributors with number of commits
   contributors = shortlog --summary --numbered
@@ -110,14 +116,14 @@
   # Prevent showing files whose names contain non-ASCII symbols as unversioned.
   # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
   precomposeunicode = false
-	pager = diff-so-fancy | less --tabs=1,5 -RFX
-	editor = vim
+  pager = diff-so-fancy | less --tabs=1,5 -RFX
+  editor = vim
 
 [color]
 
   # Use colors in Git commands that are capable of colored output when
   # outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
-	ui = true
+  ui = true
 
 [color "branch"]
 
@@ -127,12 +133,12 @@
 
 [color "diff"]
 
-	meta = yellow
-	frag = magenta bold
-	old = red bold
-	new = green bold
-	commit = yellow bold
-	whitespace = red reverse
+  meta = yellow
+  frag = magenta bold
+  old = red bold
+  new = green bold
+  commit = yellow bold
+  whitespace = red reverse
 
 [color "status"]
 
@@ -143,12 +149,13 @@
 [commit]
 
   # https://help.github.com/articles/signing-commits-using-gpg/
-	gpgsign = true
+  gpgsign = true
 
 [diff]
 
   # Detect copies as well as renames
   renames = copies
+  colorMoved = zebra
 
 [diff "bin"]
 
@@ -195,7 +202,6 @@
   pushInsteadOf = "git://gist.github.com/"
 
 [url "git://gist.github.com/"]
-
   insteadOf = "gist:"
 [filter "lfs"]
   clean = git-lfs clean -- %f
@@ -204,8 +210,8 @@
   required = true
 [user]
   name = Drew Lustro
-  email = drew@angel.co
-  signingkey = 8FE9C40E9B7F8A77
+  email = drewlustro@gmail.com
+  signingkey = 0CA0CF06111FDA02
 [color "diff-highlight"]
   oldNormal = red bold
   oldHighlight = red bold 52
@@ -213,3 +219,7 @@
   newHighlight = green bold 22
 
 
+# [fetch]
+# 	prune = true
+[init]
+  defaultBranch = main

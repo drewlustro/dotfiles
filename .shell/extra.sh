@@ -22,11 +22,13 @@ if [ -x "$(which diff-so-fancy)" ]; then
   git config --global color.diff.whitespace "red reverse"
 fi;
 
-# item2 shell integration, fzf
-if [[ "$SHELL" == *zsh ]]; then
-  test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-elif [[ "$SHELL" == *bash ]]; then
-  test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
-  [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+if [[ -o interactive ]]; then
+  # item2 shell integration, fzf
+  if [[ "$SHELL" == *zsh ]]; then
+    # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+  elif [[ "$SHELL" == *bash ]]; then
+    # test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+    [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+  fi
 fi

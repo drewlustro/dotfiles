@@ -1,19 +1,19 @@
 {
   "folders": [
     {
-      "name": "Repository",
+      "name": "Repo",
       "path": "/Users/drew/dev-local/dotfiles"
     },
     {
-      "name": "Shell Local",
+      "name": "Controlled",
       "path": "/Users/drew/.shell"
     },
     {
-      "name": "Custom Local",
+      "name": "Custom",
       "path": "/Users/drew/.shell-custom"
     },
     {
-      "name": "Local ~",
+      "name": "Home ~",
       "path": "/Users/drew/.home-directory-dotfiles"
     },
   ],
@@ -33,7 +33,9 @@
       "titleBar.activeBackground": "#eb5424",
       "titleBar.inactiveBackground": "#eb542499",
       "titleBar.activeForeground": "#e7e7e7",
-      "titleBar.inactiveForeground": "#e7e7e799"
+      "titleBar.inactiveForeground": "#e7e7e799",
+      "commandCenter.border": "#e7e7e799",
+      "sash.hoverBorder": "#ef7853"
     },
     "files.exclude": {
       "**/.git": true,

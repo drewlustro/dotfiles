@@ -48,6 +48,15 @@
       ".rpt2_cache/**": true,
       ".dist/**": true
     },
+    "search.exclude": {
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "**/.zprezto/modules": true,
+      "**/.zprezto/.gitignore": true,
+    },
     "peacock.color": "#eb5424",
     "peacock.affectStatusBar": false,
     "peacock.affectActivityBar": false,

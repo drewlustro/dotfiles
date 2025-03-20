@@ -1,3 +1,6 @@
+# Fish secrets
+secrets.fish
+
 # Compiled Python files
 *.pyc
 
@@ -16,3 +19,11 @@ Thumbs.db
 extras.zsh
 .extras
 npm-debug.log
+
+.config/configstore
+.config/gatsby
+.config/graphite/user_config
+.config/iterm2
+.config/uv
+.config/yarn
+.config/raycast/extensions

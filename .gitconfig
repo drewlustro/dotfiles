@@ -116,14 +116,14 @@
   # Prevent showing files whose names contain non-ASCII symbols as unversioned.
   # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
   precomposeunicode = false
-  pager = diff-so-fancy | less --tabs=1,5 -RFX
+	pager = diff-so-fancy | less --tabs=1,5 -RFX
   editor = vim
 
 [color]
 
   # Use colors in Git commands that are capable of colored output when
   # outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
-  ui = true
+	ui = true
 
 [color "branch"]
 
@@ -133,12 +133,12 @@
 
 [color "diff"]
 
-  meta = yellow
-  frag = magenta bold
-  old = red bold
-  new = green bold
-  commit = yellow bold
-  whitespace = red reverse
+	meta = yellow
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	commit = yellow bold
+	whitespace = red reverse
 
 [color "status"]
 
@@ -149,7 +149,7 @@
 [commit]
 
   # https://help.github.com/articles/signing-commits-using-gpg/
-  gpgsign = true
+	gpgsign = true
 
 [diff]
 
@@ -211,12 +211,12 @@
 [user]
   name = Drew Lustro
   email = drewlustro@gmail.com
-  signingkey = 0CA0CF06111FDA02
+	signingkey = 0CA0CF06111FDA02
 [color "diff-highlight"]
-  oldNormal = red bold
-  oldHighlight = red bold 52
-  newNormal = green bold
-  newHighlight = green bold 22
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
 
 
 # [fetch]

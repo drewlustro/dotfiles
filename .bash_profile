@@ -113,6 +113,13 @@ if which rbenv &> /dev/null; then
   eval "$(rbenv init -)";
 fi
 
+# secrets
+if [ -f "$HOME/.secrets.sh" ]; then
+  source "$HOME/.secrets.sh"
+else
+  echo "Warning: ~/.secrets.sh is missing (maybe add it dawg?)"
+fi
+
 . "$HOME/.cargo/env"
 
 . "$HOME/.local/bin/env"

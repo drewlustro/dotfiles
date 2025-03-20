@@ -70,10 +70,12 @@ fi;
 #   prompt-remote-ssh;
 # fi
 
-# debug -----------------------------------------------------------------------
-
-# print ruby environment
-# ruby -rjson -e "printf(%{RUBY_ENV_ACTIVATE\n\n%s\n\nRUBY_ENV_ACTIVATE}, JSON.dump(ENV.to_h))"
+# secrets
+if [ -f "$HOME/.secrets.sh" ]; then
+  source "$HOME/.secrets.sh"
+else
+  echo "Warning: ~/.secrets.sh is missing (maybe add it dawg?)"
+fi
 
 # everything else --------------------------------------------------------------
 
@@ -84,8 +86,6 @@ alias wellfound='cd ~/dev-local/wellfoundai'
 alias wf='cd ~/dev-local/wellfoundai'
 
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
-
-wf;
 
 unalias sudo
 

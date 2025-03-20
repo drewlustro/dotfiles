@@ -27,3 +27,10 @@ npm-debug.log
 .config/uv
 .config/yarn
 .config/raycast/extensions
+
+# junk dotfiles
+.node_repl_history
+.rdbg_history
+.lesshst
+.zhistory
+.zsh_history

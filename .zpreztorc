@@ -36,7 +36,6 @@ zstyle ':prezto:load' pmodule \
   'directory' \
   'editor' \
   'git'\
-  'node'\
   'spectrum' \
   'history' \
   'history-substring-search' \
@@ -54,7 +53,7 @@ zstyle ':prezto:load' pmodule \
 # Auto set to 'off' on dumb terminals.
 
 # Default
-#zstyle ':prezto:module:prompt' theme 'sorin'
+zstyle ':prezto:module:prompt' theme 'maxrelax'
 
 # Drew selects (peepcode, paradox, skwp)
 # zstyle ':prezto:module:prompt' theme 'peepcode'
@@ -62,7 +61,7 @@ zstyle ':prezto:load' pmodule \
 # zstyle ':prezto:module:prompt' theme 'paradox'
 # zstyle ':prezto:module:prompt' theme 'nicoulaj'
 # zstyle ':prezto:module:prompt' theme 'kylewest'
-zstyle ':prezto:module:prompt' theme 'maxrelax'
+# zstyle ':prezto:module:prompt' theme 'maxrelax'
 
 ######################################
 # Utility

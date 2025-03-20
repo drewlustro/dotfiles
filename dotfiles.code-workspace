@@ -4,18 +4,14 @@
       "name": "Repo",
       "path": "/Users/drew/dev-local/dotfiles"
     },
-    {
-      "name": "Controlled",
-      "path": "/Users/drew/.shell"
-    },
-    {
-      "name": "Custom",
-      "path": "/Users/drew/.shell-custom"
-    },
-    {
-      "name": "Home ~",
-      "path": "/Users/drew/.home-directory-dotfiles"
-    },
+    // {
+    //   "name": "Controlled",
+    //   "path": "/Users/drew/.shell"
+    // },
+    // {
+    //   "name": "Custom",
+    //   "path": "/Users/drew/.shell-custom"
+    // },
   ],
   "settings": {
     "workbench.colorCustomizations": {

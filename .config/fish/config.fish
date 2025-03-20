@@ -104,8 +104,15 @@ function update_iterm2_title --on-event fish_prompt
         set title "$short_parent/$current_dir"
     end
 
+    # Create final title with hostname if this is an SSH session
+    set -l final_title $title
+    if set -q SSH_CONNECTION
+        set -l host (hostname)
+        set final_title "$title @$host"
+    end
+
     # Set the iTerm2 window title
-    echo -ne "\033]0;$title\007"
+    echo -ne "\033]0;$final_title\007"
 end
 
 # Override the default fish_title to no-op so that update_iterm2_title is used instead

@@ -2,7 +2,7 @@
   "folders": [
     {
       "name": "Repo",
-      "path": "/Users/drew/dev-local/dotfiles"
+      "path": "/Users/drew/dev/dotfiles"
     },
     // {
     //   "name": "Controlled",
@@ -13,49 +13,4 @@
     //   "path": "/Users/drew/.shell-custom"
     // },
   ],
-  "settings": {
-    "workbench.colorCustomizations": {
-      "[Panda Syntax]": {
-        "titleBar.activeBackground": "#2c2c54",
-        "titleBar.inactiveBackground": "#1e1e3d",
-        "titleBar.activeForeground": "#edfbff",
-        "editor.background": "#202020"
-      },
-      "[Electron]": {
-        "titleBar.activeBackground": "#2c2c54",
-        "titleBar.inactiveBackground": "#1e1e3d",
-        "titleBar.activeForeground": "#edfbff"
-      },
-      "titleBar.activeBackground": "#eb5424",
-      "titleBar.inactiveBackground": "#eb542499",
-      "titleBar.activeForeground": "#e7e7e7",
-      "titleBar.inactiveForeground": "#e7e7e799",
-      "commandCenter.border": "#e7e7e799",
-      "sash.hoverBorder": "#ef7853"
-    },
-    "files.exclude": {
-      "**/.git": true,
-      "**/.svn": true,
-      "**/.hg": true,
-      "**/CVS": true,
-      "**/.DS_Store": true,
-      "docs/**": true,
-      ".docz/**": true,
-      ".rpt2_cache/**": true,
-      ".dist/**": true
-    },
-    "search.exclude": {
-      "**/.git": true,
-      "**/.svn": true,
-      "**/.hg": true,
-      "**/CVS": true,
-      "**/.DS_Store": true,
-      "**/.zprezto/modules": true,
-      "**/.zprezto/.gitignore": true,
-    },
-    "peacock.color": "#eb5424",
-    "peacock.affectStatusBar": false,
-    "peacock.affectActivityBar": false,
-    "terminal.integrated.cwd": "/Users/drew/dev-local/dotfiles"
-  }
 }

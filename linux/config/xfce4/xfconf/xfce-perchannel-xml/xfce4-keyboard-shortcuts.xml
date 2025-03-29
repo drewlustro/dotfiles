@@ -38,7 +38,7 @@
       <property name="&lt;Super&gt;4" type="empty"/>
     </property>
     <property name="custom" type="empty">
-      <property name="&lt;Alt&gt;F3" type="string" value="/home/drew/dev-local/livvy/hideshow-xfce4-terminal.sh">
+      <property name="&lt;Alt&gt;F3" type="string" value="/home/drew/dev/livvy/hideshow-xfce4-terminal.sh">
         <property name="startup-notify" type="bool" value="true"/>
       </property>
       <property name="&lt;Super&gt;m" type="string" value="exo-open --launch MailReader"/>
@@ -56,11 +56,11 @@
       <property name="&lt;Shift&gt;F2" type="string" value="exo-open --launch WebBrowser"/>
       <property name="&lt;Shift&gt;F1" type="string" value="subl"/>
       <property name="&lt;Shift&gt;F4" type="string" value="zeal"/>
-      <property name="&lt;Primary&gt;&lt;Alt&gt;&lt;Super&gt;0" type="string" value="/home/drew/dev-local/livvy/center-window.sh"/>
+      <property name="&lt;Primary&gt;&lt;Alt&gt;&lt;Super&gt;0" type="string" value="/home/drew/dev/livvy/center-window.sh"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;&lt;Super&gt;Escape" type="string" value="xflock4"/>
-      <property name="&lt;Alt&gt;F4" type="string" value="/home/drew/dev-local/livvy/hideshow-zeal.sh"/>
-      <property name="&lt;Alt&gt;F1" type="string" value="/home/drew/dev-local/livvy/hideshow-sublimetext.sh"/>
-      <property name="&lt;Alt&gt;F2" type="string" value="/home/drew/dev-local/livvy/hideshow-chrome.sh"/>
+      <property name="&lt;Alt&gt;F4" type="string" value="/home/drew/dev/livvy/hideshow-zeal.sh"/>
+      <property name="&lt;Alt&gt;F1" type="string" value="/home/drew/dev/livvy/hideshow-sublimetext.sh"/>
+      <property name="&lt;Alt&gt;F2" type="string" value="/home/drew/dev/livvy/hideshow-chrome.sh"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

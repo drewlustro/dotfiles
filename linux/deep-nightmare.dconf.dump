@@ -131,22 +131,22 @@ name='Zeal Launch'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4]
 binding=''
-command='~/dev-local/livvy/hideshow-sublimetext.sh'
+command='~/dev/livvy/hideshow-sublimetext.sh'
 name='SublimeText Focus'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5]
 binding=''
-command='~/dev-local/livvy/hideshow-chrome.sh'
+command='~/dev/livvy/hideshow-chrome.sh'
 name='Chrome Focus'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6]
 binding=''
-command='~/dev-local/livvy/hideshow-gnome-terminal.sh'
+command='~/dev/livvy/hideshow-gnome-terminal.sh'
 name='Terminal Focus'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7]
 binding=''
-command='~/dev-local/livvy/hideshow-zeal.sh'
+command='~/dev/livvy/hideshow-zeal.sh'
 name='Zeal Focus'
 
 [org/gnome/settings-daemon/plugins/xsettings]
@@ -1558,11 +1558,11 @@ active-plugins=['core', 'composite', 'opengl', 'compiztoolbox', 'decor', 'vpswit
 run-command-1=['disabled']
 run-command-10=['disabled']
 command-1=''
-command-2='~/dev-local/livvy/hideshow-sublimetext.sh'
-command-3='~/dev-local/livvy/hideshow-chrome.sh'
-command-4='~/dev-local/livvy/hideshow-gnome-terminal.sh'
-command-5='~/dev-local/livvy/hideshow-zeal.sh'
-command-6='~/dev-local/livvy/hideshow-nautilus.sh'
+command-2='~/dev/livvy/hideshow-sublimetext.sh'
+command-3='~/dev/livvy/hideshow-chrome.sh'
+command-4='~/dev/livvy/hideshow-gnome-terminal.sh'
+command-5='~/dev/livvy/hideshow-zeal.sh'
+command-6='~/dev/livvy/hideshow-nautilus.sh'
 run-command-11=['disabled']
 run-command-12=['disabled']
 run-command-5=['F4']

@@ -329,37 +329,37 @@ if [ "$PLATFORM" = "linux" ]; then
 
     function toolbelt-linux-dotfiles-dump() {
       hr; echo "+ dconf"; hr;
-      dconf dump / > ~/dev-local/dotfiles/linux/deep-nightmare.dconf.dump
+      dconf dump / > ~/dev/dotfiles/linux/deep-nightmare.dconf.dump
 
       hr; echo "+ ~/.conky"; hr;
-      rsync -ap ~/.conky ~/dev-local/dotfiles/linux/
+      rsync -ap ~/.conky ~/dev/dotfiles/linux/
 
       hr; echo "+ ~/.config/compiz-1"; hr;
-      rsync -ap ~/.config/compiz-1 ~/dev-local/dotfiles/linux/.config/
+      rsync -ap ~/.config/compiz-1 ~/dev/dotfiles/linux/.config/
 
       hr; echo "+ ~/.config/menus"; hr;
-      rsync -ap ~/.config/menus ~/dev-local/dotfiles/linux/.config/
+      rsync -ap ~/.config/menus ~/dev/dotfiles/linux/.config/
 
       hr; echo "+ ~/.config/pulse"; hr;
-      rsync -ap ~/.config/pulse ~/dev-local/dotfiles/linux/.config/
+      rsync -ap ~/.config/pulse ~/dev/dotfiles/linux/.config/
 
       hr; echo "+ ~/.config/Thunar"; hr;
-      rsync -ap ~/.config/Thunar ~/dev-local/dotfiles/linux/.config/
+      rsync -ap ~/.config/Thunar ~/dev/dotfiles/linux/.config/
 
       hr; echo "+ ~/.config/transmission"; hr;
-      rsync -ap ~/.config/transmission ~/dev-local/dotfiles/linux/.config/
+      rsync -ap ~/.config/transmission ~/dev/dotfiles/linux/.config/
 
       hr; echo "+ ~/.config/terminator"; hr;
-      rsync -ap ~/.config/terminator ~/dev-local/dotfiles/linux/.config/
+      rsync -ap ~/.config/terminator ~/dev/dotfiles/linux/.config/
 
       hr; echo "+ ~/.config/vlc"; hr;
-      rsync -ap ~/.config/vlc ~/dev-local/dotfiles/linux/.config/
+      rsync -ap ~/.config/vlc ~/dev/dotfiles/linux/.config/
 
       hr; echo "+ ~/.config/xfce4"; hr;
-      rsync -ap ~/.config/xfce4 ~/dev-local/dotfiles/linux/.config/
+      rsync -ap ~/.config/xfce4 ~/dev/dotfiles/linux/.config/
 
       hr; echo "+ ~/.config/Zeal"; hr;
-      rsync -ap ~/.config/Zeal ~/dev-local/dotfiles/linux/.config/
+      rsync -ap ~/.config/Zeal ~/dev/dotfiles/linux/.config/
 
     }
 

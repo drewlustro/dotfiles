@@ -1,4 +1,3 @@
-function dev --wraps='cd /Volumes/dev-local' --description 'alias dev=cd /Volumes/dev-local'
-  cd /Volumes/dev-local $argv
-        
+function dev --wraps='cd /Volumes/dev' --description 'alias dev=cd /Volumes/dev'
+  cd /Volumes/dev $argv
 end

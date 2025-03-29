@@ -82,8 +82,8 @@ fi
 alias kprod='kubectx prod'
 alias kstage='kubectx stage'
 alias kbuild='kubectx build'
-alias wellfound='cd ~/dev-local/wellfoundai'
-alias wf='cd ~/dev-local/wellfoundai'
+alias wellfound='cd ~/dev/wellfoundai'
+alias wf='cd ~/devl/wellfoundai'
 
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 

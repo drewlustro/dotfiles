@@ -128,7 +128,7 @@ function primaryInstall() {
   br;
   set -o xtrace;
   # make local npm packages dir to allow non-sudo global npm packages
-  mkdir "$HOME/dev-local" 2> /dev/null;
+  mkdir "$HOME/dev" 2> /dev/null;
 
   if ls --color > /dev/null 2>&1; then # GNU coreutils `ls`
     echo "[Notice] Detected GNU ls, not copying ./bin";

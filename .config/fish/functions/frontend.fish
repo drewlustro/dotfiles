@@ -1,4 +1,4 @@
-function frontend --wraps='cd ~/dev-local/frontend' --description 'alias frontend cd ~/dev-local/frontend'
-  cd ~/dev-local/frontend $argv
+function frontend --wraps='cd ~/dev/frontend' --description 'alias frontend cd ~/dev/frontend'
+  cd ~/dev/frontend $argv
 
 end

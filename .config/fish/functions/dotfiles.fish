@@ -1,4 +1,4 @@
-function dotfiles --wraps='cd /Volumes/dev-local/dotfiles' --description 'alias dotfiles=cd /Volumes/dev-local/dotfiles'
-  cd /Volumes/dev-local/dotfiles $argv
-        
+function dotfiles --wraps='cd /Volumes/dev/dotfiles' --description 'alias dotfiles=cd /Volumes/dev/dotfiles'
+  cd /Volumes/dev/dotfiles $argv
+
 end

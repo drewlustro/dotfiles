@@ -3,17 +3,17 @@ which reload
 reload
 which reload
 type reload
-cat ~/.bashrc 
+cat ~/.bashrc
 basename $SHELL
 source "~/.$(basename $SHELL)rc"
 source "$HOME/.$(basename $SHELL)rc"
 EXIT
-bundle exec bin/write_circle_config 
-cat bin/write_circle_config 
+bundle exec bin/write_circle_config
+cat bin/write_circle_config
 brew install circleci
 git log --format=format:%H
-git checkout company-profiles-nextgen 
-git pull origin company-profiles-nextgen 
+git checkout company-profiles-nextgen
+git pull origin company-profiles-nextgen
 scp -r *.* greenpath.local:/usr/local/etc/nginx/certs/
 scp -r * greenpath.local:/usr/local/etc/nginx/certs/
 scp angel.* greenpath.local:/usr/local/etc/nginx/certs/
@@ -36,7 +36,7 @@ core
 yarn --version
 brew install https://yarnpkg.com/downloads/1.17.3/yarn-v1.17.3.tar.gz
 brew install https://yarnpkg.com/downloads/1.18.0/yarn-v1.18.0.tar.gz
-rm ~/.curlrc 
+rm ~/.curlrc
 brew install https://yarnpkg.com/downloads/1.18.0/yarn-v1.18.0.tar.gz
 curl --version
 brew upgrade curl
@@ -64,13 +64,13 @@ npx jscodeshift -t tools/codemods/0.7-box.js ../../app/javascripts  --extensions
 ..
 npx eslint '**/*.*sx' --format codeframe --fix
 history 0
-history 
+history
 rsync -avc * greenpath.local:~/Torrents
 core
 find . -type d -name __generated__ -exec rmdir {} \;
 rsync -avc * greenpath.local:~/Torrents
 la
-beet im 
+beet im
 beet im Grimes\ \[2020\]\ Miss\ Anthropocene\ \[4AD\,\ WEB\]\ \[FLAC\]
 rsync -avc * greenpath.local:~/Torrents
 beet im Big\ Wild\ -\ 2019\ -\ Superdream\ \(Remixes\)\ \[FLAC\]/ Crooked\ Colours\ -\ 2014\ -\ Come\ Down\ \[FLAC\]/
@@ -85,10 +85,10 @@ history | grep install_name
 rsync -avc * greenpath.local:~/Torrents
 la
 cd Kappo\ Masa/
-convert-jpg-to-jpg 
+convert-jpg-to-jpg
 which convert-raw-to-jpg
 type convert-raw-to-jpg
-type convert-jpg-to-jpg 
+type convert-jpg-to-jpg
 convert-raw-to-jpg
 convert-jpg-to-jpg 99 4000 *.tif
 la
@@ -97,7 +97,7 @@ la
 
 convert-jpg-to-jpg 99 4000 '*.tif
 convert-jpg-to-jpg 99 4000 '*.tif'
-type convert-jpg-to-jpg 
+type convert-jpg-to-jpg
 convert-jpg-to-jpg 100 4000 '*.jpg'
 ..
 cd Canyon\ Village\ Lodge/
@@ -140,7 +140,7 @@ find . -maxdepth 2 -type f -iname "*.jpg" -print0 | xargs -0 -n 1 -P 8 -I {} con
 find . -maxdepth 2 -type f -iname "*.jpg" -print0 | xargs -0 -n 1 -P 8 -I {} convert -verbose -units PixelsPerInch {} -colorspace sRGB -resize 3000x3000\> -set filename:new '%t--original' -density 72 -format JPG -quality 100 '%[filename:new].jpg';
 find . -maxdepth 2 -type f -iname "*.jpg" -print0 | xargs -0 -n 1 -P 8 -I {} convert -verbose -units PixelsPerInch {} -colorspace sRGB -resize 1000x1000\> -set filename:new '%t--medium' -density 72 -format JPG -quality 100 '%[filename:new].jpg';
 find . -maxdepth 2 -type f -iname "*.jpg" -print0 | xargs -0 -n 1 -P 8 -I {} convert -verbose -units PixelsPerInch {} -colorspace sRGB -resize 640x640\> -set filename:new '%t--thumb' -density 72 -format JPG -quality 100 '%[filename:new].jpg';
-open ~/dev-local/mn-architects/static/
+open ~/dev/mn-architects/static/
 brew install git-lfs
 brew upgrade git-lfs
 cd terracehouse/home/
@@ -149,9 +149,9 @@ which bash
 which zsh
 cd terracehouse/home/
 cp .babel.json .bash_history .bash_profile .bashrc .editorconfig .engineer_infra .foxpass-user .fzf.bash .fzf.zsh .gitconfig .guard_history .hushlogin .hyper.js .inputrc .irb-history .mackup.cfg .node_history .node_path .npmrc .pagekite.rc .profile .pry_history .screenrc .tmux.conf.local .vault-token .vimrc .wgetrc .yarnrc .zcompdump .zhistory .zpreztorc  .zshrc ~/
-sudo vim /etc/shells 
+sudo vim /etc/shells
 cd ~/
-sudo vim /etc/shells 
+sudo vim /etc/shells
 cd .vim/
 ..
 chsh
@@ -174,7 +174,7 @@ make parallel spec stripe
 make parallel spec libs
 bin/parallelize spec libs
 core
-drew at mammoth in /Volumes/dev-local/AngelList on master [!$]
+drew at mammoth in /Volumes/dev/AngelList on master [!$]
 $ make parallel spec stripe
 ┌────────────────────────────────────────────────────────────────────┐
 │        Running Tests or Specs using a Parallel Tests               │
@@ -208,9 +208,9 @@ bundle exec rake parallel:spec['stripe|payment_service']
 make migrate
 bundle exec rake parallel:spec['stripe|payment_service']
 bundle exec rake parallel:spec['stripe|payment_service']
-bin/rspec spec/features/core_monetization/source_spec.rb 
-bin/rspec spec/features/core_monetization/premium_jobs_spec.rb 
-bin/rspec spec/features/core_monetization/promoted_jobs_spec.rb 
+bin/rspec spec/features/core_monetization/source_spec.rb
+bin/rspec spec/features/core_monetization/premium_jobs_spec.rb
+bin/rspec spec/features/core_monetization/promoted_jobs_spec.rb
 bundle exec rake parallel:spec['stripe|payment_service|charge']
 RUBYOPT=W0 DISABLE_SPRING=1 ./bin/rake parallel:prepare
 RUBYOPT=W0 DISABLE_SPRING=1 ./bin/rake parallel:migrate
@@ -231,23 +231,23 @@ gs
 time yarn test
 yarn add --dev jest-runner-tslint
 time yarn test
-cat node_modules/jest-runner-tslint/package.json 
+cat node_modules/jest-runner-tslint/package.json
 talent
 echo $0
 export SHELL=$(which bash)
 echo $SHELL
 mkdir ~/test
-./install.sh 
+./install.sh
 echo $SHELL
-./install.sh 
+./install.sh
 cd ~/test
 la
 ls -la
 cd .shell
 ls -la
 space
-cd dev-local/dotfiles/
-./install.sh 
+cd dev/dotfiles/
+./install.sh
 $0
 space
 space .
@@ -309,25 +309,25 @@ exbeet --dry-run
 beet --dry-run
 beet help
 beet help import
-./flac-post-download.sh 
+./flac-post-download.sh
 cd /tmp/
 la
 la | grep .log
 la
-cat 89474.log 
+cat 89474.log
 which terminal-notifier
-which terminal-notifier 
+which terminal-notifier
 la
 rm *.log
 la
 lala
 la
-cat 96688.log 
+cat 96688.log
 which beet
 ll /System/Library/Sounds
-play /System/Library/Sounds/Funk.aiff 
-play /System/Library/Sounds/Morse.aiff 
-play /System/Library/Sounds/Sosumi.aiff 
+play /System/Library/Sounds/Funk.aiff
+play /System/Library/Sounds/Morse.aiff
+play /System/Library/Sounds/Sosumi.aiff
 which bash
 torrents
 beet im Dillon\ Francis\ -\ Happy\ Machine\ \(2021\)\ -\ WEB\ FLAC/
@@ -337,17 +337,17 @@ brew install zsh
 zsh -l
 which $SHELL
 pwd
-cd dev-local/dotfiles/
+cd dev/dotfiles/
 ls
 ./install.sh
 cd
 mkdir Torrents
 ssh mammoth.local
 brew install rbenv
-./install.sh 
+./install.sh
 which bash
 chsh -s /bin/bash
-./install.sh 
+./install.sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 which nvm
 nvm
@@ -384,8 +384,8 @@ cat artifacts/*
 pwd artifacts/*
 realpath artifacts/*
 find artifacts/*
-readlink artifacts/nextjs-first-load-stats.json 
-readlink -f artifacts/nextjs-first-load-stats.json 
+readlink artifacts/nextjs-first-load-stats.json
+readlink -f artifacts/nextjs-first-load-stats.json
 readlink -f artifacts/*
 rubocop
 rbenv
@@ -402,24 +402,24 @@ which ruby
 bundle list --name-only
 bundle list --name-only | grep standard
 echo $SHELL
-cd dev-local/wellfoundai/
+cd dev/wellfoundai/
  rails development:seed_from_production
 $SHELL
 chsh -s /bin/bash
 echo $0
-cd dev-local/wellfoundai/
+cd dev/wellfoundai/
  rails development:seed_from_production
 echo $0
 chsh -s /bin/bash
-cd dev-local/wellfoundai/
+cd dev/wellfoundai/
 rake db:setup
 rake db:migrate
  rails development:seed_from_production
  rails development:seed_from_production
 chsh -s /bin/bash
 ping finerworks.com
-cd dev-local/wellfound
-cd dev-local/wellfoundai/
+cd dev/wellfound
+cd dev/wellfoundai/
 git fetch origin
 g co change_seed_loading
 git checkout change_seed_loading
@@ -447,10 +447,10 @@ which zsh
 yarn export
 bundle exec rspec spec/buildkite/talent_frontend_pipeline_spec.rb
 wellfound
-cd dev-local/wellfoundai/
+cd dev/wellfoundai/
 docker-compose up
 wellfound
-cd dev-local/wellfoundai/
+cd dev/wellfoundai/
 docker-compose up
 bash --version
 which bash
@@ -462,7 +462,7 @@ bash --version
 bash -lic 'which bash; bash --version'
 bash -lic 'bundle exec ruby -rjson -e "printf(%{RUBY_ENV_ACTIVATE%sRUBY_ENV_ACTIVATE}, JSON.dump(ENV.to_h))"'
 wellfound
-cd dev-local/wellfoundai/
+cd dev/wellfoundai/
 code .
 which ruby
 cd /bin
@@ -472,14 +472,14 @@ ln -s $(which bash)
 sudo ln -s $(which bash)
 sudo rm bash
 which bash
-rdbg --command --open --stop-at-load --sock-path=/var/folders/px/d_ny6kfj2k35tgqq2yrm1v9r0000gn/T/rdbg-501/rdbg-43358 -- rspec /Volumes/dev-local/wellfoundai/spec/models/user_spec.rb
+rdbg --command --open --stop-at-load --sock-path=/var/folders/px/d_ny6kfj2k35tgqq2yrm1v9r0000gn/T/rdbg-501/rdbg-43358 -- rspec /Volumes/dev/wellfoundai/spec/models/user_spec.rb
 gem cleanup diff-lcs
 echo $SHELL
 which bash
 which zsh
 chsh -s $(which zsh)
 bundle exec rspec spec/lib/talent/search/inbound/searcher_spec.rb:123
-rake db:migrate && rake db:test:prepare  
+rake db:migrate && rake db:test:prepare
 bundle exec rspec spec/lib/talent/search/inbound/searcher_spec.rb:123
 bundle exec rspec spec/lib/talent/search/inbound/searcher_spec.rb:138
 bundle exec rspec spec/lib/talent/search/inbound/searcher_spec.rb:132
@@ -492,18 +492,18 @@ bundle exec rspec spec/lib/talent/search/inbound/searcher_spec.rb:187
 bundle exec rspec spec/lib/talent/search/inbound/searcher_spec.rb:185
 iooooooooobundle exec rspec spec/lib/talent/search/inbound/searcher_spec.rb:118
 bundle exec rspec spec/lib/talent/search/inbound/searcher_spec.rb:118
-python zsh_to_fish_history.py 
+python zsh_to_fish_history.py
 fish --debug history'*' --debug-output ~/fish-debug-history.$(date +'%s').log
-python zsh_to_fish_history.py 
+python zsh_to_fish_history.py
 echo $SHELL
 which bash
 exit
 ./install.sh
 ..
 cd iterm-dynamic-colors/
-./dashboard-date-helper-blame.sh 
+./dashboard-date-helper-blame.sh
 marketing
-cd /Volumes/dev-local/marketing-site/
+cd /Volumes/dev/marketing-site/
 find src -name "*.module.scss" -exec sed -i '' '1i\
 @import "src/styles/base";\
 ' {} \;

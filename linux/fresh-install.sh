@@ -85,12 +85,12 @@ sudo mkdir -p /sites/pool
 sudo mkdir -p /sites/maxrelax
 sudo chmod -R 0755 /sites
 
-# dev-local setup
-mkdir -p ~/dev-local
+# dev setup
+mkdir -p ~/dev
 
 # powerline fonts
 pushd $(pwd)
-cd ~/dev-local
+cd ~/dev
 git clone https://github.com/powerline/fonts.git
 cd fonts
 ./install.sh

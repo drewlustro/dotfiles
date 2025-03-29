@@ -1,4 +1,4 @@
-function marketing --wraps='cd ~/dev-local/marketing-site' --description 'alias marketing cd ~/dev-local/marketing-site'
-  cd ~/dev-local/marketing-site $argv
-        
+function marketing --wraps='cd ~/dev/marketing-site' --description 'alias marketing cd ~/dev/marketing-site'
+  cd ~/dev/marketing-site $argv
+
 end

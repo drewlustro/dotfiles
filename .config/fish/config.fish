@@ -97,7 +97,7 @@ function update_iterm2_title --on-event fish_prompt
     else if test $current_dir = dotfiles
         set title "$current_dir ⁂"
 
-    else if test $parent_dir = dev-local
+    else if test $parent_dir = dev
         set title "$current_dir ⁙"
     else
         # Otherwise, display parent/current

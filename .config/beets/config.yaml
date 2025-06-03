@@ -42,6 +42,7 @@ scrub:
     auto: yes
 
 duplicates:
+    # checksum: 'ffmpeg -i {file} -f crc -'
     album: no
     checksum: ''
     copy: ''
@@ -54,6 +55,10 @@ duplicates:
     path: no
     strict: yes
     tag: ''
+    tiebreak:
+        items:
+            - bitrate
+            - added
 
 ui:
     color: yes

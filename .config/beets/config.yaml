@@ -8,7 +8,7 @@ import:
     copy: yes
     write: yes
     resume: ask
-    log: /Volumes/treasury/FLAC/beets/beets.mammoth.log
+    log: /Volumes/treasury/FLAC/beets/beets.arcadia.log
     autotag: no
     default_action: asis
     timid: yes

@@ -50,6 +50,8 @@ set -Ux fish_user_paths $fish_user_paths /Users/drew/.gem/ruby/3.3.0/bin
 
 if test (hostname) = selene
   nvm use 20.19.1 &>/dev/null
+else if test (hostname) = arcadia
+  nvm use 22.14.0 &>/dev/null
 end
 
 # uv python package manager + virtualenv combined
@@ -69,6 +71,26 @@ test -e {$HOME}/.iterm2_shell_integration.fish; and source {$HOME}/.iterm2_shell
 # if status is-interactive
 #   zoxide init fish | source
 # end
+
+# function __pure_prompt_virtualenv --description 'Print python virtualenv name'
+#   if set -q VIRTUAL_ENV
+#     echo "VIRTUAL_ENV: $VIRTUAL_ENV"
+#     if test "$VIRTUAL_ENV" != "$HOME/.python-uv-env-default"
+#       set venv (basename "$VIRTUAL_ENV")
+#       echo -n "($venv) "
+#     end
+#   end
+# end
+
+# Auto-activate the default Python environment
+if test -d ~/.python-uv-env-default
+  source ~/.python-uv-env-default/bin/activate.fish
+end
+
+# If default venv exists, prepend its bin/ to PATH
+if test -d ~/.python-uv-env-default/bin
+  set -gx PATH ~/.python-uv-env-default/bin $PATH
+end
 
 # Queue to move to functions
 
@@ -95,6 +117,8 @@ function update_iterm2_title --on-event fish_prompt
 
     else if test $current_dir = instapaper
         set title "$current_dir ☰"
+    else if test $parent_dir = instapaper
+        set title "instapaper/$current_dir ☰"
 
     else if test $current_dir = dotfiles
         set title "$current_dir ⁂"
@@ -127,11 +151,21 @@ end
 # bind \t forward-char
 
 # Configure directory-by-directory tab completion
-function fish_user_key_bindings
-    # Use Tab for regular completion and accept autosuggestions
-    bind \t complete-and-search
+function custom_tab_binding
+    # prefer suggestion from history first
+    if test -n (commandline -S)
+        commandline -f accept-autosuggestion
+    else if commandline --paging-mode
+        commandline -f history-search-forward
+    else
+        commandline -f complete
+    end
+end
 
-    # Custom binding for directory-by-directory path completion
+function fish_user_key_bindings
+    bind \t custom_tab_binding
+
+    # then complete by directory chunks
     bind \e\t 'commandline -f complete; if test -d (commandline -t); commandline -i "/"; commandline -f complete; end'
 end
 
@@ -141,3 +175,7 @@ set -g fish_emoji_width 2
 set -g fish_ambiguous_width 1
 set -U fish_complete_path_max_cmd_length 15
 set -g fish_autosuggestion_enabled 1
+
+# Enable history-based completion
+set -g fish_history_enabled 1
+set -g fish_history_size 10000

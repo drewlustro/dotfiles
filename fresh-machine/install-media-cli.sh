@@ -38,10 +38,9 @@ brew install ffmpeg
 # if you'd like to install with options, use: https://github.com/justinmayer/homebrew-tap
 # brew install justinmayer/tap/ffmpeg --with-theora --with-tools --with-libvorbis --with-x265
 brew install webkit2png
-brew install ufraw # RAW image support for imagemagick
 brew install imagemagick
 brew install sox # audio transcoding swiss-army knife
-brew install youtube-dl
+brew install yt-dlp
 
 # Remove outdated versions from the cellar
 brew cleanup

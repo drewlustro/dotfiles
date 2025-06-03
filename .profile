@@ -5,7 +5,6 @@
 set -m
 
 export GPG_TTY=$(tty)
-source "$HOME/.cargo/env"
 
 export RUBOCOP_DAEMON_USE_BUNDLER=true
 export PATH="$HOME/.rbenv/shims:$PATH"
@@ -13,3 +12,4 @@ export PATH="$HOME/.rbenv/shims:$PATH"
 # export PATH="/usr/local/bin/rubocop-daemon-wrapper:$PATH"
 
 . "$HOME/.local/bin/env"
+. "$HOME/.cargo/env"

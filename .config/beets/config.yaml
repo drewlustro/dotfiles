@@ -4,51 +4,56 @@ ignore: .AppleDouble ._* *~ .DS_Store *.mp4 *.MP4 *.aac *.AAC *.m4a
 art_filename: cover
 threaded: yes
 
-# Repair library configuration
+# Standard configuration
 import:
     log: /Volumes/treasury/FLAC/beets/beets.arcadia.log
-    incremental: yes
-    incremental_skip_later: yes
-    resume: yes
-    move: no
-    copy: no
-    write: no
+    copy: yes
+    write: yes
+    resume: ask
     autotag: no
+    default_action: asis
     timid: yes
 
-# Standard configuration
+# Repair library configuration
 # import:
 #     log: /Volumes/treasury/FLAC/beets/beets.arcadia.log
-#     copy: yes
-#     write: yes
-#     resume: ask
-#     log: /Volumes/treasury/FLAC/beets/beets.arcadia.log
+#     incremental: yes
+#     incremental_skip_later: yes
+#     resume: yes
+#     move: no
+#     copy: no
+#     write: no
 #     autotag: no
-#     default_action: asis
 #     timid: yes
 
 paths:
-    default: $albumartist/$album%aunique{} ($year)/$track $artist - $year - $title
+    default: $albumartist/$album ($year)/$track $artist - $year - $title
     singleton: Singles/$artist - $year - $title
-    comp: Compilations/$album%aunique{} ($year)/$track $title
+    comp: Compilations/$album ($year)/$track $title
 
 acoustid:
     apikey: 7HIrgs2T
 
 fetchart:
     auto: yes
-    maxwidth: 1600
-
-# embedart:
-#     ifempty: yes
+    maxwidth: 3200
 
 scrub:
     auto: yes
 
 duplicates:
+    album: no
+    checksum: ''
+    copy: ''
     count: yes
     delete: no
     format: "$albumartist - $album ($year)"
+    keys: ['length', 'bitrate', 'year']
+    merge: no
+    move: ''
+    path: no
+    strict: yes
+    tag: ''
 
 ui:
     color: yes

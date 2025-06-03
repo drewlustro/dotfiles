@@ -4,14 +4,28 @@ ignore: .AppleDouble ._* *~ .DS_Store *.mp4 *.MP4 *.aac *.AAC *.m4a
 art_filename: cover
 threaded: yes
 
+# Repair library configuration
 import:
-    copy: yes
-    write: yes
-    resume: ask
     log: /Volumes/treasury/FLAC/beets/beets.arcadia.log
+    incremental: yes
+    incremental_skip_later: yes
+    resume: yes
+    move: no
+    copy: no
+    write: no
     autotag: no
-    default_action: asis
     timid: yes
+
+# Standard configuration
+# import:
+#     log: /Volumes/treasury/FLAC/beets/beets.arcadia.log
+#     copy: yes
+#     write: yes
+#     resume: ask
+#     log: /Volumes/treasury/FLAC/beets/beets.arcadia.log
+#     autotag: no
+#     default_action: asis
+#     timid: yes
 
 paths:
     default: $albumartist/$album%aunique{} ($year)/$track $artist - $year - $title

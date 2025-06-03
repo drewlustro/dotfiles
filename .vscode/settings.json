@@ -1,11 +1,11 @@
 {
   "workbench.colorCustomizations": {
-    "titleBar.activeBackground": "#eb5424",
-    "titleBar.inactiveBackground": "#eb542499",
-    "titleBar.activeForeground": "#e7e7e7",
-    "titleBar.inactiveForeground": "#e7e7e799",
-    "commandCenter.border": "#e7e7e799",
-    "sash.hoverBorder": "#ef7853"
+    "titleBar.activeBackground": "#22a6b3",
+    "titleBar.inactiveBackground": "#22a6b399",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveForeground": "#15202b99",
+    "commandCenter.border": "#15202b99",
+    "sash.hoverBorder": "#30c9d8"
   },
   "files.exclude": {
     "**/.git": true,
@@ -18,7 +18,7 @@
     "**/.svn": true,
     "**/.DS_Store": true,
   },
-  "peacock.color": "#eb5424",
+  "peacock.color": "#22a6b3",
   "peacock.affectStatusBar": false,
   "peacock.affectActivityBar": false
 }

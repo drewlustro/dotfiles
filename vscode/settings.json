@@ -216,6 +216,10 @@
     {
       "name": "Instapaper Ice",
       "value": "#a5bbc9"
+    },
+    {
+      "name": "Greenland Teal",
+      "value": "#22a6b3"
     }
   ],
   "prettier.requireConfig": true,
@@ -331,5 +335,9 @@
   "makefile.configureOnOpen": false,
   "editor.codeLensFontSize": 1,
   "workbench.editor.pinnedTabSizing": "shrink",
-  "workbench.editor.tabSizingFixedMinWidth": 60
+  "workbench.editor.tabSizingFixedMinWidth": 60,
+  "vs-kubernetes": {
+    "vscode-kubernetes.helm-path-mac": "/Users/drew/.vs-kubernetes/tools/helm/darwin-arm64/helm",
+    "vscode-kubernetes.minikube-path-mac": "/Users/drew/.vs-kubernetes/tools/minikube/darwin-arm64/minikube"
+  }
 }

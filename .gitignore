@@ -34,3 +34,6 @@ npm-debug.log
 .lesshst
 .zhistory
 .zsh_history
+
+# beets state
+.config/beets/state.pickle

@@ -42,7 +42,7 @@ git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$H
 
 # ✪ EZ Dotfiles Install
 
-You can clone the repository wherever you want. (I like to keep it in `~/dev/dotfiles`. The bootstrapper script will pull in the latest version from the master branch before installing. Remember to run these commands from a `bash` shell!
+You can clone the repository wherever you want. (I like to keep it in `~/dev/dotfiles`. The bootstrapper script will pull in the latest version from the main branch before installing. Remember to run these commands from a `bash` shell!
 
 ```bash
 bash -l # make sure we're running bash
@@ -65,7 +65,7 @@ git clone https://github.com/drewlustro/dotfiles.git && cd dotfiles && ./install
 ```bash
 ./fresh-machine/brew-install-cli.sh # installs TONS of useful binaries, libs, and CLI tools via brew
 ./fresh-machine/brew-install-media-cli.sh # installs heavy media CLI tools (ffmpeg, sox, etc.) via brew
-./fresh-machine/brew-cask-fonts.sh  # installs a handful of useful public-domain typefaces, including many coding fonts
+./fresh-machine/brew-cask-fonts.sh  # installs a handful of useful public-do typefaces, including many coding fonts
 ./fresh-machine/brew-cask-apps.sh   # installs many useful OS X applications via brew-cask
 ```
 
@@ -167,7 +167,7 @@ MIT
 
 * [Mathias Bynens](https://mathiasbynens.be/)
 * [Ben Alman](http://benalman.com/) and his [dotfiles repository](https://github.com/cowboy/dotfiles)
-* [Chris Gerke](http://www.randomsquared.com/) and his [tutorial on creating an OS X SOE master image](http://chris-gerke.blogspot.com/2012/04/mac-osx-soe-master-image-day-7.html) + [_Insta_ repository](https://github.com/cgerke/Insta)
+* [Chris Gerke](http://www.randomsquared.com/) and his [tutorial on creating an OS X SOE main image](http://chris-gerke.blogspot.com/2012/04/mac-osx-soe-main-image-day-7.html) + [_Insta_ repository](https://github.com/cgerke/Insta)
 * [Cătălin Mariș](https://github.com/alrra) and his [dotfiles repository](https://github.com/alrra/dotfiles)
 * [Gianni Chiappetta](http://gf3.ca/) for sharing his [amazing collection of dotfiles](https://github.com/gf3/dotfiles)
 * [Jan Moesen](http://jan.moesen.nu/) and his [ancient `.bash_profile`](https://gist.github.com/1156154) + [shiny _tilde_ repository](https://github.com/janmoesen/tilde)

@@ -507,3 +507,4 @@ cd /Volumes/dev/marketing-site/
 find src -name "*.module.scss" -exec sed -i '' '1i\
 @import "src/styles/base";\
 ' {} \;
+. "/Applications/Cursor.app/Contents/Resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh"

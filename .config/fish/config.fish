@@ -48,7 +48,9 @@ command rbenv rehash 2>/dev/null
 set -Ua fish_user_paths /opt/homebrew/opt/coreutils/libexec/gnubin
 set -Ux fish_user_paths $fish_user_paths /Users/drew/.gem/ruby/3.3.0/bin
 
-nvm use 20.17.0 &>/dev/null
+if test (hostname) = selene
+  nvm use 20.19.1 &>/dev/null
+end
 
 # uv python package manager + virtualenv combined
 source $HOME/.local/bin/env.fish

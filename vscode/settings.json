@@ -339,5 +339,6 @@
   "vs-kubernetes": {
     "vscode-kubernetes.helm-path-mac": "/Users/drew/.vs-kubernetes/tools/helm/darwin-arm64/helm",
     "vscode-kubernetes.minikube-path-mac": "/Users/drew/.vs-kubernetes/tools/minikube/darwin-arm64/minikube"
-  }
+  },
+  "cursor.composer.textSizeScale": 1.3
 }

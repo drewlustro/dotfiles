@@ -1,6 +1,6 @@
 #!/opt/homebrew/bin/bash -x
 
-LOG=/tmp/transmission-post-download-$$.log
+LOG=/Volumes/heatsink/beets/transmission-import-logs/import-$$.log
 exec > $LOG 2>&1
 
 echo "${TR_TORRENT_DIR}/${TR_TORRENT_NAME}"

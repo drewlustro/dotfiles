@@ -1,12 +1,12 @@
-directory: /Volumes/treasury/FLAC
-library: /Volumes/treasury/FLAC/beets/flac-library.blb
+directory: /Volumes/heatsink/flac
+library: /Volumes/heatsink/beets/flac-library.blb
 ignore: .AppleDouble ._* *~ .DS_Store *.mp4 *.MP4 *.aac *.AAC *.m4a
 art_filename: cover
 threaded: yes
 
 # Standard configuration
 import:
-    log: /Volumes/treasury/FLAC/beets/beets.arcadia.log
+    log: /Volumes/heatsink/beets/beets.heatsink.log
     copy: yes
     write: yes
     resume: ask
@@ -14,9 +14,9 @@ import:
     default_action: asis
     timid: yes
 
-# Repair library configuration
+# Move / Repair library configuration
 # import:
-#     log: /Volumes/treasury/FLAC/beets/beets.arcadia.log
+#     log: /Volumes/heatsink/beets/beets.heatsink.log
 #     incremental: yes
 #     incremental_skip_later: yes
 #     resume: yes
